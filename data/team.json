@@ -1,0 +1,74 @@
+{
+  "coreTeam": [
+    {
+      "id": 1,
+      "name": "Aarav Sharma",
+      "role": "Lead Organizer",
+      "photo": "👨‍💻",
+      "bio": "Passionate about building developer communities and organizing impactful tech events.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com",
+        "github": "https://github.com"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Priya Patel",
+      "role": "Co-Organizer",
+      "photo": "👩‍💻",
+      "bio": "Android developer and mentor helping students kickstart their tech journey.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com",
+        "github": "https://github.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Rohan Kumar",
+      "role": "Tech Lead",
+      "photo": "👨‍🔧",
+      "bio": "Full-stack developer specializing in cloud technologies and modern web frameworks.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      }
+    }
+  ],
+  "volunteers": [
+    {
+      "id": 4,
+      "name": "Ananya Singh",
+      "role": "Event Coordinator",
+      "photo": "👩‍🎓",
+      "bio": "Organizing workshops and managing community events.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Vikram Desai",
+      "role": "Content Creator",
+      "photo": "👨‍🎨",
+      "bio": "Creating engaging content for social media and blogs.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Sneha Reddy",
+      "role": "Marketing Lead",
+      "photo": "👩‍💼",
+      "bio": "Promoting GDG events and managing community outreach.",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://twitter.com"
+      }
+    }
+  ]
+}

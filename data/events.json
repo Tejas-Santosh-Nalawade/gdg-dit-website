@@ -1,0 +1,92 @@
+{
+  "upcomingEvents": [
+    {
+      "id": 1,
+      "title": "Introduction to Cloud Computing",
+      "date": "March 15, 2024",
+      "time": "2:00 PM - 4:00 PM",
+      "venue": "Main Auditorium",
+      "type": "Workshop",
+      "domain": "Cloud",
+      "banner": "☁️",
+      "color": "from-blue-400 to-cyan-400",
+      "description": "Learn the fundamentals of cloud computing with Google Cloud Platform."
+    },
+    {
+      "id": 2,
+      "title": "Android App Development Bootcamp",
+      "date": "March 22, 2024",
+      "time": "10:00 AM - 5:00 PM",
+      "venue": "Computer Lab 2",
+      "type": "Bootcamp",
+      "domain": "Android",
+      "banner": "📱",
+      "color": "from-green-400 to-emerald-400",
+      "description": "Hands-on bootcamp to build your first Android application."
+    },
+    {
+      "id": 3,
+      "title": "Machine Learning Fundamentals",
+      "date": "March 28, 2024",
+      "time": "3:00 PM - 5:00 PM",
+      "venue": "Seminar Hall",
+      "type": "Seminar",
+      "domain": "AI/ML",
+      "banner": "🤖",
+      "color": "from-purple-400 to-pink-400",
+      "description": "Introduction to ML concepts and real-world applications."
+    },
+    {
+      "id": 4,
+      "title": "Web Development with React",
+      "date": "April 5, 2024",
+      "time": "2:00 PM - 4:00 PM",
+      "venue": "Computer Lab 1",
+      "type": "Workshop",
+      "domain": "Web",
+      "banner": "🌐",
+      "color": "from-blue-400 to-indigo-400",
+      "description": "Build modern web applications using React and Next.js."
+    },
+    {
+      "id": 5,
+      "title": "Flutter for Beginners",
+      "date": "April 12, 2024",
+      "time": "10:00 AM - 1:00 PM",
+      "venue": "Main Auditorium",
+      "type": "Workshop",
+      "domain": "Flutter",
+      "banner": "🎯",
+      "color": "from-cyan-400 to-blue-400",
+      "description": "Create beautiful cross-platform apps with Flutter."
+    },
+    {
+      "id": 6,
+      "title": "DevOps Best Practices",
+      "date": "April 18, 2024",
+      "time": "3:00 PM - 5:00 PM",
+      "venue": "Seminar Hall",
+      "type": "Seminar",
+      "domain": "DevOps",
+      "banner": "⚙️",
+      "color": "from-orange-400 to-red-400",
+      "description": "Learn CI/CD pipelines and modern DevOps practices."
+    }
+  ],
+  "pastEvents": [
+    {
+      "id": 7,
+      "title": "Google I/O Extended 2023",
+      "date": "May 20, 2023",
+      "type": "Conference",
+      "attendees": 300
+    },
+    {
+      "id": 8,
+      "title": "DevFest 2023",
+      "date": "November 15, 2023",
+      "type": "Conference",
+      "attendees": 500
+    }
+  ]
+}
