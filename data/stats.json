@@ -1,0 +1,32 @@
+{
+  "stats": [
+    {
+      "id": 1,
+      "label": "Community Members",
+      "value": 500,
+      "icon": "👥",
+      "suffix": "+"
+    },
+    {
+      "id": 2,
+      "label": "Events Organized",
+      "value": 50,
+      "icon": "🎉",
+      "suffix": "+"
+    },
+    {
+      "id": 3,
+      "label": "Years Active",
+      "value": 4,
+      "icon": "📅",
+      "suffix": ""
+    },
+    {
+      "id": 4,
+      "label": "Tech Domains",
+      "value": 6,
+      "icon": "💻",
+      "suffix": ""
+    }
+  ]
+}

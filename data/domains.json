@@ -1,0 +1,46 @@
+{
+  "domains": [
+    {
+      "id": 1,
+      "name": "Android",
+      "icon": "📱",
+      "color": "from-green-400 to-emerald-500",
+      "description": "Native Android app development with Kotlin & Java"
+    },
+    {
+      "id": 2,
+      "name": "Cloud",
+      "icon": "☁️",
+      "color": "from-blue-400 to-cyan-500",
+      "description": "Google Cloud Platform, Firebase & serverless"
+    },
+    {
+      "id": 3,
+      "name": "Web",
+      "icon": "🌐",
+      "color": "from-purple-400 to-pink-500",
+      "description": "Modern web development with React & Next.js"
+    },
+    {
+      "id": 4,
+      "name": "AI/ML",
+      "icon": "🤖",
+      "color": "from-orange-400 to-red-500",
+      "description": "Machine Learning & TensorFlow"
+    },
+    {
+      "id": 5,
+      "name": "Flutter",
+      "icon": "🎯",
+      "color": "from-indigo-400 to-blue-500",
+      "description": "Cross-platform app development"
+    },
+    {
+      "id": 6,
+      "name": "DevOps",
+      "icon": "⚙️",
+      "color": "from-yellow-400 to-orange-500",
+      "description": "CI/CD, Kubernetes & containerization"
+    }
+  ]
+}
