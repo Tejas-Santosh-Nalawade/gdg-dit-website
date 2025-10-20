@@ -1,19 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import SectionTitle from '@/components/common/SectionTitle';
 import EventList from '@/components/events/EventList';
-import eventsData from '@/data/events.json';
 
 const domains = ['All', 'Android', 'Cloud', 'Web', 'AI/ML', 'Flutter'];
 
 export default function EventsPage() {
+  const [eventsData, setEventsData] = useState({ upcomingEvents: [], pastEvents: [] });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Load events data on the client side only
+    import('@/data/events.json')
+      .then((module) => {
+        setEventsData(module.default);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, []);
   const [selectedDomain, setSelectedDomain] = useState('All');
 
   const filteredEvents = selectedDomain === 'All' 
     ? eventsData.upcomingEvents 
     : eventsData.upcomingEvents.filter(event => event.domain === selectedDomain);
+
+  if (isLoading) {
+    return (
+      <main className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-lg text-gray-600">Loading events...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -74,28 +96,42 @@ export default function EventsPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventsData.pastEvents.map((event) => (
-              <div
-                key={event.id}
-                className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-xl font-bold mb-2 text-gray-800">
-                  {event.title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-2">
-                  📅 {event.date}
-                </p>
-                <p className="text-sm text-gray-600 mb-4">
-                  👥 {event.attendees} attendees
-                </p>
-                <Link
-                  href={event.blogLink}
-                  className="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center gap-2"
+            {eventsData.pastEvents && eventsData.pastEvents.length > 0 ? (
+              eventsData.pastEvents.map((event) => (
+                <div
+                  key={event.id}
+                  className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow"
                 >
-                  Read Event Recap →
-                </Link>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {event.date}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    {event.attendees} attendees
+                  </p>
+                  {event.blogLink && (
+                    <Link
+                      href={event.blogLink}
+                      className="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center gap-2"
+                    >
+                      Read Event Recap →
+                    </Link>
+                  )}
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-600">No past events to display.</p>
               </div>
-            ))}
+            )}
           </div>
 
           <div className="text-center mt-8">

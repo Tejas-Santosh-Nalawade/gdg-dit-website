@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import SearchBar from '@/components/blog/SearchBar';
 import BlogGrid from '@/components/blog/BlogGrid';
 import SectionTitle from '@/components/common/SectionTitle';

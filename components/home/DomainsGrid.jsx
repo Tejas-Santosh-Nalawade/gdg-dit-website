@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { domains } from '@/data/domains.json';
+import domainsData from '@/data/domains.json';
+
+const domains = domainsData.domains;
 
 // SVG Icons for each domain
 const DomainIcon = ({ name, color }) => {
