@@ -1,0 +1,116 @@
+{
+    "coreTeam": {
+        "title": "Core Team",
+        "colorClass": "border-blue-600 text-blue-600 bg-blue-600/10",
+        "members": [
+            { "id": 1, "name": "Bhavesh Rathod", "role": "Managing Director", "photo": "bhavesh-rathod.jpg", "social": { "linkedin": "#", "github": "#" } },
+            { "id": 2, "name": "Mrunal Thakare", "role": "Tech Lead", "photo": "mrunal-thakare.jpg", "social": { "linkedin": "#", "github": "#" } },
+            { "id": 3, "name": "Gaurav Masand", "role": "GDG Lead", "photo": "gaurav-masand.jpg", "social": { "linkedin": "#", "github": "#" } },
+            { "id": 4, "name": "Ananya Mahajan", "role": "Non-Tech Lead", "photo": "ananya-mahajan.jpg", "social": { "linkedin": "#", "github": "#" } }
+        ]
+    },
+    "techTeams": [
+        {
+            "title": "App Dev (Mobile + Web) Team",
+            "colorClass": "border-red-600 text-red-600 bg-red-600/10",
+            "members": [
+                { "id": 12, "name": "Meet Mahesh Raval", "role": "Lead", "photo": "meet-raval.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 13, "name": "Prathamesh Dhanaji Gandule", "role": "Co-lead", "photo": "prathamesh-gandule.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 14, "name": "Shani Dev Kashyap", "role": "Member Lead", "photo": "shani-kashyap.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 15, "name": "Shravani Wadekar", "role": "Member Lead", "photo": "shravani-wadekar.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 16, "name": "Parth Kharat", "role": "Member Lead", "photo": "parth-kharat.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 17, "name": "Abhijit Manoj Deshmukh", "role": "Member Lead", "photo": "abhijit-deshmukh.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 18, "name": "Niraj Sanjay Karnawat", "role": "Member Lead", "photo": "niraj-karnawat.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 19, "name": "Utkarsh Pandey", "role": "Member Lead", "photo": "utkarsh-pandey.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 20, "name": "Shreyash Nahate", "role": "Member Lead", "photo": "shreyash-nahate.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 21, "name": "Sai Keshav Jadhav", "role": "Member Lead", "photo": "sai-jadhav.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 22, "name": "Pravinsingh Rathod", "role": "Member Lead", "photo": "pravinsingh-rathod.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 23, "name": "Tejas Santosh Nalawade", "role": "Member Lead", "photo": "tejas-nalawade.jpg", "social": { "linkedin": "#", "github": "#" } }
+            ]
+        },
+        {
+            "title": "AI/ML Team",
+            "colorClass": "border-green-500 text-green-500 bg-green-500/10",
+            "members": [
+                { "id": 5, "name": "Atharv Patil", "role": "Lead", "photo": "atharv-patil.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 6, "name": "Ayush Lalit Vaze", "role": "Co-lead", "photo": "ayush-vaze.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 7, "name": "Harsh Dubey", "role": "Member Lead", "photo": "harsh-dubey.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 8, "name": "Nikita Atul Shinde", "role": "Member Lead", "photo": "nikita-shinde.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 9, "name": "Sumit Dattatray Pagar", "role": "Member Lead", "photo": "sumit-pagar.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 10, "name": "Anuj Sudhir Pathak", "role": "Member Lead", "photo": "anuj-pathak.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 11, "name": "Harsh Raj", "role": "Member Lead", "photo": "harsh-raj.jpg", "social": { "linkedin": "#", "github": "#" } }
+            ]
+        },
+        {
+            "title": "DSA/Competitive Programming Team",
+            "colorClass": "border-yellow-500 text-yellow-500 bg-yellow-500/10",
+            "members": [
+                { "id": 24, "name": "Narayan Dnyaneshwar Nawale", "role": "Lead", "photo": "narayan-nawale.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 25, "name": "Hariom Phulre", "role": "Co-lead", "photo": "hariom-phulre.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 26, "name": "Ishan Sharma", "role": "Member Lead", "photo": "ishan-sharma.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 27, "name": "Sahil Bhatkande", "role": "Member Lead", "photo": "sahil-bhatkande.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 28, "name": "Shreyash Ganesh Shinde", "role": "Member Lead", "photo": "shreyash-shinde.jpg", "social": { "linkedin": "#", "github": "#" } }
+            ]
+        },
+        {
+            "title": "Cyber Security & Research Team",
+            "colorClass": "border-blue-500 text-blue-500 bg-blue-500/10",
+            "members": [
+                { "id": 29, "name": "Vaibhav Raju Baviskar", "role": "Cyber Security Lead", "photo": "vaibhav-baviskar.jpg", "social": { "linkedin": "#", "github": "#" } },
+                { "id": 30, "name": "Yash Shinkar", "role": "Research Lead", "photo": "yash-shinkar.jpg", "social": { "linkedin": "#", "github": "#" } }
+            ]
+        }
+    ],
+    "nonTechTeams": [
+        {
+            "title": "Event Management Team",
+            "colorClass": "border-red-500 text-red-500 bg-red-500/10",
+            "members": [
+                { "id": 31, "name": "Aditi Patil", "role": "Co-Lead", "photo": "aditi-patil.jpg", "social": { "linkedin": "#" } },
+                { "id": 32, "name": "Siddhesh Choulwar", "role": "Lead", "photo": "siddhesh-choulwar.jpg", "social": { "linkedin": "#" } },
+                { "id": 33, "name": "Bhavesh Patil", "role": "Member Lead", "photo": "bhavesh-patil.jpg", "social": { "linkedin": "#" } },
+                { "id": 34, "name": "Yash Kandekar", "role": "Member Lead", "photo": "yash-kandekar.jpg", "social": { "linkedin": "#" } },
+                { "id": 35, "name": "Jigyasa Shrivastava", "role": "Member Lead", "photo": "jigyasa-shrivastava.jpg", "social": { "linkedin": "#" } },
+                { "id": 36, "name": "Yash Sathe", "role": "Member Lead", "photo": "yash-sathe.jpg", "social": { "linkedin": "#" } },
+                { "id": 37, "name": "Vedika Therokar", "role": "Member Lead", "photo": "vedika-therokar.jpg", "social": { "linkedin": "#" } },
+                { "id": 38, "name": "Tushar Rehpade", "role": "Member Lead", "photo": "tushar-rehpade.jpg", "social": { "linkedin": "#" } }
+            ]
+        },
+        {
+            "title": "Marketing & Public Relations Team",
+            "colorClass": "border-green-500 text-green-500 bg-green-500/10",
+            "members": [
+                { "id": 39, "name": "Rudra Wattamawar", "role": "Lead", "photo": "rudra-wattamawar.jpg", "social": { "linkedin": "#" } },
+                { "id": 40, "name": "Prajyot Thool", "role": "Co-lead", "photo": "prajyot-thool.jpg", "social": { "linkedin": "#" } },
+                { "id": 41, "name": "Shreya Survase", "role": "Member Lead", "photo": "shreya-survase.jpg", "social": { "linkedin": "#" } },
+                { "id": 42, "name": "Yashika Talreja", "role": "Member Lead", "photo": "yashika-talreja.jpg", "social": { "linkedin": "#" } },
+                { "id": 43, "name": "Tejas Narwade", "role": "Member Lead", "photo": "tejas-narwade.jpg", "social": { "linkedin": "#" } },
+                { "id": 44, "name": "Sanvi Singh", "role": "Member Lead", "photo": "sanvi-singh.jpg", "social": { "linkedin": "#" } },
+                { "id": 45, "name": "Tanishka", "role": "Member Lead", "photo": "tanishka.jpg", "social": { "linkedin": "#" } }
+            ]
+        },
+        {
+            "title": "Content Creation Team",
+            "colorClass": "border-yellow-500 text-yellow-500 bg-yellow-500/10",
+            "members": [
+                { "id": 46, "name": "Ashish Maurya", "role": "Content Writer", "photo": "ashish-maurya.jpg", "social": { "linkedin": "#" } },
+                { "id": 47, "name": "Ruchita Kangralkar", "role": "Co-lead (Design)", "photo": "ruchita-kangralkar.jpg", "social": { "linkedin": "#" } },
+                { "id": 48, "name": "Aditi Konde", "role": "Lead (Design)", "photo": "aditi-konde.jpg", "social": { "linkedin": "#" } },
+                { "id": 49, "name": "Pranav Mulik", "role": "Member Lead (Design)", "photo": "pranav-mulik.jpg", "social": { "linkedin": "#" } }
+            ]
+        },
+        {
+            "title": "Media Production & Treasury",
+            "colorClass": "border-blue-500 text-blue-500 bg-blue-500/10",
+            "members": [
+                { "id": 50, "name": "Animesh Gaikwad", "role": "Lead (Photographer/Videographer)", "photo": "animesh-gaikwad.jpg", "social": { "linkedin": "#" } },
+                { "id": 51, "name": "Vansh Bhat", "role": "Co-Lead (Photographer/Videographer)", "photo": "vansh-bhat.jpg", "social": { "linkedin": "#" } },
+                { "id": 52, "name": "Ayush Wayal", "role": "Co-lead (Editor)", "photo": "ayush-wayal.jpg", "social": { "linkedin": "#" } },
+                { "id": 53, "name": "Sumit Bondre", "role": "Editor", "photo": "sumit-bondre.jpg", "social": { "linkedin": "#" } },
+                { "id": 54, "name": "Omkar Shinde", "role": "Co-lead (Production)", "photo": "omkar-shinde.jpg", "social": { "linkedin": "#" } },
+                { "id": 55, "name": "Harshvardhan", "role": "Lead (Social Media Manager)", "photo": "harshvardhan.jpg", "social": { "linkedin": "#" } },
+                { "id": 56, "name": "Divya Bhojwani", "role": "Co-lead (Treasury)", "photo": "divya-bhojwani.jpg", "social": { "linkedin": "#" } }
+            ]
+        }
+    ]
+}
