@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { stats } from '@/data/stats.json';
+import statsData from '@/data/stats.json';
+
+const stats = statsData.stats;
 
 function Counter({ value, suffix }) {
   const count = useMotionValue(0);
@@ -77,7 +79,21 @@ export default function StatsCounter() {
 
   // Individual Google colors for each stat
   const colors = ['#4285f4', '#ea4335', '#f9ab00', '#34a853'];
-  const icons = ['🚀', '👥', '🎯', '⭐'];
+  
+  // SVG icons for each stat
+  const getIcon = (index) => {
+    const iconPaths = [
+      // Rocket
+      <path key="rocket" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />,
+      // Users
+      <path key="users" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />,
+      // Target
+      <path key="target" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
+      // Star
+      <path key="star" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+    ];
+    return iconPaths[index];
+  };
 
   return (
     <section
@@ -104,8 +120,15 @@ export default function StatsCounter() {
               {/* Card - Bigger */}
               <div className="relative text-center p-8 rounded-3xl bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-[#1e1e1e]/5">
                 {/* Icon - Bigger */}
-                <div className="text-5xl md:text-6xl mb-4">
-                  {icons[index]}
+                <div className="mb-4 flex justify-center">
+                  <svg 
+                    className="w-14 h-14 md:w-16 md:h-16" 
+                    fill="none" 
+                    stroke={colors[index]}
+                    viewBox="0 0 24 24"
+                  >
+                    {getIcon(index)}
+                  </svg>
                 </div>
 
                 {/* Stat Value with individual color - Bigger */}

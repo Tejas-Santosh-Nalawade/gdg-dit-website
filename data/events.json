@@ -8,7 +8,7 @@
       "venue": "Main Auditorium, DIT",
       "type": "Study Jam",
       "domain": "Cloud",
-      "banner": "☁️",
+      "banner": "CLOUD",
       "color": "from-blue-400 to-cyan-400",
       "description": "Hands-on learning session on Google Cloud Platform. Get started with cloud computing and earn skill badges."
     },
@@ -20,7 +20,7 @@
       "venue": "DIT Campus",
       "type": "Hackathon",
       "domain": "AI/ML",
-      "banner": "�",
+      "banner": "HACK",
       "color": "from-green-400 to-emerald-400",
       "description": "48-hour hackathon to build innovative solutions. Prizes worth ₹1 Lakh+ and exciting goodies for winners!"
     },
@@ -32,7 +32,7 @@
       "venue": "Computer Lab 1, DIT",
       "type": "Workshop",
       "domain": "AI/ML",
-      "banner": "🤖",
+      "banner": "AI",
       "color": "from-purple-400 to-pink-400",
       "description": "Comprehensive ML workshop covering fundamentals, TensorFlow, and real-world projects with industry experts."
     },
@@ -44,7 +44,7 @@
       "venue": "Computer Lab 1",
       "type": "Workshop",
       "domain": "Web",
-      "banner": "🌐",
+      "banner": "WEB",
       "color": "from-blue-400 to-indigo-400",
       "description": "Build modern web applications using React and Next.js."
     },
@@ -56,7 +56,7 @@
       "venue": "Main Auditorium",
       "type": "Workshop",
       "domain": "Flutter",
-      "banner": "🎯",
+      "banner": "APP",
       "color": "from-cyan-400 to-blue-400",
       "description": "Create beautiful cross-platform apps with Flutter."
     },
@@ -68,7 +68,7 @@
       "venue": "Seminar Hall",
       "type": "Seminar",
       "domain": "DevOps",
-      "banner": "⚙️",
+      "banner": "OPS",
       "color": "from-orange-400 to-red-400",
       "description": "Learn CI/CD pipelines and modern DevOps practices."
     }
@@ -79,14 +79,16 @@
       "title": "Google I/O Extended 2023",
       "date": "May 20, 2023",
       "type": "Conference",
-      "attendees": 300
+      "attendees": 300,
+      "blogLink": "/blog"
     },
     {
       "id": 8,
       "title": "DevFest 2023",
       "date": "November 15, 2023",
       "type": "Conference",
-      "attendees": 500
+      "attendees": 500,
+      "blogLink": "/blog"
     }
   ]
 }

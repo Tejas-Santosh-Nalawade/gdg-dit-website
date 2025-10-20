@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { upcomingEvents } from '@/data/events.json';
+import eventsData from '@/data/events.json';
 
 export default function UpcomingEvents() {
+  const upcomingEvents = eventsData.upcomingEvents || [];
   const displayEvents = upcomingEvents.slice(0, 3);
 
   const getDomainColor = (domain) => {
