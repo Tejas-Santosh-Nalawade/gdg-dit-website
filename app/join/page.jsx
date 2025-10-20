@@ -1,6 +1,6 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-// Assuming Tailwind CSS is configured for the environment
+'use client';
+import React, { useState } from 'react';
+import joinData from '@/data/join.json';
 
 // --- Icon Component ---
 // Centralized Icon component handling all needed SVG icons
@@ -175,158 +175,8 @@ const Icon = ({ name, color }) => {
   return <Component />;
 };
 
-// --- Data Structures ---
-
-// Data for the new "What Happens After You Join?" section
-const stepsData = [
-  {
-    step: 1,
-    title: 'Welcome Message',
-    description: 'Receive a warm welcome from our team and get introduced to the community.',
-  },
-  {
-    step: 2,
-    title: 'Event Notifications',
-    description: 'Stay updated about upcoming workshops, study jams, and tech talks.',
-  },
-  {
-    step: 3,
-    title: 'Start Learning',
-    description: 'Access resources, join discussions, and start your learning journey with us.',
-  },
-];
-
-// Data for the "Why Join" section
-const benefitsData = [
-    {
-      title: 'Learn New Technologies',
-      description: 'Access workshops, study jams, and tech talks on cutting-edge technologies.',
-      iconName: 'BookOpen',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
-    },
-    {
-      title: 'Network with Developers',
-      description: 'Connect with like-minded students, professionals, and industry experts.',
-      iconName: 'Heart',
-      color: 'text-amber-600', // Using amber for yellow/gold theme
-      bgColor: 'bg-amber-50'
-    },
-    {
-      title: 'Earn Certifications',
-      description: 'Complete study jams and earn Google Cloud badges and certifications.',
-      iconName: 'Award',
-      color: 'text-red-600',
-      bgColor: 'bg-red-50'
-    },
-    {
-      title: 'Career Opportunities',
-      description: 'Get access to job opportunities, internships, and mentorship programs.',
-      iconName: 'Briefcase',
-      color: 'text-red-600',
-      bgColor: 'bg-red-50'
-    },
-    {
-      title: 'Build Projects',
-      description: 'Work on real-world projects and showcase your skills to the community.',
-      iconName: 'Rocket',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
-    },
-    {
-      title: 'Exclusive Swag & Perks',
-      description: 'Get GDG merchandise, access to Google resources, and event perks.',
-      iconName: 'Gift',
-      color: 'text-amber-600',
-      bgColor: 'bg-amber-50'
-    },
-];
-
-// Data for the existing Communities List
-const communitiesData = [
-  {
-    title: 'Flutter',
-    description: 'Connect with Flutter developers!',
-    iconName: 'Flutter',
-    color: 'text-sky-400',
-    link: '#flutter'
-  },
-  {
-    title: 'Android',
-    description: 'Join our Android development community!',
-    iconName: 'Android',
-    color: 'text-green-500',
-    link: '#android'
-  },
-  {
-    title: 'Competitive Programming',
-    description: 'Sharpen your coding skills with us!',
-    iconName: 'Competitive Programming',
-    color: 'text-red-500',
-    link: '#cp'
-  },
-  {
-    title: 'Cloud Computing',
-    description: 'Join our cloud computing discussions!',
-    iconName: 'Cloud Computing',
-    color: 'text-blue-400',
-    link: '#cloud'
-  },
-  {
-    title: 'AI/ML',
-    description: 'Explore AI and ML topics with us!',
-    iconName: 'AI/ML',
-    color: 'text-purple-400',
-    link: '#aiml'
-  },
-  {
-    title: 'UI/UX',
-    description: 'Join our UI/UX design community!',
-    iconName: 'UI/UX',
-    color: 'text-pink-400',
-    link: '#uiux'
-  },
-];
-
-// Data for the existing Platform links section (UPDATED COLORS)
-const communityPlatforms = [
-  {
-    name: 'Discord',
-    description: 'Join our Discord server for real-time discussions and tech support.',
-    iconName: 'Discord',
-    link: 'https://discord.gg/gdg',
-    gradient: 'from-indigo-600 to-indigo-800',
-    buttonColor: 'bg-indigo-500 hover:bg-indigo-600',
-    iconTextColor: 'text-indigo-200'
-  },
-  {
-    name: 'WhatsApp',
-    description: 'Get event updates and announcements on our WhatsApp community.',
-    iconName: 'WhatsApp',
-    link: 'https://chat.whatsapp.com/gdg',
-    gradient: 'from-green-600 to-emerald-800',
-    buttonColor: 'bg-green-500 hover:bg-green-600',
-    iconTextColor: 'text-green-200'
-  },
-  {
-    name: 'LinkedIn',
-    description: 'Follow us on LinkedIn for professional networking and updates.',
-    iconName: 'LinkedIn',
-    link: 'https://linkedin.com/company/gdg',
-    gradient: 'from-blue-600 to-sky-800',
-    buttonColor: 'bg-blue-500 hover:bg-blue-600',
-    iconTextColor: 'text-blue-200'
-  },
-  {
-    name: 'Meetup',
-    description: 'RSVP to our events and stay updated on upcoming meetups.',
-    iconName: 'Meetup',
-    link: 'https://meetup.com/gdg',
-    gradient: 'from-red-600 to-red-800',
-    buttonColor: 'bg-red-500 hover:bg-red-600',
-    iconTextColor: 'text-red-200'
-  },
-];
+// Extract data from imported JSON
+const { benefits, communities, platforms, steps } = joinData;
 
 
 // --- Components for New Sections ---
@@ -376,11 +226,10 @@ const PlatformCard = ({ platform }) => (
     rel="noopener noreferrer"
     className="block rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform bg-white hover:shadow-2xl hover:-translate-y-1 group border border-[#1e1e1e]/5"
   >
-    {/* Header with gradient and icon */}
-    <div className={`relative h-28 flex items-center justify-center bg-gradient-to-br ${platform.gradient}`}>
-      <div className="absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+    {/* Header with icon */}
+    <div className={`relative h-28 flex items-center justify-center ${platform.bgColor}`}>
       <div className="relative z-10 p-4 rounded-full bg-white/10 backdrop-blur-sm">
-        <Icon name={platform.iconName} color={platform.iconTextColor} />
+        <Icon name={platform.iconName} color="text-white" />
       </div>
     </div>
     
@@ -389,10 +238,8 @@ const PlatformCard = ({ platform }) => (
       <h3 className="text-xl font-extrabold mb-2">{platform.name}</h3>
       <p className="text-sm mb-6 text-[#1e1e1e]/70">{platform.description}</p>
       
-      {/* Dynamic Button */}
-      <div
-        className={`w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${platform.buttonColor} text-white shadow-md group-hover:shadow-lg`}
-      >
+      {/* Button */}
+      <div className={`w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${platform.bgColor} text-white shadow-md group-hover:shadow-lg`}>
         Join on {platform.name}
       </div>
     </div>
@@ -406,24 +253,21 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Simple filtering based on search term
-  const filteredCommunities = communitiesData.filter(community =>
+  const filteredCommunities = communities.filter(community =>
     community.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const CommunityItem = ({ community }) => (
-    <a
-      href={community.link}
-      className="flex items-center gap-4 p-3 rounded-lg transition-colors duration-150 cursor-pointer hover:bg-[#f0f0f0]"
-    >
+    <div className="flex items-center gap-4 p-3 rounded-lg transition-colors duration-150 cursor-pointer hover:bg-[#f0f0f0]">
       <div className="p-2 rounded-full bg-[#f0f0f0]">
-        <Icon name={community.iconName} color={community.color} />
+        <Icon name={community.iconName} color="text-[#4285f4]" />
       </div>
       <div className="flex-grow">
         <h3 className="font-semibold text-[#1e1e1e]">{community.title}</h3>
         <p className="text-sm text-[#1e1e1e]/70">{community.description}</p>
       </div>
-      <span className="text-xs text-[#1e1e1e]/50">Now</span>
-    </a>
+      <span className="text-xs text-[#1e1e1e]/50">Active</span>
+    </div>
   );
   
   // Base classes for the application container
@@ -444,13 +288,6 @@ export default function App() {
 
   return (
     <div className={appBaseClasses}>
-      {/* Global Style Adjustment */}
-      <style>{`
-        body {
-          background-color: #f5f5f5;
-          font-family: 'Inter', sans-serif;
-        }
-      `}</style>
       
       {/* SECTION 1: Why Join GDG-DIT */}
       <section className="pt-16 pb-12 sm:pt-20 sm:pb-16 font-sans bg-white">
@@ -469,8 +306,8 @@ export default function App() {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {benefitsData.map((benefit, index) => (
-                      <BenefitCard key={index} benefit={benefit} />
+                  {benefits.map((benefit) => (
+                      <BenefitCard key={benefit.id} benefit={benefit} />
                   ))}
               </div>
           </div>
@@ -507,8 +344,8 @@ export default function App() {
 
           {/* List of Communities */}
           <div className="flex-grow overflow-y-auto px-4 pb-4 space-y-2">
-            {filteredCommunities.map((community, index) => (
-              <CommunityItem key={index} community={community} />
+            {filteredCommunities.map((community) => (
+              <CommunityItem key={community.id} community={community} />
             ))}
             {filteredCommunities.length === 0 && (
                 <p className="text-center pt-4 text-[#1e1e1e]/50">No communities found.</p>
@@ -540,16 +377,16 @@ export default function App() {
       {/* SECTION 3: Choose Your Platform */}
       <section className="py-16 bg-[#f0f0f0]" id="community-links">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1e1e1e]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1e1e1e]">
             Choose Your Platform
           </h2>
-          <p className="text-center mb-12 text-lg text-[#1e1e1e]/70">
+          <p className="text-center mb-12 text-xl text-[#1e1e1e]/70">
             Connect with us on your preferred platform
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {communityPlatforms.map((platform, index) => (
-              <PlatformCard key={index} platform={platform} />
+            {platforms.map((platform) => (
+              <PlatformCard key={platform.id} platform={platform} />
             ))}
           </div>
         </div>
@@ -560,16 +397,15 @@ export default function App() {
       <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e1e1e]">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e1e1e]">
                       What Happens After You Join?
                   </h2>
               </div>
               
               <div className="max-w-3xl mx-auto">
-                  {stepsData.map((step, index) => (
-                      // Add border to separate steps (except the last one)
-                      <div key={index} className={index < stepsData.length - 1 ? 'border-b border-[#1e1e1e]/10' : ''}>
-                          <StepItem step={step.step} title={step.title} description={step.description} />
+                  {steps.map((step, index) => (
+                      <div key={step.id} className={index < steps.length - 1 ? 'border-b border-[#1e1e1e]/10' : ''}>
+                          <StepItem step={step.number} title={step.title} description={step.description} />
                       </div>
                   ))}
               </div>
@@ -582,10 +418,10 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* New CTA Card Design */}
               <div className="max-w-4xl mx-auto p-10 rounded-3xl text-center shadow-2xl transition-all duration-500 bg-[#4285f4]/5 border border-[#4285f4]/10 hover:shadow-2xl">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e1e1e]">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e1e1e]">
                       Ready to Get Started?
                   </h2>
-                  <p className="text-lg mb-8 text-[#1e1e1e]/70">
+                  <p className="text-xl mb-8 text-[#1e1e1e]/70">
                       Pick a platform above and join thousands of developers in our community today!
                   </p>
                   <a

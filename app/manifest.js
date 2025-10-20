@@ -1,0 +1,24 @@
+export default function manifest() {
+  return {
+    name: 'GDG-DIT | Google Developer Groups at DIT Pune',
+    short_name: 'GDG-DIT',
+    description: 'Join GDG-DIT community. Learn cutting-edge technologies, attend workshops, and connect with developers.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#4285f4',
+    orientation: 'portrait-primary',
+    icons: [
+      {
+        src: '/GDSC-logo..svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
+        purpose: 'any maskable'
+      }
+    ],
+    categories: ['education', 'technology'],
+    lang: 'en-US',
+    dir: 'ltr',
+    scope: '/'
+  };
+}

@@ -18,7 +18,7 @@
 ## 📖 Project Overview
 
 **Project Name:** GDG-DIT Website  
-**Description:** Official website for Google Developer Groups - Dehradun Institute of Technology  
+**Description:** Official website for Google Developer Groups - Dr DY Patil Institute of Technology Pimpri
 **Framework:** Next.js 15.5.5 (App Router)  
 **UI Library:** React 19.1.0  
 **Styling:** Tailwind CSS 4.0.0  
