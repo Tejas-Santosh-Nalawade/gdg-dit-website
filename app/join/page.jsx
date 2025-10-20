@@ -332,51 +332,36 @@ const communityPlatforms = [
 // --- Components for New Sections ---
 
 // Component for the "What Happens After You Join?" steps
-const StepItem = ({ step, title, description, darkMode }) => (
-    <div className={`flex items-start py-4 transition-colors duration-300
-        ${darkMode ? 'border-neutral-700' : 'border-neutral-200'}`}
-    >
+const StepItem = ({ step, title, description }) => (
+    <div className="flex items-start py-4 border-neutral-200">
         {/* Step Number Circle */}
-        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-4 transition-colors duration-300
-            ${darkMode 
-              ? 'bg-blue-600 text-white' 
-              : 'bg-blue-100 text-blue-600'
-            }`}>
+        <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-4 bg-[#4285f4] text-white">
             {step}
         </div>
         
         {/* Step Content */}
         <div>
-            <h3 className={`font-semibold mb-1 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>{title}</h3>
-            <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{description}</p>
+            <h3 className="font-semibold mb-1 text-[#1e1e1e]">{title}</h3>
+            <p className="text-sm text-[#1e1e1e]/70">{description}</p>
         </div>
     </div>
 );
 
-// Component for the "Why Join" section - UPDATED FOR DARK MODE
-const BenefitCard = ({ benefit, darkMode }) => (
-    <div className={`p-6 rounded-xl shadow-lg transition-all duration-300 h-full flex flex-col 
-        ${darkMode 
-            ? 'bg-neutral-800 border border-neutral-700 hover:shadow-neutral-700/50' 
-            : 'bg-white border border-neutral-100 hover:shadow-neutral-300/80'
-        }`}
-    >
-        {/* Icon wrapper (uses fixed light colors for Google-inspired vibrancy) */}
+// Component for the "Why Join" section
+const BenefitCard = ({ benefit }) => (
+    <div className="p-6 rounded-xl shadow-lg transition-all duration-300 h-full flex flex-col bg-white border border-[#1e1e1e]/5 hover:shadow-xl">
+        {/* Icon wrapper */}
         <div className={`p-3 rounded-xl inline-flex mb-4 ${benefit.bgColor}`}>
             <Icon name={benefit.iconName} color={benefit.color} />
         </div>
         
         {/* Title */}
-        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 
-            ${darkMode ? 'text-white' : 'text-neutral-900'}`}
-        >
+        <h3 className="text-lg font-bold mb-2 text-[#1e1e1e]">
             {benefit.title}
         </h3>
         
         {/* Description */}
-        <p className={`text-sm flex-grow transition-colors duration-300 
-            ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}
-        >
+        <p className="text-sm flex-grow text-[#1e1e1e]/70">
             {benefit.description}
         </p>
     </div>
@@ -384,32 +369,29 @@ const BenefitCard = ({ benefit, darkMode }) => (
 
 
 // --- Updated Platform Card Component ---
-const PlatformCard = ({ platform, darkMode }) => (
+const PlatformCard = ({ platform }) => (
   <a
     href={platform.link}
     target="_blank"
     rel="noopener noreferrer"
-    className={`block rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform 
-      ${darkMode ? 'bg-neutral-800 hover:shadow-neutral-700/50' : 'bg-white hover:shadow-neutral-300/80'}
-      hover:-translate-y-1 group border ${darkMode ? 'border-neutral-700' : 'border-neutral-100'}`}
+    className="block rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform bg-white hover:shadow-2xl hover:-translate-y-1 group border border-[#1e1e1e]/5"
   >
     {/* Header with gradient and icon */}
     <div className={`relative h-28 flex items-center justify-center bg-gradient-to-br ${platform.gradient}`}>
-      <div className={`absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      <div className="absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="relative z-10 p-4 rounded-full bg-white/10 backdrop-blur-sm">
         <Icon name={platform.iconName} color={platform.iconTextColor} />
       </div>
     </div>
     
     {/* Body Content */}
-    <div className={`p-6 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>
+    <div className="p-6 text-[#1e1e1e]">
       <h3 className="text-xl font-extrabold mb-2">{platform.name}</h3>
-      <p className={`text-sm mb-6 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{platform.description}</p>
+      <p className="text-sm mb-6 text-[#1e1e1e]/70">{platform.description}</p>
       
       {/* Dynamic Button */}
       <div
-        className={`w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 
-          ${platform.buttonColor} text-white shadow-md group-hover:shadow-lg`}
+        className={`w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${platform.buttonColor} text-white shadow-md group-hover:shadow-lg`}
       >
         Join on {platform.name}
       </div>
@@ -422,101 +404,73 @@ const PlatformCard = ({ platform, darkMode }) => (
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [darkMode, setDarkMode] = useState(true); // Start in dark mode
 
   // Simple filtering based on search term
   const filteredCommunities = communitiesData.filter(community =>
     community.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const CommunityItem = ({ community, darkMode }) => (
+  const CommunityItem = ({ community }) => (
     <a
       href={community.link}
-      className={`flex items-center gap-4 p-3 rounded-lg transition-colors duration-150 cursor-pointer
-        ${darkMode ? 'hover:bg-neutral-800/70' : 'hover:bg-neutral-100'}
-      `}
+      className="flex items-center gap-4 p-3 rounded-lg transition-colors duration-150 cursor-pointer hover:bg-[#f0f0f0]"
     >
-      <div className={`p-2 rounded-full ${darkMode ? 'bg-white/5' : 'bg-neutral-100'}`}>
+      <div className="p-2 rounded-full bg-[#f0f0f0]">
         <Icon name={community.iconName} color={community.color} />
       </div>
       <div className="flex-grow">
-        <h3 className={`font-semibold ${darkMode ? 'text-white' : 'text-neutral-900'}`}>{community.title}</h3>
-        <p className={`text-sm ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{community.description}</p>
+        <h3 className="font-semibold text-[#1e1e1e]">{community.title}</h3>
+        <p className="text-sm text-[#1e1e1e]/70">{community.description}</p>
       </div>
-      <span className={`text-xs ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>Now</span>
+      <span className="text-xs text-[#1e1e1e]/50">Now</span>
     </a>
   );
   
-  // Base classes for the application container based on mode
-  const appBaseClasses = `min-h-screen p-0 sm:p-0 font-sans transition-colors duration-500 ${
-    darkMode ? 'bg-black text-white' : 'bg-neutral-50 text-neutral-900'
-  }`;
+  // Base classes for the application container
+  const appBaseClasses = "min-h-screen p-0 sm:p-0 font-sans bg-[#f0f0f0] text-[#1e1e1e]";
 
   // Classes for the main two-column content block
-  const mainContentClasses = `max-w-7xl mx-auto rounded-xl overflow-hidden md:grid md:grid-cols-3 mt-4 sm:mt-8 transition-shadow duration-500 shadow-2xl ${
-    darkMode ? 'shadow-[0_0_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
-  }`;
+  const mainContentClasses = "max-w-7xl mx-auto rounded-xl overflow-hidden md:grid md:grid-cols-3 mt-4 sm:mt-8 shadow-xl";
   
   // Classes for the left sidebar
-  const sidebarClasses = `md:col-span-1 flex flex-col h-full min-h-screen md:min-h-0 transition-colors duration-500
-    ${darkMode ? 'bg-neutral-900 border-r border-neutral-800' : 'bg-white border-r border-neutral-200'}
-  `;
+  const sidebarClasses = "md:col-span-1 flex flex-col h-full min-h-screen md:min-h-0 bg-white border-r border-[#1e1e1e]/10";
   
   // Classes for the right hero section
-  const heroClasses = `md:col-span-2 p-8 md:p-12 flex items-center justify-center min-h-[50vh] md:min-h-full transition-colors duration-500
-    ${darkMode ? 'bg-neutral-950' : 'bg-neutral-100'}
-  `;
+  const heroClasses = "md:col-span-2 p-8 md:p-12 flex items-center justify-center min-h-[50vh] md:min-h-full bg-white";
   
   // Classes for the Hero text and button
-  const heroTitleClass = `text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight ${darkMode ? 'text-white' : 'text-neutral-900'}`;
-  const heroPClass = `text-lg mb-8 ${darkMode ? 'text-neutral-300' : 'text-neutral-700'}`;
-
+  const heroTitleClass = "text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-[#1e1e1e]";
+  const heroPClass = "text-lg mb-8 text-[#1e1e1e]/70";
 
   return (
     <div className={appBaseClasses}>
       {/* Global Style Adjustment */}
       <style>{`
         body {
-          background-color: ${darkMode ? '#000' : '#f5f5f5'};
+          background-color: #f5f5f5;
           font-family: 'Inter', sans-serif;
         }
       `}</style>
       
-      {/* Mode Toggle Button (Fixed Position for easy access) */}
-      <button 
-        onClick={() => setDarkMode(!darkMode)}
-        className={`fixed top-4 right-4 z-50 p-3 rounded-full shadow-lg transition-all duration-300
-          ${darkMode 
-            ? 'bg-neutral-800 text-yellow-400 hover:bg-neutral-700' 
-            : 'bg-white text-blue-500 hover:bg-neutral-100'
-          } shadow-md border ${darkMode ? 'border-neutral-700' : 'border-neutral-200'}`}
-        aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-      >
-        <Icon name={darkMode ? 'Sun' : 'Moon'} color="" />
-      </button>
-
-      {/* SECTION 1: Why Join GDG-DIT (Now fully responsive to dark mode) */}
-      <section className={`pt-16 pb-12 sm:pt-20 sm:pb-16 font-sans transition-colors duration-500
-          ${darkMode ? 'bg-neutral-900' : 'bg-white'}`}>
+      {/* SECTION 1: Why Join GDG-DIT */}
+      <section className="pt-16 pb-12 sm:pt-20 sm:pb-16 font-sans bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                  {/* Badge color adjustments */}
-                  <div className={`inline-flex items-center space-x-2 py-1 px-3 rounded-full text-sm font-medium mb-8 shadow-md transition-colors duration-500
-                      ${darkMode ? 'bg-purple-900 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
+                  <div className="inline-flex items-center space-x-2 py-1 px-3 rounded-full text-sm font-medium mb-8 shadow-md bg-[#4285f4]/10 text-[#4285f4]">
                       <span role="img" aria-label="members">✨</span> 
                       <span>500+ members already part of our community!</span>
                   </div>
-                  <h2 className={`text-3xl md:text-4xl font-extrabold mb-2 transition-colors duration-500 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>
+                  <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-[#1e1e1e]">
                       Why Join GDG-DIT?
                   </h2>
-                  <p className={`text-lg transition-colors duration-500 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                  <p className="text-lg text-[#1e1e1e]/70">
                       Become part of a vibrant community of developers, learners, and innovators.
                   </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {benefitsData.map((benefit, index) => (
-                      <BenefitCard key={index} benefit={benefit} darkMode={darkMode} />
+                      <BenefitCard key={index} benefit={benefit} />
                   ))}
               </div>
           </div>
@@ -524,18 +478,16 @@ export default function App() {
       {/* END SECTION 1 */}
 
 
-      {/* SECTION 2: Main Content Block (Light/Dark Switch) */}
+      {/* SECTION 2: Main Content Block */}
       <div className={mainContentClasses}>
         
         {/* Left Column: Communities List Sidebar */}
         <aside className={sidebarClasses}>
-          <div className={`p-4 transition-colors duration-500 flex items-center justify-between
-            ${darkMode ? 'border-b border-neutral-800' : 'border-b border-neutral-200'}
-          `}>
-            <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-neutral-900'}`}>Communities</h2>
-            <div className={`flex items-center space-x-2 ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
-              <button className="p-1 hover:text-white transition-colors" aria-label="Add Community">+</button>
-              <button className="p-1 hover:text-white transition-colors" aria-label="More Options">⋮</button>
+          <div className="p-4 flex items-center justify-between border-b border-[#1e1e1e]/10">
+            <h2 className="text-xl font-bold text-[#1e1e1e]">Communities</h2>
+            <div className="flex items-center space-x-2 text-[#1e1e1e]/50">
+              <button className="p-1 hover:text-[#1e1e1e] transition-colors" aria-label="Add Community">+</button>
+              <button className="p-1 hover:text-[#1e1e1e] transition-colors" aria-label="More Options">⋮</button>
             </div>
           </div>
           
@@ -547,24 +499,19 @@ export default function App() {
                 placeholder="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`w-full pl-10 pr-4 py-2 rounded-lg transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
-                    ${darkMode 
-                        ? 'bg-neutral-800 text-white placeholder-neutral-500' 
-                        : 'bg-neutral-100 text-neutral-900 placeholder-neutral-400 border border-neutral-200'
-                    }
-                `}
+                className="w-full pl-10 pr-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4285f4] bg-[#f0f0f0] text-[#1e1e1e] placeholder-[#1e1e1e]/50 border border-[#1e1e1e]/10"
               />
-              <svg className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#1e1e1e]/50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
 
           {/* List of Communities */}
           <div className="flex-grow overflow-y-auto px-4 pb-4 space-y-2">
             {filteredCommunities.map((community, index) => (
-              <CommunityItem key={index} community={community} darkMode={darkMode} />
+              <CommunityItem key={index} community={community} />
             ))}
             {filteredCommunities.length === 0 && (
-                <p className={`text-center pt-4 ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>No communities found.</p>
+                <p className="text-center pt-4 text-[#1e1e1e]/50">No communities found.</p>
             )}
           </div>
         </aside>
@@ -581,7 +528,7 @@ export default function App() {
             
             <a
               href="#community-links"
-              className="inline-block bg-green-500 text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-green-400 transition-colors shadow-lg shadow-green-500/30"
+              className="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-[#128C7E] transition-colors shadow-lg shadow-[#25D366]/30"
             >
               Explore All Communities
             </a>
@@ -590,38 +537,30 @@ export default function App() {
       </div>
       {/* END SECTION 2 */}
       
-      {/* SECTION 3: Choose Your Platform (Dynamic Light/Dark Switch) */}
-      <section className={`py-16 transition-colors duration-500 ${darkMode ? 'bg-neutral-950/50' : 'bg-white'}`} id="community-links">
+      {/* SECTION 3: Choose Your Platform */}
+      <section className="py-16 bg-[#f0f0f0]" id="community-links">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`text-3xl md:text-4xl font-bold text-center mb-4 transition-colors duration-500 
-            ${darkMode ? 'text-white' : 'text-neutral-900'}`}
-          >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1e1e1e]">
             Choose Your Platform
           </h2>
-          <p className={`text-center mb-12 text-lg transition-colors duration-500 
-            ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}
-          >
+          <p className="text-center mb-12 text-lg text-[#1e1e1e]/70">
             Connect with us on your preferred platform
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {communityPlatforms.map((platform, index) => (
-              <PlatformCard key={index} platform={platform} darkMode={darkMode} />
+              <PlatformCard key={index} platform={platform} />
             ))}
           </div>
         </div>
       </section>
       {/* END SECTION 3 */}
 
-      {/* SECTION 4: What Happens After You Join? (Light/Dark Switch) */}
-      <section className={`py-16 transition-colors duration-500 
-        ${darkMode ? 'bg-black' : 'bg-neutral-50'}`}
-      >
+      {/* SECTION 4: What Happens After You Join? */}
+      <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                  <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-500 
-                    ${darkMode ? 'text-white' : 'text-neutral-900'}`}
-                  >
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e1e1e]">
                       What Happens After You Join?
                   </h2>
               </div>
@@ -629,8 +568,8 @@ export default function App() {
               <div className="max-w-3xl mx-auto">
                   {stepsData.map((step, index) => (
                       // Add border to separate steps (except the last one)
-                      <div key={index} className={index < stepsData.length - 1 ? 'border-b' : ''}>
-                          <StepItem step={step.step} title={step.title} description={step.description} darkMode={darkMode} />
+                      <div key={index} className={index < stepsData.length - 1 ? 'border-b border-[#1e1e1e]/10' : ''}>
+                          <StepItem step={step.step} title={step.title} description={step.description} />
                       </div>
                   ))}
               </div>
@@ -638,33 +577,20 @@ export default function App() {
       </section>
       {/* END SECTION 4 */}
       
-      {/* SECTION 5: Ready to Get Started? CTA (Updated to a clean, mode-responsive card) */}
-      <section className={`py-16 transition-colors duration-500 ${darkMode ? 'bg-black' : 'bg-neutral-50'}`}>
+      {/* SECTION 5: Ready to Get Started? CTA */}
+      <section className="py-16 bg-[#f0f0f0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* New CTA Card Design */}
-              <div className={`max-w-4xl mx-auto p-10 rounded-3xl text-center shadow-2xl transition-all duration-500 
-                  ${darkMode 
-                      ? 'bg-blue-900/40 border border-blue-800/50 hover:shadow-blue-800/40' 
-                      : 'bg-blue-50 border border-blue-100 hover:shadow-blue-300/60'
-                  }`}
-              >
-                  <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-500 
-                    ${darkMode ? 'text-white' : 'text-blue-900'}`}
-                  >
+              <div className="max-w-4xl mx-auto p-10 rounded-3xl text-center shadow-2xl transition-all duration-500 bg-[#4285f4]/5 border border-[#4285f4]/10 hover:shadow-2xl">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1e1e1e]">
                       Ready to Get Started?
                   </h2>
-                  <p className={`text-lg mb-8 transition-colors duration-500 
-                    ${darkMode ? 'text-blue-200' : 'text-blue-700'}`}
-                  >
+                  <p className="text-lg mb-8 text-[#1e1e1e]/70">
                       Pick a platform above and join thousands of developers in our community today!
                   </p>
                   <a
                       href="#community-links"
-                      className={`inline-block px-8 py-3 rounded-full font-bold text-lg transition-colors duration-300 shadow-lg 
-                          ${darkMode 
-                              ? 'bg-white text-blue-600 hover:bg-neutral-100' 
-                              : 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-500/50'
-                          }`}
+                      className="inline-block px-8 py-3 rounded-full font-bold text-lg transition-colors duration-300 shadow-lg bg-[#4285f4] text-white hover:bg-[#3367D6] shadow-[#4285f4]/50"
                   >
                       View Events
                   </a>
