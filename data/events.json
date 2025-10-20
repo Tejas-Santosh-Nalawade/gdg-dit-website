@@ -2,39 +2,39 @@
   "upcomingEvents": [
     {
       "id": 1,
-      "title": "Introduction to Cloud Computing",
-      "date": "March 15, 2024",
-      "time": "2:00 PM - 4:00 PM",
-      "venue": "Main Auditorium",
-      "type": "Workshop",
+      "title": "Google Cloud Study Jam",
+      "date": "November 5, 2025",
+      "time": "2:00 PM - 5:00 PM",
+      "venue": "Main Auditorium, DIT",
+      "type": "Study Jam",
       "domain": "Cloud",
       "banner": "☁️",
       "color": "from-blue-400 to-cyan-400",
-      "description": "Learn the fundamentals of cloud computing with Google Cloud Platform."
+      "description": "Hands-on learning session on Google Cloud Platform. Get started with cloud computing and earn skill badges."
     },
     {
       "id": 2,
-      "title": "Android App Development Bootcamp",
-      "date": "March 22, 2024",
-      "time": "10:00 AM - 5:00 PM",
-      "venue": "Computer Lab 2",
-      "type": "Bootcamp",
-      "domain": "Android",
-      "banner": "📱",
+      "title": "HackBit 2025",
+      "date": "December 10-11, 2025",
+      "time": "24 Hours Hackathon",
+      "venue": "DIT Campus",
+      "type": "Hackathon",
+      "domain": "AI/ML",
+      "banner": "�",
       "color": "from-green-400 to-emerald-400",
-      "description": "Hands-on bootcamp to build your first Android application."
+      "description": "48-hour hackathon to build innovative solutions. Prizes worth ₹1 Lakh+ and exciting goodies for winners!"
     },
     {
       "id": 3,
-      "title": "Machine Learning Fundamentals",
-      "date": "March 28, 2024",
-      "time": "3:00 PM - 5:00 PM",
-      "venue": "Seminar Hall",
-      "type": "Seminar",
+      "title": "Machine Learning Workshop",
+      "date": "December 18, 2025",
+      "time": "10:00 AM - 4:00 PM",
+      "venue": "Computer Lab 1, DIT",
+      "type": "Workshop",
       "domain": "AI/ML",
       "banner": "🤖",
       "color": "from-purple-400 to-pink-400",
-      "description": "Introduction to ML concepts and real-world applications."
+      "description": "Comprehensive ML workshop covering fundamentals, TensorFlow, and real-world projects with industry experts."
     },
     {
       "id": 4,

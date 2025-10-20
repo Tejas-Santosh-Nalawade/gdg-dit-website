@@ -16,31 +16,37 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-[#1e1e1e]/5">
+      <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">GDG</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <Image
+                src="/GDSC-logo..svg"
+                alt="GDG Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 transition-transform group-hover:scale-105"
+              />
             </div>
-            <span className="text-xl font-bold text-gray-800">GDG-DIT</span>
+            <span className="text-2xl md:text-3xl font-bold text-[#1e1e1e] tracking-tight">GDG-DIT</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-[#1e1e1e]/70 hover:text-[#4285f4] hover:bg-[#4285f4]/5 transition-all px-5 py-3 rounded-full font-semibold text-lg"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/join"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium"
+              className="ml-2 bg-[#4285f4] text-white px-8 py-3.5 rounded-full hover:bg-[#3367D6] hover:shadow-lg hover:shadow-[#4285f4]/25 transition-all font-bold text-lg"
             >
               Join Community
             </Link>
@@ -48,7 +54,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-[#1e1e1e] p-2 hover:bg-[#f0f0f0] rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -72,12 +78,12 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
+          <div className="md:hidden mt-4 pb-4 space-y-2 border-t border-[#1e1e1e]/5 pt-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block text-[#1e1e1e]/70 hover:text-[#4285f4] hover:bg-[#4285f4]/5 transition-all font-semibold py-3.5 px-4 rounded-lg text-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -85,7 +91,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/join"
-              className="block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium text-center"
+              className="block bg-[#4285f4] text-white px-6 py-4 rounded-full hover:bg-[#3367D6] transition-all font-bold text-center mt-4 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Join Community
