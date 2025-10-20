@@ -1,42 +1,166 @@
+'use client';
+
 import Link from 'next/link';
-import Button from '../common/Button';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 text-white">
-      <div className="container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Learn, Build, and Grow Together
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-100">
-            Join the Google Developer Groups community at DIT and connect with passionate developers
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/join"
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
-              Join Our Community
-            </Button>
-            <Button
-              href="/events"
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              View Upcoming Events
-            </Button>
-          </div>
-        </div>
+    <section className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 bg-white overflow-hidden">
+      {/* Subtle background with separate colors */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4285f4]/[0.03] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#34a853]/[0.03] rounded-full blur-3xl" />
       </div>
-      
-      {/* Decorative wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-        </svg>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Badge */}
+            <motion.div
+              variants={fadeInUp}
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#f0f0f0] border border-[#1e1e1e]/8 mb-6"
+            >
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#4285f4]" />
+                <span className="w-2 h-2 rounded-full bg-[#ea4335]" />
+                <span className="w-2 h-2 rounded-full bg-[#f9ab00]" />
+                <span className="w-2 h-2 rounded-full bg-[#34a853]" />
+              </div>
+              <span className="text-[#1e1e1e]/70 text-base font-medium tracking-tight">
+                Google Developer Groups - DIT
+              </span>
+            </motion.div>
+
+            {/* Main Heading - Larger fonts */}
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl sm:text-3xl md:text-4xl lg:text-[6rem] xl:text-[6rem] font-bold text-[#1e1e1e] mb-5 leading-[1.05] tracking-[-0.03em]"
+            >
+              Building the Future
+              <br />
+              <span className="text-[#4285f4]">with Technology</span>
+            </motion.h1>
+
+            {/* Description - Slightly smaller font */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-[#1e1e1e]/60 mb-10 leading-relaxed"
+            >
+              Join a global network of developers and innovators, sharpen your skills, and work on real-world projects.
+            </motion.p>
+
+            {/* CTA Buttons - Slightly smaller */}
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              <Link
+                href="/join"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#4285f4] rounded-full overflow-hidden transition-all duration-300 hover:bg-[#3367D6] hover:shadow-xl hover:shadow-[#4285f4]/30 hover:-translate-y-1"
+              >
+                <span className="relative z-10">Join Our Community</span>
+                <svg
+                  className="relative z-10 ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
+
+              <Link
+                href="/events"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#1e1e1e] bg-white border-2 border-[#1e1e1e]/10 rounded-full transition-all duration-300 hover:border-[#1e1e1e]/20 hover:bg-[#f0f0f0]/50 hover:-translate-y-1"
+              >
+                Explore Events
+              </Link>
+            </motion.div>
+
+            {/* Social Proof - Slightly smaller */}
+            <motion.div
+              variants={fadeInUp}
+              className="mt-12 pt-6 border-t border-[#1e1e1e]/8"
+            >
+              <div className="flex flex-wrap items-center gap-8 text-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex -space-x-2">
+                    <div className="w-9 h-9 rounded-full bg-[#4285f4] border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                      A
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-[#ea4335] border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                      B
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-[#f9ab00] border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                      C
+                    </div>
+                    <div className="w-9 h-9 rounded-full bg-[#34a853] border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                      D
+                    </div>
+                  </div>
+                  <span className="text-[#1e1e1e]/60">
+                    <strong className="text-[#1e1e1e] font-semibold">500+</strong> active members
+                  </span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <svg className="w-5 h-5 text-[#f9ab00]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-[#1e1e1e]/60">
+                    <strong className="text-[#1e1e1e] font-semibold">50+</strong> successful events
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right - Animation GIF */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:flex items-center justify-center"
+          >
+            <div className="relative w-full max-w-[500px] aspect-square">
+              <Image
+                src="/globe.gif"
+                alt="Technology Animation"
+                fill
+                className="object-contain"
+                priority
+                unoptimized
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
