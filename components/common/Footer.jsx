@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,31 +21,35 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white mt-auto">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-[#1e1e1e] text-white mt-auto">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 py-16 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 mb-10">
           {/* About Section */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">GDG</span>
-              </div>
-              <span className="text-xl font-bold">GDG-DIT</span>
+            <div className="flex items-center gap-3 mb-5 group">
+              <Image
+                src="/GDSC-logo..svg"
+                alt="GDG Logo"
+                width={44}
+                height={44}
+                className="w-11 h-11 transition-transform group-hover:scale-105"
+              />
+              <span className="text-2xl font-bold">GDG-DIT</span>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-white/60 text-sm leading-relaxed">
               Google Developer Groups at DIT. A community for developers to learn, connect, and grow together.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-semibold mb-5">Quick Links</h3>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white/60 hover:text-[#4285f4] transition-colors text-sm inline-block"
                   >
                     {link.label}
                   </Link>
@@ -55,20 +60,20 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              <a href="mailto:contact@gdgdit.com" className="hover:text-white transition-colors">
+            <h3 className="text-xl font-semibold mb-5">Connect With Us</h3>
+            <p className="text-white/60 text-sm mb-5">
+              <a href="mailto:contact@gdgdit.com" className="hover:text-[#4285f4] transition-colors">
                 contact@gdgdit.com
               </a>
             </p>
-            <div className="flex space-x-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/60 hover:text-[#4285f4] transition-colors p-2.5 hover:bg-white/5 rounded-lg"
                   aria-label={social.label}
                 >
                   <SocialIcon icon={social.icon} />
@@ -79,8 +84,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>© {currentYear} GDG-DIT. All rights reserved.</p>
+        <div className="border-t border-white/10 mt-10 pt-8 text-center">
+          <p className="text-white/50 text-sm">
+            © {currentYear} GDG-DIT. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -88,7 +95,7 @@ export default function Footer() {
 }
 
 function SocialIcon({ icon }) {
-  const iconClass = "w-6 h-6";
+  const iconClass = "w-7 h-7";
   
   switch (icon) {
     case 'linkedin':
