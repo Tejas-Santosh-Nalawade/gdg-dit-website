@@ -1,233 +1,678 @@
-export default function JoinPage() {
-  const benefits = [
-    {
-      icon: '🎓',
-      title: 'Learn New Technologies',
-      description: 'Access workshops, study jams, and tech talks on cutting-edge technologies',
-    },
-    {
-      icon: '🤝',
-      title: 'Network with Developers',
-      description: 'Connect with like-minded students, professionals, and industry experts',
-    },
-    {
-      icon: '🏆',
-      title: 'Earn Certifications',
-      description: 'Complete study jams and earn Google Cloud badges and certifications',
-    },
-    {
-      icon: '💼',
-      title: 'Career Opportunities',
-      description: 'Get access to job opportunities, internships, and mentorship programs',
-    },
-    {
-      icon: '🚀',
-      title: 'Build Projects',
-      description: 'Work on real-world projects and showcase your skills to the community',
-    },
-    {
-      icon: '🎁',
-      title: 'Exclusive Swag & Perks',
-      description: 'Get GDG merchandise, access to Google resources, and event perks',
-    },
-  ];
+'use client'
+import React, { useState, useEffect } from 'react';
+// Assuming Tailwind CSS is configured for the environment
 
-  const communityPlatforms = [
+// --- Icon Component ---
+// Centralized Icon component handling all needed SVG icons
+const Icon = ({ name, color }) => {
+  let Component;
+  switch (name) {
+    // Icons for the existing Communities section
+    case 'Flutter':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="m15 13-3 3-3-3m3-10v16"/>
+        </svg>
+      );
+      break;
+    case 'Android':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <circle cx="12" cy="5" r="3"/>
+            <path d="M18.8 13.8c.8-.8 1.2-1.8 1.2-2.8V6.3c0-1.8-1.5-3.3-3.3-3.3h-1.4c-1.8 0-3.3 1.5-3.3 3.3v4.7c0 1-.4 2-1.2 2.8L12 17l-1.5-1.5c-.8-.8-1.2-1.8-1.2-2.8V6.3c0-1.8-1.5-3.3-3.3-3.3H5.2c-1.8 0-3.3 1.5-3.3 3.3v4.7c0 1 .4 2 1.2 2.8L5 17l-1.5 1.5c-.8.8-1.2 1.8-1.2 2.8V23h19v-4.7c0-1-.4-2-1.2-2.8L19 17l-1.5-1.5Z"/>
+        </svg>
+      );
+      break;
+    case 'Competitive Programming':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+        </svg>
+      );
+      break;
+    case 'Cloud Computing':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242M16 19h6"/>
+            <path d="M16 22l3-3-3-3"/>
+        </svg>
+      );
+      break;
+    case 'AI/ML':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M12 10V4"/>
+            <path d="M19 18a7.7 7.7 0 0 0 .04-2.5 7 7 0 0 0-4-6.32c-.5-.73-1-1.35-1.7-1.72s-1.44-.45-2.2-.45c-.75 0-1.48.15-2.2.45s-1.2.98-1.7 1.72a7 7 0 0 0-4 6.32 7.7 7.7 0 0 0 .04 2.5"/>
+            <path d="M16 21.5c-2-.5-2.5-1.5-2.5-2.5"/>
+            <path d="M8 21.5c2-.5 2.5-1.5 2.5-2.5"/>
+            <path d="M19 18H5"/>
+        </svg>
+      );
+      break;
+    case 'UI/UX':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+        </svg>
+      );
+      break;
+    // Icons for the Platform links section
+    case 'Discord':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          <path d="M8 12h.01"/>
+          <path d="M12 12h.01"/>
+          <path d="M16 12h.01"/>
+        </svg>
+      );
+      break;
+    case 'WhatsApp':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      );
+      break;
+    case 'LinkedIn':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      );
+      break;
+    case 'Meetup':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+          <line x1="16" x2="16" y1="2" y2="6"/>
+          <line x1="8" x2="8" y1="2" y2="6"/>
+          <line x1="3" x2="21" y1="10" y2="10"/>
+        </svg>
+      );
+      break;
+    // Icons for the Benefits section
+    case 'BookOpen':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+      );
+      break;
+    case 'Heart':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3.51.57-4.5 2-1-.9-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.05 3 5.5l7 7Z"/>
+        </svg>
+      );
+      break;
+    case 'Award':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M11 16h2"/>
+            <path d="M8 12h8"/>
+            <path d="M11 8h2"/>
+            <circle cx="12" cy="12" r="10"/>
+        </svg>
+      );
+      break;
+    case 'Briefcase':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      );
+      break;
+    case 'Rocket':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M4.5 16.5c-1.5 1.5-3 3-3 6.5s2-1 6.5-3c1.5 1.5 3 3 6.5 3s1-2 3-6.5c-1.5-1.5-3-3-6.5-3s-2 1-3 6.5Z"/>
+            <path d="M15 13l4-4M9 15l4-4M17 7l-4 4"/>
+        </svg>
+      );
+      break;
+    case 'Gift':
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-6 w-6`}>
+            <path d="M12 11h.01"/>
+            <path d="M12 15h.01"/>
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="M8 12h8"/>
+        </svg>
+      );
+      break;
+    case 'Sun': // Light mode icon
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-5 w-5`}>
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.44 1.44"/>
+            <path d="m17.67 17.67 1.44 1.44"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.44 1.44"/>
+            <path d="m19.07 4.93-1.44 1.44"/>
+        </svg>
+      );
+      break;
+    case 'Moon': // Dark mode icon
+      Component = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`${color} h-5 w-5`}>
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      );
+      break;
+    default:
+      Component = () => <div className={`${color} text-xl`}>G</div>; // Generic placeholder
+  }
+  return <Component />;
+};
+
+// --- Data Structures ---
+
+// Data for the new "What Happens After You Join?" section
+const stepsData = [
+  {
+    step: 1,
+    title: 'Welcome Message',
+    description: 'Receive a warm welcome from our team and get introduced to the community.',
+  },
+  {
+    step: 2,
+    title: 'Event Notifications',
+    description: 'Stay updated about upcoming workshops, study jams, and tech talks.',
+  },
+  {
+    step: 3,
+    title: 'Start Learning',
+    description: 'Access resources, join discussions, and start your learning journey with us.',
+  },
+];
+
+// Data for the "Why Join" section
+const benefitsData = [
     {
-      name: 'Discord',
-      description: 'Join our Discord server for real-time discussions and tech support',
-      icon: '💬',
-      link: 'https://discord.gg/gdgdit',
-      color: 'from-indigo-400 to-indigo-600',
+      title: 'Learn New Technologies',
+      description: 'Access workshops, study jams, and tech talks on cutting-edge technologies.',
+      iconName: 'BookOpen',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50'
     },
     {
-      name: 'WhatsApp',
-      description: 'Get event updates and announcements on our WhatsApp community',
-      icon: '📱',
-      link: 'https://chat.whatsapp.com/gdgdit',
-      color: 'from-green-400 to-green-600',
+      title: 'Network with Developers',
+      description: 'Connect with like-minded students, professionals, and industry experts.',
+      iconName: 'Heart',
+      color: 'text-amber-600', // Using amber for yellow/gold theme
+      bgColor: 'bg-amber-50'
     },
     {
-      name: 'LinkedIn',
-      description: 'Follow us on LinkedIn for professional networking and updates',
-      icon: '💼',
-      link: 'https://linkedin.com/company/gdg-dit',
-      color: 'from-blue-400 to-blue-600',
+      title: 'Earn Certifications',
+      description: 'Complete study jams and earn Google Cloud badges and certifications.',
+      iconName: 'Award',
+      color: 'text-red-600',
+      bgColor: 'bg-red-50'
     },
     {
-      name: 'Meetup',
-      description: 'RSVP to our events and stay updated on upcoming meetups',
-      icon: '📅',
-      link: 'https://meetup.com/gdg-dit',
-      color: 'from-red-400 to-red-600',
+      title: 'Career Opportunities',
+      description: 'Get access to job opportunities, internships, and mentorship programs.',
+      iconName: 'Briefcase',
+      color: 'text-red-600',
+      bgColor: 'bg-red-50'
     },
-  ];
+    {
+      title: 'Build Projects',
+      description: 'Work on real-world projects and showcase your skills to the community.',
+      iconName: 'Rocket',
+      color: 'text-green-600',
+      bgColor: 'bg-green-50'
+    },
+    {
+      title: 'Exclusive Swag & Perks',
+      description: 'Get GDG merchandise, access to Google resources, and event perks.',
+      iconName: 'Gift',
+      color: 'text-amber-600',
+      bgColor: 'bg-amber-50'
+    },
+];
+
+// Data for the existing Communities List
+const communitiesData = [
+  {
+    title: 'Flutter',
+    description: 'Connect with Flutter developers!',
+    iconName: 'Flutter',
+    color: 'text-sky-400',
+    link: '#flutter'
+  },
+  {
+    title: 'Android',
+    description: 'Join our Android development community!',
+    iconName: 'Android',
+    color: 'text-green-500',
+    link: '#android'
+  },
+  {
+    title: 'Competitive Programming',
+    description: 'Sharpen your coding skills with us!',
+    iconName: 'Competitive Programming',
+    color: 'text-red-500',
+    link: '#cp'
+  },
+  {
+    title: 'Cloud Computing',
+    description: 'Join our cloud computing discussions!',
+    iconName: 'Cloud Computing',
+    color: 'text-blue-400',
+    link: '#cloud'
+  },
+  {
+    title: 'AI/ML',
+    description: 'Explore AI and ML topics with us!',
+    iconName: 'AI/ML',
+    color: 'text-purple-400',
+    link: '#aiml'
+  },
+  {
+    title: 'UI/UX',
+    description: 'Join our UI/UX design community!',
+    iconName: 'UI/UX',
+    color: 'text-pink-400',
+    link: '#uiux'
+  },
+];
+
+// Data for the existing Platform links section (UPDATED COLORS)
+const communityPlatforms = [
+  {
+    name: 'Discord',
+    description: 'Join our Discord server for real-time discussions and tech support.',
+    iconName: 'Discord',
+    link: 'https://discord.gg/gdg',
+    gradient: 'from-indigo-600 to-indigo-800',
+    buttonColor: 'bg-indigo-500 hover:bg-indigo-600',
+    iconTextColor: 'text-indigo-200'
+  },
+  {
+    name: 'WhatsApp',
+    description: 'Get event updates and announcements on our WhatsApp community.',
+    iconName: 'WhatsApp',
+    link: 'https://chat.whatsapp.com/gdg',
+    gradient: 'from-green-600 to-emerald-800',
+    buttonColor: 'bg-green-500 hover:bg-green-600',
+    iconTextColor: 'text-green-200'
+  },
+  {
+    name: 'LinkedIn',
+    description: 'Follow us on LinkedIn for professional networking and updates.',
+    iconName: 'LinkedIn',
+    link: 'https://linkedin.com/company/gdg',
+    gradient: 'from-blue-600 to-sky-800',
+    buttonColor: 'bg-blue-500 hover:bg-blue-600',
+    iconTextColor: 'text-blue-200'
+  },
+  {
+    name: 'Meetup',
+    description: 'RSVP to our events and stay updated on upcoming meetups.',
+    iconName: 'Meetup',
+    link: 'https://meetup.com/gdg',
+    gradient: 'from-red-600 to-red-800',
+    buttonColor: 'bg-red-500 hover:bg-red-600',
+    iconTextColor: 'text-red-200'
+  },
+];
+
+
+// --- Components for New Sections ---
+
+// Component for the "What Happens After You Join?" steps
+const StepItem = ({ step, title, description, darkMode }) => (
+    <div className={`flex items-start py-4 transition-colors duration-300
+        ${darkMode ? 'border-neutral-700' : 'border-neutral-200'}`}
+    >
+        {/* Step Number Circle */}
+        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-4 transition-colors duration-300
+            ${darkMode 
+              ? 'bg-blue-600 text-white' 
+              : 'bg-blue-100 text-blue-600'
+            }`}>
+            {step}
+        </div>
+        
+        {/* Step Content */}
+        <div>
+            <h3 className={`font-semibold mb-1 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>{title}</h3>
+            <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{description}</p>
+        </div>
+    </div>
+);
+
+// Component for the "Why Join" section - UPDATED FOR DARK MODE
+const BenefitCard = ({ benefit, darkMode }) => (
+    <div className={`p-6 rounded-xl shadow-lg transition-all duration-300 h-full flex flex-col 
+        ${darkMode 
+            ? 'bg-neutral-800 border border-neutral-700 hover:shadow-neutral-700/50' 
+            : 'bg-white border border-neutral-100 hover:shadow-neutral-300/80'
+        }`}
+    >
+        {/* Icon wrapper (uses fixed light colors for Google-inspired vibrancy) */}
+        <div className={`p-3 rounded-xl inline-flex mb-4 ${benefit.bgColor}`}>
+            <Icon name={benefit.iconName} color={benefit.color} />
+        </div>
+        
+        {/* Title */}
+        <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 
+            ${darkMode ? 'text-white' : 'text-neutral-900'}`}
+        >
+            {benefit.title}
+        </h3>
+        
+        {/* Description */}
+        <p className={`text-sm flex-grow transition-colors duration-300 
+            ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}
+        >
+            {benefit.description}
+        </p>
+    </div>
+);
+
+
+// --- Updated Platform Card Component ---
+const PlatformCard = ({ platform, darkMode }) => (
+  <a
+    href={platform.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`block rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform 
+      ${darkMode ? 'bg-neutral-800 hover:shadow-neutral-700/50' : 'bg-white hover:shadow-neutral-300/80'}
+      hover:-translate-y-1 group border ${darkMode ? 'border-neutral-700' : 'border-neutral-100'}`}
+  >
+    {/* Header with gradient and icon */}
+    <div className={`relative h-28 flex items-center justify-center bg-gradient-to-br ${platform.gradient}`}>
+      <div className={`absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      <div className="relative z-10 p-4 rounded-full bg-white/10 backdrop-blur-sm">
+        <Icon name={platform.iconName} color={platform.iconTextColor} />
+      </div>
+    </div>
+    
+    {/* Body Content */}
+    <div className={`p-6 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>
+      <h3 className="text-xl font-extrabold mb-2">{platform.name}</h3>
+      <p className={`text-sm mb-6 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{platform.description}</p>
+      
+      {/* Dynamic Button */}
+      <div
+        className={`w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 
+          ${platform.buttonColor} text-white shadow-md group-hover:shadow-lg`}
+      >
+        Join on {platform.name}
+      </div>
+    </div>
+  </a>
+);
+
+
+// --- Main Application Component ---
+
+export default function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [darkMode, setDarkMode] = useState(true); // Start in dark mode
+
+  // Simple filtering based on search term
+  const filteredCommunities = communitiesData.filter(community =>
+    community.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const CommunityItem = ({ community, darkMode }) => (
+    <a
+      href={community.link}
+      className={`flex items-center gap-4 p-3 rounded-lg transition-colors duration-150 cursor-pointer
+        ${darkMode ? 'hover:bg-neutral-800/70' : 'hover:bg-neutral-100'}
+      `}
+    >
+      <div className={`p-2 rounded-full ${darkMode ? 'bg-white/5' : 'bg-neutral-100'}`}>
+        <Icon name={community.iconName} color={community.color} />
+      </div>
+      <div className="flex-grow">
+        <h3 className={`font-semibold ${darkMode ? 'text-white' : 'text-neutral-900'}`}>{community.title}</h3>
+        <p className={`text-sm ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>{community.description}</p>
+      </div>
+      <span className={`text-xs ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>Now</span>
+    </a>
+  );
+  
+  // Base classes for the application container based on mode
+  const appBaseClasses = `min-h-screen p-0 sm:p-0 font-sans transition-colors duration-500 ${
+    darkMode ? 'bg-black text-white' : 'bg-neutral-50 text-neutral-900'
+  }`;
+
+  // Classes for the main two-column content block
+  const mainContentClasses = `max-w-7xl mx-auto rounded-xl overflow-hidden md:grid md:grid-cols-3 mt-4 sm:mt-8 transition-shadow duration-500 shadow-2xl ${
+    darkMode ? 'shadow-[0_0_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+  }`;
+  
+  // Classes for the left sidebar
+  const sidebarClasses = `md:col-span-1 flex flex-col h-full min-h-screen md:min-h-0 transition-colors duration-500
+    ${darkMode ? 'bg-neutral-900 border-r border-neutral-800' : 'bg-white border-r border-neutral-200'}
+  `;
+  
+  // Classes for the right hero section
+  const heroClasses = `md:col-span-2 p-8 md:p-12 flex items-center justify-center min-h-[50vh] md:min-h-full transition-colors duration-500
+    ${darkMode ? 'bg-neutral-950' : 'bg-neutral-100'}
+  `;
+  
+  // Classes for the Hero text and button
+  const heroTitleClass = `text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight ${darkMode ? 'text-white' : 'text-neutral-900'}`;
+  const heroPClass = `text-lg mb-8 ${darkMode ? 'text-neutral-300' : 'text-neutral-700'}`;
+
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Join GDG-DIT Community
-            </h1>
-            <p className="text-xl md:text-2xl mb-8">
-              Become part of a vibrant community of developers, learners, and innovators
-            </p>
-            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-              <p className="text-lg">
-                🎉 <strong>500+</strong> members already part of our community!
-              </p>
+    <div className={appBaseClasses}>
+      {/* Global Style Adjustment */}
+      <style>{`
+        body {
+          background-color: ${darkMode ? '#000' : '#f5f5f5'};
+          font-family: 'Inter', sans-serif;
+        }
+      `}</style>
+      
+      {/* Mode Toggle Button (Fixed Position for easy access) */}
+      <button 
+        onClick={() => setDarkMode(!darkMode)}
+        className={`fixed top-4 right-4 z-50 p-3 rounded-full shadow-lg transition-all duration-300
+          ${darkMode 
+            ? 'bg-neutral-800 text-yellow-400 hover:bg-neutral-700' 
+            : 'bg-white text-blue-500 hover:bg-neutral-100'
+          } shadow-md border ${darkMode ? 'border-neutral-700' : 'border-neutral-200'}`}
+        aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      >
+        <Icon name={darkMode ? 'Sun' : 'Moon'} color="" />
+      </button>
+
+      {/* SECTION 1: Why Join GDG-DIT (Now fully responsive to dark mode) */}
+      <section className={`pt-16 pb-12 sm:pt-20 sm:pb-16 font-sans transition-colors duration-500
+          ${darkMode ? 'bg-neutral-900' : 'bg-white'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                  {/* Badge color adjustments */}
+                  <div className={`inline-flex items-center space-x-2 py-1 px-3 rounded-full text-sm font-medium mb-8 shadow-md transition-colors duration-500
+                      ${darkMode ? 'bg-purple-900 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
+                      <span role="img" aria-label="members">✨</span> 
+                      <span>500+ members already part of our community!</span>
+                  </div>
+                  <h2 className={`text-3xl md:text-4xl font-extrabold mb-2 transition-colors duration-500 ${darkMode ? 'text-white' : 'text-neutral-900'}`}>
+                      Why Join GDG-DIT?
+                  </h2>
+                  <p className={`text-lg transition-colors duration-500 ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                      Become part of a vibrant community of developers, learners, and innovators.
+                  </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {benefitsData.map((benefit, index) => (
+                      <BenefitCard key={index} benefit={benefit} darkMode={darkMode} />
+                  ))}
+              </div>
+          </div>
+      </section>
+      {/* END SECTION 1 */}
+
+
+      {/* SECTION 2: Main Content Block (Light/Dark Switch) */}
+      <div className={mainContentClasses}>
+        
+        {/* Left Column: Communities List Sidebar */}
+        <aside className={sidebarClasses}>
+          <div className={`p-4 transition-colors duration-500 flex items-center justify-between
+            ${darkMode ? 'border-b border-neutral-800' : 'border-b border-neutral-200'}
+          `}>
+            <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-neutral-900'}`}>Communities</h2>
+            <div className={`flex items-center space-x-2 ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}>
+              <button className="p-1 hover:text-white transition-colors" aria-label="Add Community">+</button>
+              <button className="p-1 hover:text-white transition-colors" aria-label="More Options">⋮</button>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Join GDG-DIT?
-          </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-800">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+          <div className="p-4">
+            {/* Search Bar */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className={`w-full pl-10 pr-4 py-2 rounded-lg transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-blue-500 
+                    ${darkMode 
+                        ? 'bg-neutral-800 text-white placeholder-neutral-500' 
+                        : 'bg-neutral-100 text-neutral-900 placeholder-neutral-400 border border-neutral-200'
+                    }
+                `}
+              />
+              <svg className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Join Platforms Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">
+          {/* List of Communities */}
+          <div className="flex-grow overflow-y-auto px-4 pb-4 space-y-2">
+            {filteredCommunities.map((community, index) => (
+              <CommunityItem key={index} community={community} darkMode={darkMode} />
+            ))}
+            {filteredCommunities.length === 0 && (
+                <p className={`text-center pt-4 ${darkMode ? 'text-neutral-500' : 'text-neutral-400'}`}>No communities found.</p>
+            )}
+          </div>
+        </aside>
+
+        {/* Right Column: Hero/Promotion Area */}
+        <main className={heroClasses}>
+          <div className="max-w-2xl">
+            <h1 className={heroTitleClass}>
+              Join our WhatsApp communities now!
+            </h1>
+            <p className={heroPClass}>
+              Connect with fellow developers, share knowledge, and stay updated on the latest in tech. Our GDG/GDSC communities are the perfect place to grow your skills and network with like-minded individuals.
+            </p>
+            
+            <a
+              href="#community-links"
+              className="inline-block bg-green-500 text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-green-400 transition-colors shadow-lg shadow-green-500/30"
+            >
+              Explore All Communities
+            </a>
+          </div>
+        </main>
+      </div>
+      {/* END SECTION 2 */}
+      
+      {/* SECTION 3: Choose Your Platform (Dynamic Light/Dark Switch) */}
+      <section className={`py-16 transition-colors duration-500 ${darkMode ? 'bg-neutral-950/50' : 'bg-white'}`} id="community-links">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`text-3xl md:text-4xl font-bold text-center mb-4 transition-colors duration-500 
+            ${darkMode ? 'text-white' : 'text-neutral-900'}`}
+          >
             Choose Your Platform
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
+          <p className={`text-center mb-12 text-lg transition-colors duration-500 
+            ${darkMode ? 'text-neutral-400' : 'text-neutral-600'}`}
+          >
             Connect with us on your preferred platform
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {communityPlatforms.map((platform, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <div className={`bg-gradient-to-r ${platform.color} h-24 flex items-center justify-center text-5xl`}>
-                  {platform.icon}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-800">
-                    {platform.name}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {platform.description}
-                  </p>
-                  <a
-                    href={platform.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block w-full bg-gradient-to-r ${platform.color} text-white text-center py-3 rounded-lg font-bold hover:opacity-90 transition-opacity`}
-                  >
-                    Join on {platform.name}
-                  </a>
-                </div>
-              </div>
+              <PlatformCard key={index} platform={platform} darkMode={darkMode} />
             ))}
           </div>
         </div>
       </section>
+      {/* END SECTION 3 */}
 
-      {/* What's Next Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
-              What Happens After You Join?
-            </h2>
-            <div className="space-y-6 text-left">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                  1️⃣
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Welcome Message</h3>
-                  <p className="text-gray-600">
-                    Receive a warm welcome from our team and get introduced to the community
-                  </p>
-                </div>
+      {/* SECTION 4: What Happens After You Join? (Light/Dark Switch) */}
+      <section className={`py-16 transition-colors duration-500 
+        ${darkMode ? 'bg-black' : 'bg-neutral-50'}`}
+      >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-500 
+                    ${darkMode ? 'text-white' : 'text-neutral-900'}`}
+                  >
+                      What Happens After You Join?
+                  </h2>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                  2️⃣
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Event Notifications</h3>
-                  <p className="text-gray-600">
-                    Stay updated about upcoming workshops, study jams, and tech talks
-                  </p>
-                </div>
+              <div className="max-w-3xl mx-auto">
+                  {stepsData.map((step, index) => (
+                      // Add border to separate steps (except the last one)
+                      <div key={index} className={index < stepsData.length - 1 ? 'border-b' : ''}>
+                          <StepItem step={step.step} title={step.title} description={step.description} darkMode={darkMode} />
+                      </div>
+                  ))}
               </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                  3️⃣
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Start Learning</h3>
-                  <p className="text-gray-600">
-                    Access resources, join discussions, and start your learning journey with us
+          </div>
+      </section>
+      {/* END SECTION 4 */}
+      
+      {/* SECTION 5: Ready to Get Started? CTA (Updated to a clean, mode-responsive card) */}
+      <section className={`py-16 transition-colors duration-500 ${darkMode ? 'bg-black' : 'bg-neutral-50'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* New CTA Card Design */}
+              <div className={`max-w-4xl mx-auto p-10 rounded-3xl text-center shadow-2xl transition-all duration-500 
+                  ${darkMode 
+                      ? 'bg-blue-900/40 border border-blue-800/50 hover:shadow-blue-800/40' 
+                      : 'bg-blue-50 border border-blue-100 hover:shadow-blue-300/60'
+                  }`}
+              >
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-4 transition-colors duration-500 
+                    ${darkMode ? 'text-white' : 'text-blue-900'}`}
+                  >
+                      Ready to Get Started?
+                  </h2>
+                  <p className={`text-lg mb-8 transition-colors duration-500 
+                    ${darkMode ? 'text-blue-200' : 'text-blue-700'}`}
+                  >
+                      Pick a platform above and join thousands of developers in our community today!
                   </p>
-                </div>
+                  <a
+                      href="#community-links"
+                      className={`inline-block px-8 py-3 rounded-full font-bold text-lg transition-colors duration-300 shadow-lg 
+                          ${darkMode 
+                              ? 'bg-white text-blue-600 hover:bg-neutral-100' 
+                              : 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-500/50'
+                          }`}
+                  >
+                      View Events
+                  </a>
               </div>
-            </div>
           </div>
-        </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Pick a platform above and join thousands of developers in our community today!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
-            >
-              Join Now
-            </a>
-            <a
-              href="/events"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              View Events
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+      {/* END SECTION 5 */}
+      
+    </div>
   );
 }
