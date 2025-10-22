@@ -53,7 +53,7 @@ export default function WhatWeDo() {
   };
 
   return (
-    <section className="relative py-20 md:py-24 bg-white overflow-hidden">
+    <section id="what-we-do" className="relative py-20 md:py-24 bg-white overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{

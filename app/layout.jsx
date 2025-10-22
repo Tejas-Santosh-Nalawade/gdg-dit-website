@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import ScrollbarColorChanger from "./components/ScrollbarColorChanger";
+import SelectionColorChanger from "./components/SelectionColorChanger";
 import { siteConfig, generatePageMetadata, generateOrganizationSchema } from "@/lib/seo";
 import Script from "next/script";
 
@@ -61,6 +63,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollbarColorChanger />
+        <SelectionColorChanger />
         <Navbar />
         {children}
         <Footer />

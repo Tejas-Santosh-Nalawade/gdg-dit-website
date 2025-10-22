@@ -50,7 +50,7 @@ export default function StatsCounter() {
       { threshold: 0.3 }
     );
 
-    const element = document.getElementById('stats-section');
+    const element = document.getElementById('stats');
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -97,7 +97,7 @@ export default function StatsCounter() {
 
   return (
     <section
-      id="stats-section"
+      id="stats"
       className="relative py-24 md:py-28 bg-[#f0f0f0] overflow-hidden"
     >
       <motion.div

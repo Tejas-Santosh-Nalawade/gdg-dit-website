@@ -42,7 +42,7 @@ export default function UpcomingEvents() {
   };
 
   return (
-    <section className="relative py-20 md:py-24 bg-[#fafafa] overflow-hidden">
+    <section id="upcoming-events" className="relative py-20 md:py-24 bg-[#fafafa] overflow-hidden">
       {/* Decorative top border with Google colors */}
       <div className="absolute top-0 left-0 right-0 h-1 flex">
         <div className="flex-1 bg-[#4285f4]" />
