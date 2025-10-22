@@ -30,129 +30,163 @@ export default function Gallery() {
   };
 
   return (
-    <section className="relative py-24 md:py-28 bg-[#f0f0f0] overflow-hidden">
+    <section id="gallery" className="relative py-20 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
-        {/* Section Header - Bigger, more attractive */}
+        {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1e1e1e] mb-5"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Photo Gallery
-          </motion.h2>
-          <p className="text-xl md:text-2xl text-[#1e1e1e]/70 max-w-3xl mx-auto">
-            Curated images from past events
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e1e1e] mb-3" style={{ fontFamily: 'Google Sans, sans-serif' }}>
+            Gallery
+          </h2>
+          <p className="text-lg text-[#1e1e1e]/70">
+            Take a look at some of our biggest events and activities
           </p>
         </motion.div>
 
-        {/* Slider Container */}
-        <div className="relative">
-          {/* Left Arrow */}
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hidden md:block"
-            aria-label="Scroll left"
-          >
-            <svg className="w-6 h-6 text-[#1e1e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm hover:bg-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hidden md:block"
-            aria-label="Scroll right"
-          >
-            <svg className="w-6 h-6 text-[#1e1e1e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* Scrollable Gallery */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+        {/* Masonry Grid Layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {/* Large image - Top Left */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="col-span-2 row-span-2 relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
             style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch',
+              border: '4px solid transparent',
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #4285f4, #ea4335, #f9ab00, #34a853) border-box'
             }}
           >
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative flex-shrink-0 group cursor-pointer"
-              >
-                {/* Image Card */}
-                <div className="relative w-[320px] h-[400px] md:w-[380px] md:h-[480px] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                  {/* Placeholder with gradient for now - replace with actual images */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br flex items-center justify-center"
-                    style={{
-                      backgroundImage: `linear-gradient(135deg, 
-                        ${['#4285f4', '#ea4335', '#f9ab00', '#34a853'][index % 4]}30, 
-                        ${['#4285f4', '#ea4335', '#f9ab00', '#34a853'][index % 4]}10)`,
-                    }}
-                  >
-                    {/* Add Image component when real images are available */}
-                    {/* <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover"
-                    /> */}
-                    
-                    {/* Placeholder icon instead of emoji */}
-                    <div className="flex flex-col items-center justify-center">
-                      <svg 
-                        className="w-24 h-24 mb-4" 
-                        fill="none" 
-                        stroke={['#4285f4', '#ea4335', '#f9ab00', '#34a853'][index % 4]}
-                        strokeWidth={1.5}
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                      </svg>
-                      <span className="text-white/60 text-sm font-medium">Add Event Photo</span>
-                    </div>
-                  </div>
+            <div className="relative w-full h-full min-h-[400px] bg-white">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                <svg className="w-20 h-20" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              </div>
+            </div>
+          </motion.div>
 
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e1e1e]/80 via-[#1e1e1e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
-                        {image.title}
-                      </h3>
-                      <p className="text-white/80 text-sm">
-                        View full gallery
-                      </p>
-                    </div>
-                  </div>
+          {/* Top Right - Small Red */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+            style={{
+              border: '4px solid transparent',
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #ea4335, #f9ab00) border-box'
+            }}
+          >
+            <div className="relative w-full h-full min-h-[195px] bg-white">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ea4335]/0 via-transparent to-transparent group-hover:from-[#ea4335]/10 transition-all duration-300" />
+          </motion.div>
 
-                  {/* Decorative corner */}
-                  <div
-                    className="absolute top-4 right-4 w-3 h-3 rounded-full"
-                    style={{
-                      backgroundColor: ['#4285f4', '#ea4335', '#f9ab00', '#34a853'][index % 4],
-                    }}
-                  />
+          {/* Top Right - Small Yellow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+            style={{
+              border: '4px solid transparent',
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #f9ab00, #34a853) border-box'
+            }}
+          >
+            <div className="relative w-full h-full min-h-[195px] bg-white">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#f9ab00]/0 via-transparent to-transparent group-hover:from-[#f9ab00]/10 transition-all duration-300" />
+          </motion.div>
+
+          {/* Middle Right - Small Green */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+            style={{
+              border: '4px solid transparent',
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #34a853, #4285f4) border-box'
+            }}
+          >
+            <div className="relative w-full h-full min-h-[195px] bg-white">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#34a853]/0 via-transparent to-transparent group-hover:from-[#34a853]/10 transition-all duration-300" />
+          </motion.div>
+
+          {/* Middle Right - Small Blue */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+            style={{
+              border: '4px solid transparent',
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #4285f4, #ea4335) border-box'
+            }}
+          >
+            <div className="relative w-full h-full min-h-[195px] bg-white">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4285f4]/0 via-transparent to-transparent group-hover:from-[#4285f4]/10 transition-all duration-300" />
+          </motion.div>
+
+          {/* Bottom Row - 4 small images */}
+          {[
+            { gradient: 'linear-gradient(135deg, #4285f4, #34a853)', hoverColor: '#4285f4' },
+            { gradient: 'linear-gradient(135deg, #ea4335, #f9ab00)', hoverColor: '#ea4335' },
+            { gradient: 'linear-gradient(135deg, #f9ab00, #4285f4)', hoverColor: '#f9ab00' },
+            { gradient: 'linear-gradient(135deg, #34a853, #ea4335)', hoverColor: '#34a853' }
+          ].map((item, index) => (
+            <motion.div
+              key={`bottom-${index}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
+              className="relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+              style={{
+                border: '4px solid transparent',
+                background: `linear-gradient(white, white) padding-box, ${item.gradient} border-box`
+              }}
+            >
+              <div className="relative w-full h-full min-h-[195px] bg-white">
+                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                  <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* View More Button - Bigger */}

@@ -12,6 +12,10 @@
   --gdg-yellow: #f9ab00;
   --gdg-red: #ea4335;
 
+  /* Dynamic colors for scrollbar and selection */
+  --scrollbar-color: #4285f4;
+  --selection-color: #4285f4;
+
   /* Halftone Colors */
   --halftone-blue: #57caff;
   --halftone-green: #5cdb6d;
@@ -177,6 +181,26 @@ body {
   font-family: 'Google Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Complete cursor - Blue+Red left, Yellow+Green right, White tail */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28"><path d="M2 2 L2 24 L10 16 L13 24 L16 23 L12 15 L20 15 L2 2 Z" fill="white" stroke="%23000" stroke-width="1.2"/><path d="M2 2 L2 13 L11 13 L2 2 Z" fill="%234285f4"/><path d="M2 13 L11 13 L10 16 L2 24 Z" fill="%23ea4335"/><path d="M11 13 L20 15 L12 15 L11 13 Z" fill="%23f9ab00"/><path d="M11 13 L12 15 L16 23 L13 24 L10 16 L11 13 Z" fill="%2334a853"/></svg>') 2 2, auto;
+}
+
+/* Same cursor for all interactive elements */
+a, button, [role="button"], input[type="submit"], input[type="button"], select, [onclick], 
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea,
+*::selection {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28"><path d="M2 2 L2 24 L10 16 L13 24 L16 23 L12 15 L20 15 L2 2 Z" fill="white" stroke="%23000" stroke-width="1.2"/><path d="M2 2 L2 13 L11 13 L2 2 Z" fill="%234285f4"/><path d="M2 13 L11 13 L10 16 L2 24 Z" fill="%23ea4335"/><path d="M11 13 L20 15 L12 15 L11 13 Z" fill="%23f9ab00"/><path d="M11 13 L12 15 L16 23 L13 24 L10 16 L11 13 Z" fill="%2334a853"/></svg>') 2 2, auto;
+}
+
+/* Text selection with dynamic Google color */
+::selection {
+  background-color: var(--selection-color);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--selection-color);
+  color: white;
 }
 
 /* Smooth scroll behavior */
@@ -184,9 +208,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with dynamic Google color */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
@@ -194,12 +218,21 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+  background: var(--scrollbar-color);
+  border-radius: 7px;
+  border: 2px solid var(--off-white);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  filter: brightness(0.85);
+  box-shadow: 0 0 8px var(--scrollbar-color);
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--off-white);
 }
 
 .dark {

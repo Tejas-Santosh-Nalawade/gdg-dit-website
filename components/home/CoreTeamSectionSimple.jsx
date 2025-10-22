@@ -35,7 +35,7 @@ const coreTeamMembers = [
 
 export default function CoreTeamSectionSimple() {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="core-team" className="relative py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6 md:px-8 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">

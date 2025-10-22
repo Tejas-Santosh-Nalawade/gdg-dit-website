@@ -29,7 +29,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
+    <section id="hero" className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
       {/* Enhanced Background Gradient Animation */}
       <div className="absolute inset-0 z-0 opacity-50">
         <BackgroundGradientAnimation
