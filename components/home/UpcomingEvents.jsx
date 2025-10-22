@@ -10,11 +10,14 @@ export default function UpcomingEvents() {
 
   const getEventColor = (type) => {
     const colors = {
-      'Workshop': { bg: 'rgba(66, 133, 244, 0.15)', text: '#4285f4', border: '#4285f4' },
-      'Study Jam': { bg: 'rgba(255, 241, 179, 0.7)', text: '#f57f17', border: '#ffd54f' },
-      'Hackathon': { bg: 'rgba(178, 235, 202, 0.6)', text: '#388e3c', border: '#81c784' },
-      'Conference': { bg: 'rgba(187, 222, 251, 0.7)', text: '#1976d2', border: '#90caf9' },
-      'Seminar': { bg: 'rgba(255, 204, 188, 0.6)', text: '#e64a19', border: '#ff8a65' },
+      'Workshop': { bg: 'rgba(239, 154, 154, 0.3)', text: '#d32f2f', border: '#ef5350' },
+      'Study Jam': { bg: 'rgba(255, 249, 196, 0.8)', text: '#f57f17', border: '#fdd835' },
+      'Hackathon': { bg: 'rgba(178, 235, 202, 0.5)', text: '#388e3c', border: '#66bb6a' },
+      'Conference': { bg: 'rgba(187, 222, 251, 0.5)', text: '#1976d2', border: '#42a5f5' },
+      'Seminar': { bg: 'rgba(255, 204, 188, 0.5)', text: '#e64a19', border: '#ff7043' },
+      'Info session': { bg: 'rgba(187, 222, 251, 0.5)', text: '#1976d2', border: '#42a5f5' },
+      'Speaker Session / Tech Talk': { bg: 'rgba(255, 249, 196, 0.8)', text: '#f57f17', border: '#fdd835' },
+      'Workshop / Study Group': { bg: 'rgba(178, 235, 202, 0.5)', text: '#388e3c', border: '#66bb6a' },
     };
     return colors[type] || colors['Workshop'];
   };
@@ -83,10 +86,7 @@ export default function UpcomingEvents() {
           viewport={{ once: true }}
         >
           {displayEvents.map((event) => {
-            // Special color for Machine Learning Workshop
-            const colors = event.title === 'Machine Learning Workshop' 
-              ? { bg: 'rgba(234, 67, 53, 0.15)', text: '#ea4335', border: '#ea4335' }
-              : getEventColor(event.type);
+            const colors = getEventColor(event.type);
             return (
               <motion.div
                 key={event.id}

@@ -1,5 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import WhatWeDo from '@/components/home/WhatWeDo';
+import FacultyCoordinators from '@/components/home/FacultyCoordinators';
 import CoreTeamSectionSimple from '@/components/home/CoreTeamSectionSimple';
 import UpcomingEvents from '@/components/home/UpcomingEvents';
 import DomainsGrid from '@/components/home/DomainsGrid';
@@ -42,6 +43,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <WhatWeDo />
+        <FacultyCoordinators />
         <CoreTeamSectionSimple />
         <UpcomingEvents />
         <DomainsGrid />

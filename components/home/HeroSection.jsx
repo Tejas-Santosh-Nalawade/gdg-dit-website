@@ -73,18 +73,18 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center pt-16 pb-20 md:pt-20 md:pb-24 overflow-hidden">
-      {/* Enhanced Background Gradient Animation */}
-      <div className="absolute inset-0 z-0 opacity-50">
+      {/* Enhanced Background Gradient Animation - Lighter */}
+      <div className="absolute inset-0 z-0 opacity-30">
         <BackgroundGradientAnimation
           gradientBackgroundStart="rgb(255, 255, 255)"
-          gradientBackgroundEnd="rgb(245, 245, 250)"
+          gradientBackgroundEnd="rgb(250, 250, 252)"
           firstColor="66, 133, 244"
           secondColor="234, 67, 53"
           thirdColor="251, 188, 5"
           fourthColor="52, 168, 83"
           fifthColor="66, 133, 244"
           pointerColor="66, 133, 244"
-          size="70%"
+          size="60%"
           blendingValue="soft-light"
           interactive={true}
           containerClassName="absolute inset-0"
@@ -92,7 +92,7 @@ export default function HeroSection() {
       </div>
 
       {/* White overlay for better text visibility */}
-      <div className="absolute inset-0 z-[1] bg-white/20 backdrop-blur-[0.5px]"></div>
+      <div className="absolute inset-0 z-[1] bg-white/40 backdrop-blur-[0.5px]"></div>
 
       {/* Floating Geometric Shapes */}
       <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">

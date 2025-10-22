@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-// Gallery images - you can add more images from public/images/gallery folder
+// Gallery images - using actual images from gallery folder
 const galleryImages = [
-  { id: 1, src: '/images/gallery/event1.jpg', alt: 'DevFest 2024', title: 'DevFest 2024' },
-  { id: 2, src: '/images/gallery/event2.jpg', alt: 'Android Workshop', title: 'Android Workshop' },
-  { id: 3, src: '/images/gallery/event3.jpg', alt: 'Cloud Study Jam', title: 'Cloud Study Jam' },
-  { id: 4, src: '/images/gallery/event4.jpg', alt: 'ML Workshop', title: 'ML Workshop' },
-  { id: 5, src: '/images/gallery/event5.jpg', alt: 'Flutter Fest', title: 'Flutter Fest' },
-  { id: 6, src: '/images/gallery/event6.jpg', alt: 'Web Dev Bootcamp', title: 'Web Dev Bootcamp' },
-  { id: 7, src: '/images/gallery/event7.jpg', alt: 'Hackathon 2024', title: 'Hackathon 2024' },
-  { id: 8, src: '/images/gallery/event8.jpg', alt: 'Tech Talk', title: 'Tech Talk' },
+  { id: 1, src: '/images/gallery/gallery-1.jpg', alt: 'GDG Event 1' },
+  { id: 2, src: '/images/gallery/gallery-2.jpg', alt: 'GDG Event 2' },
+  { id: 3, src: '/images/gallery/gallery-3.jpg', alt: 'GDG Event 3' },
+  { id: 4, src: '/images/gallery/gallery-4.jpg', alt: 'GDG Event 4' },
+  { id: 5, src: '/images/gallery/gallery-5.jpg', alt: 'GDG Event 5' },
+  { id: 6, src: '/images/gallery/gallery-6.jpg', alt: 'GDG Event 6' },
+  { id: 7, src: '/images/gallery/gallery-7.jpg', alt: 'GDG Event 7' },
+  { id: 8, src: '/images/gallery/gallery-8.jpg', alt: 'GDG Event 8' },
 ];
 
 export default function Gallery() {
@@ -50,7 +50,7 @@ export default function Gallery() {
 
         {/* Masonry Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {/* Large image - Top Left */}
+          {/* Large image - Top Left - Gallery 1 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -62,16 +62,20 @@ export default function Gallery() {
               background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #4285f4, #ea4335, #f9ab00, #34a853) border-box'
             }}
           >
-            <div className="relative w-full h-full min-h-[400px] bg-white">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <svg className="w-20 h-20" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-              </div>
+            <div className="relative w-full h-full min-h-[400px]">
+              <Image
+                src={galleryImages[0].src}
+                alt={galleryImages[0].alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </motion.div>
 
-          {/* Top Right - Small Red */}
+          {/* Top Right - Gallery 2 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -83,17 +87,19 @@ export default function Gallery() {
               background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #ea4335, #f9ab00) border-box'
             }}
           >
-            <div className="relative w-full h-full min-h-[195px] bg-white">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-              </div>
+            <div className="relative w-full h-full min-h-[195px]">
+              <Image
+                src={galleryImages[1].src}
+                alt={galleryImages[1].alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ea4335]/0 via-transparent to-transparent group-hover:from-[#ea4335]/10 transition-all duration-300" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#ea4335]/0 via-transparent to-transparent group-hover:from-[#ea4335]/10 transition-all duration-300" />
           </motion.div>
 
-          {/* Top Right - Small Yellow */}
+          {/* Top Right - Gallery 3 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -105,17 +111,19 @@ export default function Gallery() {
               background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #f9ab00, #34a853) border-box'
             }}
           >
-            <div className="relative w-full h-full min-h-[195px] bg-white">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-              </div>
+            <div className="relative w-full h-full min-h-[195px]">
+              <Image
+                src={galleryImages[2].src}
+                alt={galleryImages[2].alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f9ab00]/0 via-transparent to-transparent group-hover:from-[#f9ab00]/10 transition-all duration-300" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#f9ab00]/0 via-transparent to-transparent group-hover:from-[#f9ab00]/10 transition-all duration-300" />
           </motion.div>
 
-          {/* Middle Right - Small Green */}
+          {/* Middle Right - Gallery 4 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -127,17 +135,19 @@ export default function Gallery() {
               background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #34a853, #4285f4) border-box'
             }}
           >
-            <div className="relative w-full h-full min-h-[195px] bg-white">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-              </div>
+            <div className="relative w-full h-full min-h-[195px]">
+              <Image
+                src={galleryImages[3].src}
+                alt={galleryImages[3].alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#34a853]/0 via-transparent to-transparent group-hover:from-[#34a853]/10 transition-all duration-300" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#34a853]/0 via-transparent to-transparent group-hover:from-[#34a853]/10 transition-all duration-300" />
           </motion.div>
 
-          {/* Middle Right - Small Blue */}
+          {/* Middle Right - Gallery 5 */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -149,22 +159,23 @@ export default function Gallery() {
               background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #4285f4, #ea4335) border-box'
             }}
           >
-            <div className="relative w-full h-full min-h-[195px] bg-white">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                </svg>
-              </div>
+            <div className="relative w-full h-full min-h-[195px]">
+              <Image
+                src={galleryImages[4].src}
+                alt={galleryImages[4].alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4285f4]/0 via-transparent to-transparent group-hover:from-[#4285f4]/10 transition-all duration-300" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#4285f4]/0 via-transparent to-transparent group-hover:from-[#4285f4]/10 transition-all duration-300" />
           </motion.div>
 
-          {/* Bottom Row - 4 small images */}
+          {/* Bottom Row - Gallery 6, 7, 8 */}
           {[
-            { gradient: 'linear-gradient(135deg, #4285f4, #34a853)', hoverColor: '#4285f4' },
-            { gradient: 'linear-gradient(135deg, #ea4335, #f9ab00)', hoverColor: '#ea4335' },
-            { gradient: 'linear-gradient(135deg, #f9ab00, #4285f4)', hoverColor: '#f9ab00' },
-            { gradient: 'linear-gradient(135deg, #34a853, #ea4335)', hoverColor: '#34a853' }
+            { gradient: 'linear-gradient(135deg, #4285f4, #34a853)', imageIndex: 5 },
+            { gradient: 'linear-gradient(135deg, #ea4335, #f9ab00)', imageIndex: 6 },
+            { gradient: 'linear-gradient(135deg, #f9ab00, #4285f4)', imageIndex: 7 }
           ].map((item, index) => (
             <motion.div
               key={`bottom-${index}`}
@@ -178,12 +189,14 @@ export default function Gallery() {
                 background: `linear-gradient(white, white) padding-box, ${item.gradient} border-box`
               }}
             >
-              <div className="relative w-full h-full min-h-[195px] bg-white">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                  <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
-                </div>
+              <div className="relative w-full h-full min-h-[195px]">
+                <Image
+                  src={galleryImages[item.imageIndex].src}
+                  alt={galleryImages[item.imageIndex].alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
               </div>
             </motion.div>
           ))}
