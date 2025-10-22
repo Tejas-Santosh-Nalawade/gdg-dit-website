@@ -10,7 +10,7 @@ export default function UpcomingEvents() {
 
   const getEventColor = (type) => {
     const colors = {
-      'Workshop': { bg: 'rgba(244, 180, 202, 0.6)', text: '#c2185b', border: '#f48fb1' },
+      'Workshop': { bg: 'rgba(66, 133, 244, 0.15)', text: '#4285f4', border: '#4285f4' },
       'Study Jam': { bg: 'rgba(255, 241, 179, 0.7)', text: '#f57f17', border: '#ffd54f' },
       'Hackathon': { bg: 'rgba(178, 235, 202, 0.6)', text: '#388e3c', border: '#81c784' },
       'Conference': { bg: 'rgba(187, 222, 251, 0.7)', text: '#1976d2', border: '#90caf9' },
@@ -75,7 +75,10 @@ export default function UpcomingEvents() {
           viewport={{ once: true }}
         >
           {displayEvents.map((event) => {
-            const colors = getEventColor(event.type);
+            // Special color for Machine Learning Workshop
+            const colors = event.title === 'Machine Learning Workshop' 
+              ? { bg: 'rgba(234, 67, 53, 0.15)', text: '#ea4335', border: '#ea4335' }
+              : getEventColor(event.type);
             return (
               <motion.div
                 key={event.id}

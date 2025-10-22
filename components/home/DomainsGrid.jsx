@@ -193,6 +193,14 @@ export default function DomainsGrid() {
           })}
         </motion.div>
       </div>
+
+      {/* Decorative bottom border with Google colors */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex">
+        <div className="flex-1 bg-[#4285f4]" />
+        <div className="flex-1 bg-[#ea4335]" />
+        <div className="flex-1 bg-[#f9ab00]" />
+        <div className="flex-1 bg-[#34a853]" />
+      </div>
     </section>
   );
 }
