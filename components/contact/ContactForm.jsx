@@ -25,14 +25,14 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">
+    <div className="bg-white rounded-2xl shadow-xl p-8 border border-[#1e1e1e]/5">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#1e1e1e]" style={{ fontFamily: 'Google Sans, sans-serif' }}>
         Send Us a Message
       </h2>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-[#1e1e1e] mb-2" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Name *
           </label>
           <input
@@ -42,13 +42,13 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 border border-[#1e1e1e]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent text-[#1e1e1e]"
             placeholder="Your name"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-[#1e1e1e] mb-2" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Email *
           </label>
           <input
@@ -58,13 +58,13 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 border border-[#1e1e1e]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent text-[#1e1e1e]"
             placeholder="your.email@example.com"
           />
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="subject" className="block text-sm font-semibold text-[#1e1e1e] mb-2" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Subject *
           </label>
           <input
@@ -74,13 +74,13 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 border border-[#1e1e1e]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent text-[#1e1e1e]"
             placeholder="What is this about?"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="message" className="block text-sm font-semibold text-[#1e1e1e] mb-2" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Message *
           </label>
           <textarea
@@ -90,14 +90,15 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             rows="5"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 border border-[#1e1e1e]/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4285f4] focus:border-transparent text-[#1e1e1e] resize-none"
             placeholder="Your message..."
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors"
+          className="w-full bg-[#4285f4] text-white py-3 rounded-xl font-bold hover:bg-[#3367D6] transition-all duration-300 shadow-lg hover:shadow-xl"
+          style={{ fontFamily: 'Google Sans, sans-serif' }}
         >
           Send Message
         </button>

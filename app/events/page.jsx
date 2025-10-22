@@ -38,32 +38,33 @@ export default function EventsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-[#fafafa]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+      <section className="bg-gradient-to-r from-[#4285f4] to-[#ea4335] text-white py-20">
+        <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Events
           </h1>
-          <p className="text-xl text-center max-w-2xl mx-auto">
+          <p className="text-xl text-center max-w-3xl mx-auto opacity-95">
             Join us for workshops, study jams, and tech talks to enhance your skills
           </p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b">
-        <div className="container mx-auto px-4">
+      <section className="py-8 bg-white border-b border-gray-200">
+        <div className="container mx-auto px-6 md:px-8 max-w-7xl">
           <div className="flex flex-wrap gap-3 justify-center">
             {domains.map((domain) => (
               <button
                 key={domain}
                 onClick={() => setSelectedDomain(domain)}
-                className={`px-6 py-2 rounded-full font-semibold transition-colors ${
+                className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
                   selectedDomain === domain
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-[#4285f4] text-white shadow-lg scale-105'
+                    : 'bg-[#f0f0f0] text-[#5f6368] hover:bg-[#e0e0e0]'
                 }`}
+                style={{ fontFamily: 'Google Sans, sans-serif' }}
               >
                 {domain}
               </button>
@@ -74,8 +75,10 @@ export default function EventsPage() {
 
       {/* Upcoming Events */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <SectionTitle title="Upcoming Events" />
+        <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#1e1e1e]" style={{ fontFamily: 'Google Sans, sans-serif' }}>
+            Upcoming Events
+          </h2>
           <EventList events={filteredEvents} />
 
           {filteredEvents.length === 0 && (
@@ -90,8 +93,8 @@ export default function EventsPage() {
 
       {/* Past Events */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-gray-800">
+        <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#1e1e1e]" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Past Events
           </h2>
           
@@ -100,18 +103,18 @@ export default function EventsPage() {
               eventsData.pastEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+                  className="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#4285f4]/20"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-gray-800">
+                  <h3 className="text-xl font-bold mb-2 text-[#1e1e1e]" style={{ fontFamily: 'Google Sans, sans-serif' }}>
                     {event.title}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-2 flex items-center gap-2">
+                  <p className="text-sm text-[#5f6368] mb-2 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     {event.date}
                   </p>
-                  <p className="text-sm text-gray-600 mb-4 flex items-center gap-2">
+                  <p className="text-sm text-[#5f6368] mb-4 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
@@ -120,7 +123,7 @@ export default function EventsPage() {
                   {event.blogLink && (
                     <Link
                       href={event.blogLink}
-                      className="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center gap-2"
+                      className="text-[#4285f4] hover:text-[#3367D6] font-semibold text-sm flex items-center gap-2"
                     >
                       Read Event Recap →
                     </Link>
@@ -129,7 +132,7 @@ export default function EventsPage() {
               ))
             ) : (
               <div className="col-span-full text-center py-8">
-                <p className="text-gray-600">No past events to display.</p>
+                <p className="text-[#5f6368]">No past events to display.</p>
               </div>
             )}
           </div>
@@ -137,7 +140,8 @@ export default function EventsPage() {
           <div className="text-center mt-8">
             <Link
               href="/blog"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              className="inline-block bg-[#4285f4] text-white px-8 py-4 rounded-full font-bold hover:bg-[#3367D6] transition-all duration-300 hover:shadow-xl"
+              style={{ fontFamily: 'Google Sans, sans-serif' }}
             >
               View All Event Recaps
             </Link>

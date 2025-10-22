@@ -12,27 +12,31 @@ export default function BlogCard({ post }) {
       {/* Content */}
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+          <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{
+            backgroundColor: '#c3ecf6',
+            color: '#4285f4'
+          }}>
             {post.category}
           </span>
         </div>
         
-        <h2 className="text-xl font-bold mb-3 text-gray-800">
+        <h2 className="text-xl font-bold mb-3" style={{ color: '#1e1e1e' }}>
           {post.title}
         </h2>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+        <p className="text-sm mb-4 line-clamp-3" style={{ color: '#5f6368' }}>
           {post.excerpt}
         </p>
         
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+        <div className="flex items-center justify-between text-sm mb-4" style={{ color: '#5f6368' }}>
           <span>By {post.author}</span>
           <span>{post.date}</span>
         </div>
         
         <Link
           href={`/blog/${post.slug}`}
-          className="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center gap-2"
+          className="font-semibold text-sm flex items-center gap-2 hover:opacity-80 transition-opacity"
+          style={{ color: '#4285f4' }}
         >
           Read More →
         </Link>
