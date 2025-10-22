@@ -35,7 +35,7 @@ const coreTeamMembers = [
 
 export default function CoreTeamSectionSimple() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="relative py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6 md:px-8 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -99,6 +99,14 @@ export default function CoreTeamSectionSimple() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Decorative bottom border with Google colors */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex">
+        <div className="flex-1 bg-[#4285f4]" />
+        <div className="flex-1 bg-[#ea4335]" />
+        <div className="flex-1 bg-[#f9ab00]" />
+        <div className="flex-1 bg-[#34a853]" />
       </div>
     </section>
   );

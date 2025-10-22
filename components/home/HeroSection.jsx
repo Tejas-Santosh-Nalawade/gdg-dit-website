@@ -30,18 +30,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
-      {/* Lighter Background Gradient Animation */}
-      <div className="absolute inset-0 z-0 opacity-30">
+      {/* Enhanced Background Gradient Animation */}
+      <div className="absolute inset-0 z-0 opacity-50">
         <BackgroundGradientAnimation
           gradientBackgroundStart="rgb(255, 255, 255)"
-          gradientBackgroundEnd="rgb(250, 250, 250)"
+          gradientBackgroundEnd="rgb(245, 245, 250)"
           firstColor="66, 133, 244"
           secondColor="234, 67, 53"
           thirdColor="251, 188, 5"
           fourthColor="52, 168, 83"
           fifthColor="66, 133, 244"
           pointerColor="66, 133, 244"
-          size="60%"
+          size="70%"
           blendingValue="soft-light"
           interactive={true}
           containerClassName="absolute inset-0"
@@ -49,7 +49,7 @@ export default function HeroSection() {
       </div>
 
       {/* White overlay for better text visibility */}
-      <div className="absolute inset-0 z-[1] bg-white/40 backdrop-blur-[1px]"></div>
+      <div className="absolute inset-0 z-[1] bg-white/20 backdrop-blur-[0.5px]"></div>
 
       {/* Google Developer Groups Logo with Animation */}
       <motion.div
@@ -201,6 +201,14 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Decorative bottom border with Google colors */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex">
+        <div className="flex-1 bg-[#4285f4]" />
+        <div className="flex-1 bg-[#ea4335]" />
+        <div className="flex-1 bg-[#f9ab00]" />
+        <div className="flex-1 bg-[#34a853]" />
       </div>
     </section>
   );
