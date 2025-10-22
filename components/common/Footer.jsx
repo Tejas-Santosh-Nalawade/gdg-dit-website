@@ -8,7 +8,6 @@ export default function Footer() {
     { href: '/', label: 'Home' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
-    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
     { href: '/code-of-conduct', label: 'Code of Conduct' },
   ];

@@ -120,14 +120,7 @@ export default function EventsPage() {
                     </svg>
                     {event.attendees} attendees
                   </p>
-                  {event.blogLink && (
-                    <Link
-                      href={event.blogLink}
-                      className="text-[#4285f4] hover:text-[#3367D6] font-semibold text-sm flex items-center gap-2"
-                    >
-                      Read Event Recap →
-                    </Link>
-                  )}
+                  {/* event.blogLink removed - blog section deprecated */}
                 </div>
               ))
             ) : (
@@ -137,15 +130,7 @@ export default function EventsPage() {
             )}
           </div>
 
-          <div className="text-center mt-8">
-            <Link
-              href="/blog"
-              className="inline-block bg-[#4285f4] text-white px-8 py-4 rounded-full font-bold hover:bg-[#3367D6] transition-all duration-300 hover:shadow-xl"
-              style={{ fontFamily: 'Google Sans, sans-serif' }}
-            >
-              View All Event Recaps
-            </Link>
-          </div>
+          {/* View All Event Recaps removed - blog section deprecated */}
         </div>
       </section>
     </main>

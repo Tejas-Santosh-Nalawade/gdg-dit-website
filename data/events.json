@@ -79,16 +79,14 @@
       "title": "Google I/O Extended 2023",
       "date": "May 20, 2023",
       "type": "Conference",
-      "attendees": 300,
-      "blogLink": "/blog"
+      "attendees": 300
     },
     {
       "id": 8,
       "title": "DevFest 2023",
       "date": "November 15, 2023",
       "type": "Conference",
-      "attendees": 500,
-      "blogLink": "/blog"
+      "attendees": 500
     }
   ]
 }
