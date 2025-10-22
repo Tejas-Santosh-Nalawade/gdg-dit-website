@@ -8,12 +8,12 @@ export default function Button({
   className = '',
   ...props 
 }) {
-  const baseStyles = 'inline-block font-semibold transition-colors rounded-full text-center';
+  const baseStyles = 'inline-block font-semibold transition-all duration-300 rounded-full text-center';
   
   const variants = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700',
-    secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    primary: 'text-white hover:shadow-lg',
+    secondary: 'text-white hover:shadow-lg',
+    outline: 'border-2 hover:shadow-lg',
   };
   
   const sizes = {
@@ -22,18 +22,25 @@ export default function Button({
     lg: 'px-8 py-4 text-lg',
   };
   
+  // Google official colors
+  const variantStyles = {
+    primary: { backgroundColor: '#4285f4' },
+    secondary: { backgroundColor: '#34a853' },
+    outline: { borderColor: '#4285f4', color: '#4285f4' },
+  };
+  
   const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
   
   if (href) {
     return (
-      <Link href={href} className={classes} {...props}>
+      <Link href={href} className={classes} style={variantStyles[variant]} {...props}>
         {children}
       </Link>
     );
   }
   
   return (
-    <button className={classes} {...props}>
+    <button className={classes} style={variantStyles[variant]} {...props}>
       {children}
     </button>
   );

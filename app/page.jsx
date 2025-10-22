@@ -1,5 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import WhatWeDo from '@/components/home/WhatWeDo';
+import CoreTeamSectionSimple from '@/components/home/CoreTeamSectionSimple';
 import UpcomingEvents from '@/components/home/UpcomingEvents';
 import DomainsGrid from '@/components/home/DomainsGrid';
 import StatsCounter from '@/components/home/StatsCounter';
@@ -41,6 +42,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <WhatWeDo />
+        <CoreTeamSectionSimple />
         <UpcomingEvents />
         <DomainsGrid />
         <StatsCounter />

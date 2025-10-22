@@ -10,10 +10,16 @@ export default function EventCard({ event }) {
       </div>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+          <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{
+            backgroundColor: '#c3ecf6',
+            color: '#4285f4'
+          }}>
             {event.type}
           </span>
-          <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">
+          <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{
+            backgroundColor: '#ccf6c5',
+            color: '#34a853'
+          }}>
             {event.domain}
           </span>
         </div>
@@ -44,7 +50,9 @@ export default function EventCard({ event }) {
         <p className="text-gray-600 text-sm mb-4">
           {event.description}
         </p>
-        <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <button className="w-full text-white py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg" style={{
+          backgroundColor: '#4285f4'
+        }}>
           Register Now
         </button>
       </div>

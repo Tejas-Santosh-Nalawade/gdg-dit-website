@@ -3,6 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
+import dynamic from 'next/dynamic';
+
+// Dynamically import Globe3D to avoid SSR issues
+const Globe3D = dynamic(() => import('./Globe3D'), { ssr: false });
 
 export default function HeroSection() {
   const fadeInUp = {
@@ -28,11 +33,43 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 bg-white overflow-hidden">
-      {/* Subtle background with separate colors */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4285f4]/[0.03] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#34a853]/[0.03] rounded-full blur-3xl" />
+    <section className="relative min-h-[85vh] flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
+      {/* Background Gradient Animation */}
+      <div className="absolute inset-0 z-0">
+        <BackgroundGradientAnimation
+          gradientBackgroundStart="rgb(255, 255, 255)"
+          gradientBackgroundEnd="rgb(245, 245, 245)"
+          firstColor="66, 133, 244"
+          secondColor="234, 67, 53"
+          thirdColor="251, 188, 5"
+          fourthColor="52, 168, 83"
+          fifthColor="66, 133, 244"
+          pointerColor="66, 133, 244"
+          size="80%"
+          blendingValue="soft-light"
+          interactive={true}
+          containerClassName="absolute inset-0"
+        />
+      </div>
+
+      {/* Decorative Images - gt.webp and lt.webp */}
+      <div className="absolute top-20 right-10 z-10 opacity-10 hidden lg:block">
+        <Image
+          src="/gt.webp"
+          alt="Decorative"
+          width={150}
+          height={150}
+          className="animate-pulse"
+        />
+      </div>
+      <div className="absolute top-32 left-10 z-10 opacity-10 hidden lg:block">
+        <Image
+          src="/lt.webp"
+          alt="Decorative"
+          width={150}
+          height={150}
+          className="animate-pulse"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 relative z-10 w-full">
@@ -142,7 +179,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right - Animation GIF */}
+          {/* Right - 3D Globe with Background Animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -150,14 +187,7 @@ export default function HeroSection() {
             className="relative hidden lg:flex items-center justify-center"
           >
             <div className="relative w-full max-w-[500px] aspect-square">
-              <Image
-                src="/globe.gif"
-                alt="Technology Animation"
-                fill
-                className="object-contain"
-                priority
-                unoptimized
-              />
+              <Globe3D />
             </div>
           </motion.div>
         </div>
