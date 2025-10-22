@@ -14,9 +14,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { href: 'https://linkedin.com/company/gdg-dit', label: 'LinkedIn', icon: 'linkedin' },
+    { href: 'https://www.linkedin.com/company/gdg-dit/', label: 'LinkedIn', icon: 'linkedin' },
+    { href: 'https://instagram.com/gdg.dit', label: 'Instagram', icon: 'instagram' },
     { href: 'https://twitter.com/gdgdit', label: 'Twitter', icon: 'twitter' },
-    { href: 'https://instagram.com/gdgdit', label: 'Instagram', icon: 'instagram' },
     { href: 'https://github.com/gdg-dit', label: 'GitHub', icon: 'github' },
   ];
 
@@ -61,11 +61,18 @@ export default function Footer() {
           {/* Contact & Social */}
           <div>
             <h3 className="text-xl font-semibold mb-5">Connect With Us</h3>
-            <p className="text-white/60 text-sm mb-5">
-              <a href="mailto:contact@gdgdit.com" className="hover:text-[#4285f4] transition-colors">
-                contact@gdgdit.com
-              </a>
-            </p>
+            <div className="space-y-2 mb-5">
+              <p className="text-white/60 text-sm">
+                <a href="mailto:gdg.dit@dypvp.edu.in" className="hover:text-[#4285f4] transition-colors">
+                  gdg.dit@dypvp.edu.in
+                </a>
+              </p>
+              <p className="text-white/60 text-sm">
+                <a href="mailto:gdgoncampusdit@gmail.com" className="hover:text-[#4285f4] transition-colors">
+                  gdgoncampusdit@gmail.com
+                </a>
+              </p>
+            </div>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a

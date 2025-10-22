@@ -51,6 +51,14 @@ export default function UpcomingEvents() {
         <div className="flex-1 bg-[#34a853]" />
       </div>
 
+      {/* Decorative bottom border with Google colors */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex">
+        <div className="flex-1 bg-[#4285f4]" />
+        <div className="flex-1 bg-[#ea4335]" />
+        <div className="flex-1 bg-[#f9ab00]" />
+        <div className="flex-1 bg-[#34a853]" />
+      </div>
+
       <div className="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center mb-16"
