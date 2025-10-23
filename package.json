@@ -9,16 +9,40 @@
     "lint": "eslint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "lucide-react": "^0.546.0",
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0"
+=======
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "animejs": "^4.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.24",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "next": "15.5.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.180.0"
+>>>>>>> ca65d316b4859e25824c37f37821f1489324d0a5
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.5",
+<<<<<<< HEAD
     "tailwindcss": "^4"
+=======
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.4.0"
+>>>>>>> ca65d316b4859e25824c37f37821f1489324d0a5
   }
 }

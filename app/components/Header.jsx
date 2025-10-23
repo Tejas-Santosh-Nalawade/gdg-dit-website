@@ -10,7 +10,6 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
-    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -20,10 +19,12 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">GDG</span>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{
+              background: 'linear-gradient(to right, #4285f4, #ea4335, #f9ab00, #34a853)'
+            }}>
+              <span className="text-white font-bold text-xl" style={{ fontFamily: 'Google Sans, sans-serif' }}>GDG</span>
             </div>
-            <span className="text-xl font-bold text-gray-800">GDG-DIT</span>
+            <span className="text-xl font-bold" style={{ color: '#1e1e1e', fontFamily: 'Google Sans, sans-serif' }}>GDG-DIT</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,14 +33,16 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="hover:opacity-70 transition-opacity font-medium"
+                style={{ color: '#5f6368' }}
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/join"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium"
+              className="text-white px-6 py-2 rounded-full transition-all duration-300 hover:shadow-lg font-medium"
+              style={{ backgroundColor: '#4285f4', fontFamily: 'Google Sans, sans-serif' }}
             >
               Join Community
             </Link>
@@ -76,7 +79,8 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block hover:opacity-70 transition-opacity font-medium py-2"
+                style={{ color: '#5f6368' }}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -84,7 +88,8 @@ export default function Header() {
             ))}
             <Link
               href="/join"
-              className="block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors font-medium text-center"
+              className="block text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-medium text-center"
+              style={{ backgroundColor: '#4285f4', fontFamily: 'Google Sans, sans-serif' }}
               onClick={() => setIsMenuOpen(false)}
             >
               Join Community

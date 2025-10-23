@@ -2,91 +2,149 @@
   "upcomingEvents": [
     {
       "id": 1,
-      "title": "Introduction to Cloud Computing",
-      "date": "March 15, 2024",
-      "time": "2:00 PM - 4:00 PM",
-      "venue": "Main Auditorium",
+      "title": "React Rush – Build Interactive Web Apps!",
+      "date": "Apr 6, 2025",
+      "time": "TBD",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
       "type": "Workshop",
-      "domain": "Cloud",
-      "banner": "☁️",
-      "color": "from-blue-400 to-cyan-400",
-      "description": "Learn the fundamentals of cloud computing with Google Cloud Platform."
+      "domain": "Web",
+      "banner": "WEB",
+      "color": "from-red-400 to-pink-400",
+      "description": "Build dynamic UIs with React. Learn components, state, and more to create interactive web applications."
     },
     {
       "id": 2,
-      "title": "Android App Development Bootcamp",
-      "date": "March 22, 2024",
-      "time": "10:00 AM - 5:00 PM",
-      "venue": "Computer Lab 2",
-      "type": "Bootcamp",
-      "domain": "Android",
-      "banner": "📱",
-      "color": "from-green-400 to-emerald-400",
-      "description": "Hands-on bootcamp to build your first Android application."
+      "title": "DSA ODYSSEY",
+      "date": "Apr 6, 2025",
+      "time": "TBD",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Study Jam",
+      "domain": "AI/ML",
+      "banner": "DSA",
+      "color": "from-yellow-400 to-orange-400",
+      "description": "Master Data Structures and Algorithms - From Concepts to Code! Enhance your problem-solving skills."
     },
     {
       "id": 3,
-      "title": "Machine Learning Fundamentals",
-      "date": "March 28, 2024",
-      "time": "3:00 PM - 5:00 PM",
-      "venue": "Seminar Hall",
-      "type": "Seminar",
+      "title": "Tech Winter Break ❄️",
+      "date": "Dec 24, 2024",
+      "time": "4 Weeks | 4 Key Activities | 40 Winners!!",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Hackathon",
       "domain": "AI/ML",
-      "banner": "🤖",
-      "color": "from-purple-400 to-pink-400",
-      "description": "Introduction to ML concepts and real-world applications."
+      "banner": "WINTER",
+      "color": "from-green-400 to-emerald-400",
+      "description": "4 weeks of intensive learning with key activities and 40 winners. A complete winter tech experience!"
     },
     {
       "id": 4,
-      "title": "Web Development with React",
-      "date": "April 5, 2024",
-      "time": "2:00 PM - 4:00 PM",
-      "venue": "Computer Lab 1",
-      "type": "Workshop",
-      "domain": "Web",
-      "banner": "🌐",
-      "color": "from-blue-400 to-indigo-400",
-      "description": "Build modern web applications using React and Next.js."
+      "title": "Unlock Your Tech Potential – Join the GDG FE Induction Event",
+      "date": "Nov 28, 2024",
+      "time": "28 Nov 2024, 5 PM, DIT",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Info session",
+      "domain": "AI/ML",
+      "banner": "INDUCTION",
+      "color": "from-blue-400 to-cyan-400",
+      "description": "Engineer's Guide 101 - It's time to ANOTHER WAY TO START. Join the GDG First Edition induction event."
     },
     {
       "id": 5,
-      "title": "Flutter for Beginners",
-      "date": "April 12, 2024",
-      "time": "10:00 AM - 1:00 PM",
-      "venue": "Main Auditorium",
-      "type": "Workshop",
-      "domain": "Flutter",
-      "banner": "🎯",
-      "color": "from-cyan-400 to-blue-400",
-      "description": "Create beautiful cross-platform apps with Flutter."
+      "title": "Placement Series Part 1 – HireHustle",
+      "date": "Oct 17, 2024",
+      "time": "10.2024",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Speaker Session / Tech Talk",
+      "domain": "AI/ML",
+      "banner": "TALK",
+      "color": "from-yellow-400 to-orange-400",
+      "description": "Season-1 HireHustle: Master Data Structures and Algorithms. Learn placement preparation strategies."
     },
     {
       "id": 6,
-      "title": "DevOps Best Practices",
-      "date": "April 18, 2024",
-      "time": "3:00 PM - 5:00 PM",
-      "venue": "Seminar Hall",
-      "type": "Seminar",
-      "domain": "DevOps",
-      "banner": "⚙️",
-      "color": "from-orange-400 to-red-400",
-      "description": "Learn CI/CD pipelines and modern DevOps practices."
+      "title": "Build With AI",
+      "date": "Oct 11, 2024",
+      "time": "Study Jams - 24 ~ 25",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Workshop",
+      "domain": "AI/ML",
+      "banner": "AI",
+      "color": "from-red-400 to-pink-400",
+      "description": "Join Build With AI Study Jams 2024-25. Get ready to build amazing AI solutions!"
+    },
+    {
+      "id": 7,
+      "title": "Gen AI Study Jams - Info and Registration Session",
+      "date": "Sep 24, 2024",
+      "time": "Sep 24, 2024 - 30+ Quests, 120 Participants",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Hackathon",
+      "domain": "AI/ML",
+      "banner": "GENAI",
+      "color": "from-green-400 to-emerald-400",
+      "description": "GenAI Study Jams 2024-25. Info and registration session with 30+ quests and 120 participants."
+    },
+    {
+      "id": 8,
+      "title": "Web Development Bootcamp",
+      "date": "May 15, 2025",
+      "time": "9:00 AM - 5:00 PM",
+      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
+      "type": "Study Jam",
+      "domain": "Web",
+      "banner": "WEB",
+      "color": "from-yellow-400 to-orange-400",
+      "description": "Full-day intensive bootcamp on modern web development. Learn HTML, CSS, JavaScript, and frameworks."
     }
   ],
   "pastEvents": [
     {
-      "id": 7,
-      "title": "Google I/O Extended 2023",
-      "date": "May 20, 2023",
+      "id": 101,
+      "title": "Google I/O Extended 2024",
+      "date": "May 18, 2024",
       "type": "Conference",
-      "attendees": 300
+      "domain": "AI/ML",
+      "attendees": 250
     },
     {
-      "id": 8,
-      "title": "DevFest 2023",
+      "id": 102,
+      "title": "DevFest Pune 2023",
       "date": "November 15, 2023",
       "type": "Conference",
-      "attendees": 500
+      "domain": "Web",
+      "attendees": 400
+    },
+    {
+      "id": 103,
+      "title": "Cloud Study Jam 2024",
+      "date": "March 10, 2024",
+      "type": "Study Jam",
+      "domain": "AI/ML",
+      "attendees": 180
+    },
+    {
+      "id": 104,
+      "title": "Android Workshop Series",
+      "date": "February 20, 2024",
+      "type": "Workshop",
+      "domain": "AI/ML",
+      "attendees": 120
+    },
+    {
+      "id": 105,
+      "title": "Web Development Bootcamp",
+      "date": "January 15, 2024",
+      "type": "Workshop",
+      "domain": "Web",
+      "attendees": 150
+    },
+    {
+      "id": 106,
+      "title": "AI/ML Hands-on Session",
+      "date": "December 8, 2023",
+      "type": "Workshop",
+      "domain": "AI/ML",
+      "attendees": 200
     }
   ]
 }
