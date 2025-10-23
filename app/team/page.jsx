@@ -1,28 +1,10 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import TeamCard from '@/components/team/TeamCard';
-import SectionTitle  from '@/components/team/SectionTitle'
-import teamData from '@/data/TeamData.json'
+import SectionTitle from '@/components/team/SectionTitle';
+import teamData from '@/data/TeamData.json';
 
-
-/**
- * Component to load Tailwind CSS (kept for compliance in single-file environment).
- */
-const TailwindLoader = () => (
-    <script src="https://cdn.tailwindcss.com"></script>
-);
-
-/**
- * Helper to extract the core text color class for section titles (e.g., 'text-blue-600').
- */
-const getColorClass = (classes) => classes.split(' ').find(cls => cls.startsWith('text-'));
-
-
-// --- Main App Component ---
-function App() {
-    // Utility class for GDG Blue, used for CTA background
-    const gdgBlue = "bg-blue-600 hover:bg-blue-700 transition-colors duration-300";
-
+export default function TeamPage() {
     // SAFETY CHECK: Ensure teamData is defined before rendering.
     if (!teamData || !teamData.coreTeam || !teamData.coreTeam.members) {
         return <div className="p-10 text-center text-xl text-red-500">Error loading team data. Please check data structure.</div>;
@@ -32,16 +14,8 @@ function App() {
     const allTechTeams = teamData.techTeams || [];
     const allNonTechTeams = teamData.nonTechTeams || [];
 
-
     return (
         <main className="min-h-screen bg-gray-50 font-sans antialiased">
-            {/* Inject Tailwind CSS script */}
-            <script src="https://cdn.tailwindcss.com"></script>
-            <style>
-                {/* Apply Inter font globally for a modern look */}
-                {`body { font-family: 'Inter', sans-serif; }`}
-            </style>
-
             {/* Hero Section: GDG-branded header */}
             <section className="bg-white py-16 shadow-lg">
                 <div className="container mx-auto px-4 max-w-7xl">
@@ -133,7 +107,5 @@ function App() {
         </main>
     );
 }
-
-export default App;
 
 
