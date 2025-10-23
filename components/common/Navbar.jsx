@@ -11,6 +11,7 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
+    { href: '/sponsors', label: 'Sponsors' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -22,7 +23,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Image
-                src="/GDSC-logo..svg"
+                src="/GDSC-logo.svg"
                 alt="GDG Logo"
                 width={48}
                 height={48}

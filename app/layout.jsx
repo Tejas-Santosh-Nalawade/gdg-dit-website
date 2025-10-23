@@ -27,9 +27,9 @@ export const metadata = {
     path: ""
   }),
   icons: {
-    icon: "/GDSC-logo..svg",
-    apple: "/GDSC-logo..svg",
-    shortcut: "/GDSC-logo..svg"
+    icon: "/GDSC-logo.svg",
+    apple: "/GDSC-logo.svg",
+    shortcut: "/GDSC-logo.svg"
   },
   manifest: "/manifest.json",
   appleWebApp: {

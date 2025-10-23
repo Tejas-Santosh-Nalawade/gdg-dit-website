@@ -10,7 +10,7 @@ export default function manifest() {
     orientation: 'portrait-primary',
     icons: [
       {
-        src: '/GDSC-logo..svg',
+        src: '/GDSC-logo.svg',
         sizes: 'any',
         type: 'image/svg+xml',
         purpose: 'any maskable'
