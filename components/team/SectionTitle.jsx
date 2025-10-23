@@ -1,30 +1,18 @@
 import React from 'react';
 
 /**
- * Section Title component with GDG branding style (first word red, rest black) and centered alignment.
+ * Section Title component with clean, centered GDG style.
  * @param {object} props - Component props.
  * @param {string} props.title - The title text.
+ * @param {string} [props.colorClass] - Tailwind class for the accent color (e.g., 'text-blue-600').
  */
-export default function SectionTitle({ title }) {
-    // Split the title into parts for multi-color styling
-    const parts = title.split(' ');
-    const firstWord = parts[0];
-    const remainingWords = parts.slice(1).join(' ');
-
+const SectionTitle = ({ title, colorClass = 'text-gray-900' }) => {
+    // H3 style with dashed bottom border
     return (
-        <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 leading-tight mb-4">
-                {/* The first word is always red for emphasis */}
-                <span className="text-red-600">
-                    {firstWord}
-                </span>
-                {/* Remaining words are dark gray/black, separated by a space */}
-                {remainingWords && (
-                    <span className="text-gray-900 ml-2">
-                        {remainingWords}
-                    </span>
-                )}
-            </h2>
-        </div>
+        <h3 className={`text-2xl md:text-3xl font-bold tracking-tight mb-10 text-center ${colorClass} border-b-4 border-dashed border-gray-200 pb-2 max-w-lg mx-auto`}>
+            {title}
+        </h3>
     );
 }
+
+export default SectionTitle;

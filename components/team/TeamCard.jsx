@@ -1,104 +1,158 @@
-"use client"; // CRITICAL FIX: Mark this component as a Client Component because it uses useState and useEffect
+"use client"
+import React, { useState, useEffect } from "react";
+import Card from './Card'
 
-import React, { useState, useEffect } from 'react';
-import { Linkedin, Github } from 'lucide-react'; // Keeping imports just in case, but they are no longer used in the JSX
-// FIX: The Card component is assumed to be a sibling file, 'Card.jsx'
-import Card from './Card'; 
 
-/**
- * Helper function to generate initials from a full name (handles two words).
- * e.g., "Gaurav Masand" -> "GM"
- * @param {string} name - The full name of the member.
- * @returns {string} The initials or single initial.
- */
+// Helper function to generate initials from a full name.
 const getInitials = (name) => {
     if (!name) return '?';
-    const parts = name.trim().split(/\s+/);
+    const parts = name.trim().split(/\s+/).filter(Boolean); // Filter empty strings
     if (parts.length === 1) {
         return parts[0].charAt(0).toUpperCase();
     }
-    // Takes the first letter of the first and last word
+    // Takes the first letter of the first and last non-empty word
     return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
 };
 
+/**
+ * Social Icons (using inline SVG for self-contained component)
+ */
+const Github = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className}>
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.803 8.207 11.385.6.115.82-.248.82-.553 0-.271-.01-1.111-.01-2.023-3.337.724-4.042-1.61-4.042-1.61-.542-1.365-1.323-1.731-1.323-1.731-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.778.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.004.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.772.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.894-.015 3.287 0 .308.216.678.823.553 4.771-1.581 8.203-6.082 8.203-11.385.001-6.627-5.372-12-12-12z" /></svg>
+);
+
+const Linkedin = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className}>
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.13-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.76 7 2.457v6.778z" /></svg>
+);
+
 
 /**
- * Component to display individual team member details, now including the photo fallback logic.
+ * Component to display individual team member details with a GDG-style card design.
  * @param {object} props
- * @param {object} props.member - Team member data object, must contain 'photo' field with the filename.
+ * @param {object} props.member - Team member data object.
  */
-export default function TeamCard({ member }) {
-    // Safely destructure the color classes
+const TeamCard = ({ member, isCore = false }) => {
+    
     const colorClasses = member.colorClass ? member.colorClass.split(' ') : [];
     
-    // colorClasses[0] is typically like 'border-blue-500'. We need to extract the color name.
-    const baseBorderClass = colorClasses[0] || 'border-gray-500';
-    const textColor = colorClasses[1] || 'text-gray-600';
-    const badgeBg = colorClasses[2] || 'bg-gray-100';
-
-    // 1. Logic to extract base color (e.g., 'blue') and construct a LIGHTER border (e.g., border-blue-300)
-    const colorMatch = baseBorderClass.match(/border-([a-z]+)-\d+/);
-    const baseColorName = colorMatch ? colorMatch[1] : 'gray';
-    const lightBorderColor = `border-${baseColorName}-300`; 
+    // Extract base classes for dynamic styling
+    const textColor = colorClasses.find(c => c.startsWith('text-')) || 'text-gray-600';
+    const baseBorderClass = colorClasses.find(c => c.startsWith('border-')) || 'border-gray-500';
     
-    // Construct the image URL pointing to the public directory
-    const imageUrl = `/images/team/${member.photo}`;
+    // Create the solid background class for the strip by converting 'border-' to 'bg-'
+    const solidHeaderColorClass = baseBorderClass.replace('border-', 'bg-'); 
 
-    // Calculate initials for the fallback
+    // Image URL Construction (Updated to use the required path)
+    const imageBaseUrl = "images/team/";
+    const imageUrl = `${imageBaseUrl}${member.photo}`;
     const initials = getInitials(member.name);
     
-    // State to handle image loading status for the fallback
-    const [imageLoaded, setImageLoaded] = useState(true);
+    // State for image loading/error fallback
+    const [imageError, setImageError] = useState(false);
     
-    // Reset image loaded state if member changes
     useEffect(() => {
-        // We assume the image is present initially, and the onError will switch this state
-        setImageLoaded(true);
+        // Reset state when member changes
+        setImageError(false);
     }, [member.photo]);
 
+    // Array of colors for the four dots (GDG/Google Brand Colors)
+    const dotColors = ['bg-blue-600', 'bg-red-600', 'bg-yellow-500', 'bg-green-600'];
 
     return (
-        // Apply the new, lighter border color
-        <Card className={`h-full border-t-4 ${lightBorderColor} overflow-hidden flex flex-col justify-between`}>
-            {/* INCREASED PADDING from p-6 to p-8 to make the card visibly larger */}
-            <div className="flex flex-col items-center p-8 text-center">
-                
-                {/* Photo Display Area - INCREASED SIZE from w-32 h-32 to w-40 h-40 */}
-                <div className={`w-40 h-40 rounded-full overflow-hidden mb-4 shadow-inner flex items-center justify-center ${
-                    !imageLoaded ? 'ring-4 ring-offset-2 ring-gray-200' : ''
-                }`}>
+        <Card className={`overflow-hidden flex flex-col justify-between`}>
+            
+            {/* Solid Color Header Strip */}
+            <div className={`h-2.5 w-full ${solidHeaderColorClass}`}></div>
+
+            {/* 1. Image Area - Aspect ratio [4/3] provides a good rectangular space for the image */}
+            <div className="w-full h-52 relative">
+                <div className="w-full h-full overflow-hidden flex items-center justify-center bg-gray-100">
                     
-                    {/* Conditional rendering based on imageLoaded state */}
-                    {imageLoaded && member.photo ? (
+                    {/* Image with object-cover and error handling */}
+                    {!imageError ? (
                         <img 
                             src={imageUrl} 
                             alt={member.name} 
-                            className="w-full h-full object-cover transition-opacity duration-500" 
+                            // object-cover ensures the picture fits the frame size
+                            className="w-full h-full object-cover object-top" 
                             onError={() => {
-                                // If image fails to load, trigger state change to show initials
-                                setImageLoaded(false);
+                                // On error, switch to showing initials in the placeholder div
+                                setImageError(true);
                             }}
+                            loading="lazy"
                         />
                     ) : (
-                        // Fallback: If image fails to load OR photo property is missing, show initials
-                        // INCREASED INITIALS TEXT SIZE from text-3xl to text-5xl
-                        <div className={`w-full h-full rounded-full bg-gray-100 flex items-center justify-center text-5xl font-bold text-gray-500 shadow-inner`}>
+                        /* Fallback: If image fails to load, show initials */
+                        <div className={`absolute inset-0 flex items-center justify-center text-4xl font-extrabold text-gray-500 bg-gray-200`}>
                             {initials}
                         </div>
                     )}
                 </div>
+            </div>
+
+            {/* 2. Text Content Area - Centered and padded */}
+            <div className="flex flex-col items-center p-4 pt-6 text-center flex-grow">
                 
-                {/* Info */}
-                {/* INCREASED NAME TEXT SIZE from text-lg to text-xl */}
-                <h3 className="text-xl font-extrabold text-gray-800 leading-tight mb-5">
+                {/* Name */}
+                <h3 className="text-xl font-extrabold text-gray-800 leading-tight mb-1">
                     {member.name}
                 </h3>
                 
-                {/* Role Badge - INCREASED TEXT SIZE from text-xs to text-sm */}
-                <span className={`text-sm font-bold px-3 py-1 rounded-full ${textColor} ${badgeBg} tracking-wide mb-4`}>
+                {/* Role Text */}
+                <p className={`text-sm font-semibold ${textColor} tracking-wide mb-2`}>
                     {member.role}
-                </span>
+                </p>
+
+                {/* Core Member Bio (New Addition) */}
+                {isCore && member.bio && (
+                    <p className="text-gray-500 text-xs italic mb-4 px-2 max-w-xs">
+                        {member.bio}
+                    </p>
+                )}
+
+                {/* Color Dots for Branding */}
+                <div className="flex justify-center space-x-1 mb-4">
+                    {dotColors.map((dotClass, i) => (
+                        <span key={i} className={`w-2 h-2 rounded-full ${dotClass}`}></span>
+                    ))}
+                </div>
+
+                {/* Social Links - ONLY FOR CORE MEMBERS */}
+                {isCore && (member.social?.linkedin || member.social?.github) && (
+                    <div className="flex space-x-4 mt-2 mb-2">
+                        {/* LinkedIn */}
+                        {member.social.linkedin && (
+                            <a
+                                href={member.social.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-blue-600 transition duration-150 p-1"
+                                title={`LinkedIn of ${member.name}`}
+                            >
+                                <Linkedin className="w-5 h-5" />
+                            </a>
+                        )}
+                        
+                        {/* GitHub */}
+                        {member.social.github && (
+                            <a
+                                href={member.social.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-gray-800 transition duration-150 p-1"
+                                title={`GitHub of ${member.name}`}
+                            >
+                                <Github className="w-5 h-5" />
+                            </a>
+                        )}
+                    </div>
+                )}
             </div>
         </Card>
     );
 };
+
+
+export default TeamCard;
