@@ -27,7 +27,19 @@ const TeamCard = ({ member, isCore = false }) => {
     const colorClasses = member.colorClass ? member.colorClass.split(' ') : [];
     const textColor = colorClasses.find(c => c.startsWith('text-')) || 'text-gray-600';
     const baseBorderClass = colorClasses.find(c => c.startsWith('border-')) || 'border-gray-500';
-    const solidHeaderColorClass = baseBorderClass.replace('border-', 'bg-'); 
+    
+    // Map border colors to solid, vibrant Google colors for the top border
+    let solidHeaderColorClass = 'bg-gray-500';
+    if (baseBorderClass.includes('blue')) {
+        solidHeaderColorClass = 'bg-blue-500';
+    } else if (baseBorderClass.includes('green')) {
+        solidHeaderColorClass = 'bg-green-500';
+    } else if (baseBorderClass.includes('yellow')) {
+        solidHeaderColorClass = 'bg-yellow-500';
+    } else if (baseBorderClass.includes('red')) {
+        solidHeaderColorClass = 'bg-red-500';
+    }
+    
     const imageBaseUrl = "/images/team/";
     const imageUrl = `${imageBaseUrl}${member.photo}`;
     const initials = getInitials(member.name);
@@ -36,7 +48,7 @@ const TeamCard = ({ member, isCore = false }) => {
     const dotColors = ['bg-blue-600', 'bg-red-600', 'bg-yellow-500', 'bg-green-600'];
     return (
         <Card className={`overflow-hidden flex flex-col justify-between`}>
-            <div className={`h-2.5 w-full ${solidHeaderColorClass}`}></div>
+            <div className={`h-3.5 w-full ${solidHeaderColorClass} rounded-t-xl`}></div>
             <div className="w-full h-52 relative">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center bg-gray-100">
                     {!imageError && member.photo !== '👤' ? (
@@ -48,15 +60,15 @@ const TeamCard = ({ member, isCore = false }) => {
             </div>
             <div className="flex flex-col items-center p-4 pt-6 text-center flex-grow">
                 <h3 className="text-xl font-extrabold text-gray-800 leading-tight mb-1">{member.name}</h3>
-                <p className={`text-sm font-semibold  tracking-wide mb-2`}>{member.role}</p>
+                <p className={`text-sm font-semibold ${textColor} tracking-wide mb-2`}>{member.role}</p>
                 {isCore && member.bio && (<p className="text-gray-500 text-xs italic mb-4 px-2 max-w-xs">{member.bio}</p>)}
                 <div className="flex justify-center space-x-1 mb-4">
-                    {dotColors.map((dotClass, i) => (<span key={i} className={`w-2 h-2 rounded-full `}></span>))}
+                    {dotColors.map((dotClass, i) => (<span key={i} className={`w-2 h-2 rounded-full ${dotClass}`}></span>))}
                 </div>
                 {isCore && (member.social?.linkedin || member.social?.github) && (
                     <div className="flex space-x-4 mt-2 mb-2">
-                        {member.social.linkedin && (<a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition duration-150 p-1" title={`LinkedIn of `}><Linkedin className="w-5 h-5" /></a>)}
-                        {member.social.github && (<a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition duration-150 p-1" title={`GitHub of `}><Github className="w-5 h-5" /></a>)}
+                        {member.social.linkedin && (<a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition duration-150 p-1" title={`LinkedIn of ${member.name}`}><Linkedin className="w-5 h-5" /></a>)}
+                        {member.social.github && (<a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition duration-150 p-1" title={`GitHub of ${member.name}`}><Github className="w-5 h-5" /></a>)}
                     </div>
                 )}
             </div>
