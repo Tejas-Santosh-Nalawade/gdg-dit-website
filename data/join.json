@@ -54,37 +54,44 @@
       "id": 1,
       "title": "Flutter",
       "description": "Connect with Flutter developers!",
-      "iconName": "Flutter"
+      "iconName": "Flutter",
+      "link": "https://chat.whatsapp.com/CjEpoHXbfmF3AfkZ1LEp5X"
     },
     {
       "id": 2,
       "title": "Android",
       "description": "Build Android apps together!",
-      "iconName": "Android"
+      "iconName": "Android",
+      "link": "https://chat.whatsapp.com/GNXhJwCpwPR28YaUNAFe2B"
     },
     {
       "id": 3,
       "title": "Competitive Programming",
       "description": "Solve coding challenges!",
-      "iconName": "Competitive Programming"
+      "iconName": "Competitive Programming",
+      "link": "https://chat.whatsapp.com/E61t8Fk2hGn1H91dumtWHE"
     },
     {
       "id": 4,
       "title": "Cloud Computing",
       "description": "Master cloud technologies!",
-      "iconName": "Cloud Computing"
+      "iconName": "Cloud Computing",
+      "link": "https://chat.whatsapp.com/KRjmxF7C4ScH192QSXeeiF"
+
     },
     {
       "id": 5,
       "title": "AI/ML",
       "description": "Explore AI and Machine Learning!",
-      "iconName": "AI/ML"
+      "iconName": "AI/ML",
+      "link": "https://chat.whatsapp.com/EVlz7THQclX6bsjkiIUfvM"
     },
     {
       "id": 6,
       "title": "UI/UX",
       "description": "Design beautiful interfaces!",
-      "iconName": "UI/UX"
+      "iconName": "UI/UX",
+      "link": "https://chat.whatsapp.com/EfO8Y4892LPHBhNR0dPONu"
     }
   ],
   "platforms": [

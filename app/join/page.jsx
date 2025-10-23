@@ -317,7 +317,7 @@ export default function App() {
     const colors = getDomainColors(community.title);
     
     return (
-      <div className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer hover:shadow-lg border-2 ${colors.border} bg-white dark:bg-gray-800 hover:scale-[1.02]`}>
+      <a href={community.link} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-pointer hover:shadow-lg border-2 ${colors.border} bg-white dark:bg-gray-800 hover:scale-[1.02]`}>
         <div className={`p-3 rounded-xl ${colors.bg} flex-shrink-0`}>
           <Icon name={community.iconName} color={colors.text} />
         </div>
@@ -326,7 +326,7 @@ export default function App() {
           <p className="text-sm text-[#5f6368] dark:text-gray-400">{community.description}</p>
         </div>
         <span className="text-xs px-3 py-1.5 rounded-full font-semibold bg-green-100 text-green-700 flex-shrink-0">Active</span>
-      </div>
+      </a>
     );
   };
   
