@@ -15,7 +15,7 @@ const coreTeamMembers = [
     id: 2,
     name: 'Bhavesh Rathod',
     role: 'Managing Director',
-    image: '/images/team/Bhavesh-Rathod.jpg',
+    image: '/images/team/bhavesh-rathod.jpg',
     color: '#4285f4',
   },
   {
@@ -72,7 +72,7 @@ export default function CoreTeamSectionSimple() {
   };
 
   return (
-    <section id="core-team" className="relative py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="core-team" className="relative py-20 bg-linear-to-b from-white to-gray-50">
       <div className="container mx-auto px-6 md:px-8 max-w-7xl">
         {/* Section Header */}
         <motion.div
@@ -124,7 +124,7 @@ export default function CoreTeamSectionSimple() {
                 />
 
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="relative aspect-square overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                   <motion.div
                     initial={{ scale: 1.2, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}

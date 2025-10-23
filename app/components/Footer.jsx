@@ -25,7 +25,7 @@ export default function Footer() {
           {/* About Section */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-r from-blue-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-xl">GDG</span>
               </div>
               <span className="text-xl font-bold">GDG-DIT</span>

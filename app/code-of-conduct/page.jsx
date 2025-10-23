@@ -2,7 +2,7 @@ export default function CodeOfConductPage() {
   return (
     <main className="min-h-screen bg-[#fafafa]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#f9ab00] to-[#ea4335] text-white py-20">
+      <section className="bg-linear-to-r from-[#f9ab00] to-[#ea4335] text-white py-20">
         <div className="container mx-auto px-6 md:px-8 max-w-7xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Code of Conduct
