@@ -71,7 +71,7 @@ export default function Gallery() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </motion.div>
 
@@ -95,7 +95,7 @@ export default function Gallery() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#ea4335]/0 via-transparent to-transparent group-hover:from-[#ea4335]/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#ea4335]/0 via-transparent to-transparent group-hover:from-[#ea4335]/10 transition-all duration-300" />
             </div>
           </motion.div>
 
@@ -119,7 +119,7 @@ export default function Gallery() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#f9ab00]/0 via-transparent to-transparent group-hover:from-[#f9ab00]/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#f9ab00]/0 via-transparent to-transparent group-hover:from-[#f9ab00]/10 transition-all duration-300" />
             </div>
           </motion.div>
 
@@ -143,7 +143,7 @@ export default function Gallery() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#34a853]/0 via-transparent to-transparent group-hover:from-[#34a853]/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#34a853]/0 via-transparent to-transparent group-hover:from-[#34a853]/10 transition-all duration-300" />
             </div>
           </motion.div>
 
@@ -167,7 +167,7 @@ export default function Gallery() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4285f4]/0 via-transparent to-transparent group-hover:from-[#4285f4]/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#4285f4]/0 via-transparent to-transparent group-hover:from-[#4285f4]/10 transition-all duration-300" />
             </div>
           </motion.div>
 

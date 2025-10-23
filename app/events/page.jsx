@@ -44,12 +44,12 @@ export default function EventsPage() {
   return (
     <main className="min-h-screen bg-[#fafafa]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#4285f4] to-[#ea4335] text-white py-20">
+      <section className="bg-white text-[#1e1e1e] py-20">
         <div className="container mx-auto px-6 md:px-8 max-w-7xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center" style={{ fontFamily: 'Google Sans, sans-serif' }}>
             Events
           </h1>
-          <p className="text-xl text-center max-w-3xl mx-auto opacity-95">
+          <p className="text-xl text-center max-w-3xl mx-auto text-[#5f6368]">
             Join us for workshops, study jams, and tech talks to enhance your skills
           </p>
         </div>
@@ -133,7 +133,7 @@ export default function EventsPage() {
                 return (
                   <div
                     key={event.id}
-                    className="bg-white rounded-3xl p-6 border-2 hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-3xl p-6 border-2 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
                     style={{ borderColor: colors.bg, backgroundColor: colors.bgLight }}
                   >
                     <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 text-white"

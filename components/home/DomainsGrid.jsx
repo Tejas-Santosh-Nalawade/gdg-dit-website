@@ -93,7 +93,7 @@ export default function DomainsGrid() {
                 className="relative group cursor-pointer"
               >
                 <div
-                  className="relative rounded-3xl overflow-hidden aspect-[4/5] border-4 border-white shadow-lg"
+                  className="relative rounded-3xl overflow-hidden aspect-4/5 border-4 border-white shadow-lg"
                   style={{
                     backgroundColor: style.accentBg,
                     boxShadow: '0 8px 24px rgba(0,0,0,0.12)'

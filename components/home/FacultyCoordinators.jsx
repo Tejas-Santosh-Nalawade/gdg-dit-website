@@ -110,7 +110,7 @@ export default function FacultyCoordinators() {
                 />
 
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="relative aspect-square overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                   <motion.div
                     initial={{ scale: 1.2, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}

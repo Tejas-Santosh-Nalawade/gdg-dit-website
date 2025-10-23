@@ -1,6 +1,6 @@
 export default function SponsorUs() {
   return (
-    <div className="bg-gradient-to-r from-[#34a853] to-[#4285f4] rounded-2xl p-8 text-white shadow-lg">
+    <div className="bg-linear-to-r from-[#34a853] to-[#4285f4] rounded-2xl p-8 text-white shadow-lg">
       <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Google Sans, sans-serif' }}>
         Sponsor Us
       </h3>

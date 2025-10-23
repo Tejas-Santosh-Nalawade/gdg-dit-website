@@ -92,10 +92,10 @@ export default function HeroSection() {
       </div>
 
       {/* White overlay for better text visibility */}
-      <div className="absolute inset-0 z-[1] bg-white/40 backdrop-blur-[0.5px]"></div>
+      <div className="absolute inset-0 z-1 bg-white/40 backdrop-blur-[0.5px]"></div>
 
       {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none">
         {/* Blue Circle */}
         <motion.div
           animate={{
@@ -370,7 +370,7 @@ export default function HeroSection() {
                   className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-[#4285f4] rounded-full overflow-hidden transition-all duration-300 hover:bg-[#3367D6] hover:shadow-2xl hover:shadow-[#4285f4]/40"
                 >
                   <motion.span
-                    className="absolute inset-0 bg-gradient-to-r from-[#4285f4] to-[#3367D6]"
+                    className="absolute inset-0 bg-linear-to-r from-[#4285f4] to-[#3367D6]"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.3 }}
