@@ -35,7 +35,7 @@
       "id": 2,
       "name": "Bhavesh Rathod",
       "role": "Managing Director",
-      "photo": "/images/team/bhavesh-rathod.jpg",
+      "photo": "/images/team/bhavesh-rathod.webp",
       "social": {
         "linkedin": "https://linkedin.com"
       }
@@ -53,7 +53,7 @@
       "id": 4,
       "name": "Ananya Mahajan",
       "role": "Non-Tech Lead / Production Head",
-      "photo": "/images/team/Ananya.jpeg",
+      "photo": "/images/team/Ananya.webp",
       "social": {
         "linkedin": "https://linkedin.com"
       }
@@ -68,49 +68,49 @@
           "id": "aiml-1",
           "name": "Atharv Patil",
           "role": "Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-2",
           "name": "Ayush Lalit Vaze",
           "role": "Co-lead",
-          "photo": "/images/team/ayush-vaze.jpg",
+          "photo": "/images/team/ayush-vaze.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-3",
           "name": "Harsh Dubey",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-4",
           "name": "Nikita Atul Shinde",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-5",
           "name": "Sumit Dattatray Pagar",
           "role": "Member Lead",
-          "photo": "/images/team/sumit-pagar.jpg",
+          "photo": "/images/team/sumit-pagar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-6",
           "name": "Anuj Sudhir Pathak",
           "role": "Member Lead",
-          "photo": "/images/team/anuj-pathak.jpg",
+          "photo": "/images/team/anuj-pathak.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "aiml-7",
           "name": "Harsh Raj",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         }
       ]
@@ -123,84 +123,84 @@
           "id": "appdev-1",
           "name": "Meet Mahesh Raval",
           "role": "Lead",
-          "photo": "/images/team/meet-raval.jpg",
+          "photo": "/images/team/meet-raval.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-2",
           "name": "Prathamesh Dhanaji Gandule",
           "role": "Co-lead",
-          "photo": "/images/team/prathamesh-gandule.jpg",
+          "photo": "/images/team/prathamesh-gandule.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-3",
           "name": "Shani Dev Kashyap",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-4",
           "name": "Shravani Wadekar",
           "role": "Member Lead",
-          "photo": "/images/team/shravani-wadekar.jpg",
+          "photo": "/images/team/shravani-wadekar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-5",
           "name": "Parth Kharat",
           "role": "Member Lead",
-          "photo": "/images/team/parth-kharat.jpg",
+          "photo": "/images/team/parth-kharat.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-6",
           "name": "Abhijit Manoj Deshmukh",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-7",
           "name": "Niraj Sanjay Karnawat",
           "role": "Member Lead",
-          "photo": "/images/team/niraj-karnawat.jpg",
+          "photo": "/images/team/niraj-karnawat.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-8",
           "name": "Utkarsh Pandey",
           "role": "Member Lead",
-          "photo": "/images/team/utkarsh-pandey.jpg",
+          "photo": "/images/team/utkarsh-pandey.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-9",
           "name": "Shreyash Nahate",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-10",
           "name": "Sai Keshav Jadhav",
           "role": "Member Lead",
-          "photo": "/images/team/sai-jadhav.jpg",
+          "photo": "/images/team/sai-jadhav.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-11",
           "name": "Pravinsingh Rathod",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "appdev-12",
           "name": "Tejas Santosh Nalawade",
           "role": "Member Lead",
-          "photo": "/images/team/tejas-nalawade.jpg",
+          "photo": "/images/team/tejas-nalawade.webp",
           "social": { "linkedin": "https://linkedin.com" }
         }
       ]
@@ -213,42 +213,42 @@
           "id": "dsa-1",
           "name": "Narayan Dnyaneshwar Nawale",
           "role": "Lead",
-          "photo": "/images/team/narayan-nawale.jpg",
+          "photo": "/images/team/narayan-nawale.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "dsa-2",
           "name": "Hariom Phulre",
           "role": "Co-lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "dsa-3",
           "name": "Ishan Sharma",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "dsa-4",
           "name": "Sahil Bhatkande",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "dsa-5",
           "name": "Shreyash Ganesh Shinde",
           "role": "Member Lead",
-          "photo": "/images/team/shreyash-shinde.jpg",
+          "photo": "/images/team/shreyash-shinde.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "dsa-6",
           "name": "Ashwin Luhar",
           "role": "Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         }
       ]
@@ -261,7 +261,7 @@
           "id": "cyber-1",
           "name": "Vaibhav Raju Baviskar",
           "role": "Lead",
-          "photo": "/images/team/vaibhav-baviskar.jpg",
+          "photo": "/images/team/vaibhav-baviskar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         }
       ]
@@ -274,189 +274,189 @@
           "id": "nontech-1",
           "name": "Ashish Maurya",
           "role": "Content Writer Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-2",
           "name": "Ruchita Kangralkar",
           "role": "Design Co-lead",
-          "photo": "/images/team/ruchita-kangralkar.jpg",
+          "photo": "/images/team/ruchita-kangralkar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-3",
           "name": "Aditi Konde",
           "role": "Design Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-4",
           "name": "Pranav Mulik",
           "role": "Design Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-5",
           "name": "Aditi Patil",
           "role": "Event Management Co-Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-6",
           "name": "Siddhesh Choulwar",
           "role": "Event Management Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-7",
           "name": "Bhavesh Patil",
           "role": "Event Management Member Lead",
-          "photo": "/images/team/bhavesh-patil.jpg",
+          "photo": "/images/team/bhavesh-patil.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-8",
           "name": "Yash Kandekar",
           "role": "Event Management Member Lead",
-          "photo": "/images/team/yash-kandekar.jpg",
+          "photo": "/images/team/yash-kandekar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-9",
           "name": "Jigyasa Shrivastava",
           "role": "Event Management Member Lead",
-          "photo": "/images/team/jigyasa-shrivastava.jpg",
+          "photo": "/images/team/jigyasa-shrivastava.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-10",
           "name": "Yash Sathe",
           "role": "Event Management Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-11",
           "name": "Vedika Therokar",
           "role": "Event Management Member Lead",
-          "photo": "/images/team/vedika-therokar.jpg",
+          "photo": "/images/team/vedika-therokar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-12",
           "name": "Tushar Rehpade",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-13",
           "name": "Rudra Wattamawar",
           "role": "Marketing/PR Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-14",
           "name": "Prajyot Thool",
           "role": "Marketing/PR Co-lead",
-          "photo": "/images/team/prajyot-thool.jpg",
+          "photo": "/images/team/prajyot-thool.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-15",
           "name": "Shreya Survase",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-16",
           "name": "Yashika Talreja",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-17",
           "name": "Tejas Narwade",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/tejas-narwade.jpg",
+          "photo": "/images/team/tejas-narwade.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-18",
           "name": "Sanvi Singh",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-19",
           "name": "Tanishka",
           "role": "Marketing/PR Member Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-20",
           "name": "Animesh Gaikwad",
           "role": "Photographer/Videographer Lead",
-          "photo": "/images/team/animesh-gaikwad.jpg",
+          "photo": "/images/team/animesh-gaikwad.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-21",
           "name": "Vansh Bhat",
           "role": "Photographer/Videographer Co-Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-22",
           "name": "Ayush Wayal",
           "role": "Editor Co-lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-23",
           "name": "Sumit Bondre",
           "role": "Editor Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-24",
           "name": "Omkar Shinde",
           "role": "Production Co-lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-25",
           "name": "Harshvardhan",
           "role": "Social Media Manager Lead",
-          "photo": "/images/team/member-placeholder.jpg",
+          "photo": "/images/team/member-placeholder.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-26",
           "name": "Diya Bhojwani",
           "role": "Treasurer Co-lead",
-          "photo": "/images/team/divya-bhojwani.jpg",
+          "photo": "/images/team/divya-bhojwani.webp",
           "social": { "linkedin": "https://linkedin.com" }
         },
         {
           "id": "nontech-27",
           "name": "Yash Shinkar",
           "role": "Research Lead",
-          "photo": "/images/team/yash-shinkar.jpg",
+          "photo": "/images/team/yash-shinkar.webp",
           "social": { "linkedin": "https://linkedin.com" }
         }
       ]

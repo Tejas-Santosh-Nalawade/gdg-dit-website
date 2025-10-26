@@ -5,7 +5,10 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
   // Compression
@@ -17,14 +20,23 @@ const nextConfig = {
   // Generate ETags
   generateEtags: true,
   
+  // Optimized production build
+  productionBrowserSourceMaps: false,
+  
   // Page extensions
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['framer-motion', '@react-three/fiber', '@react-three/drei'],
+  },
   
   // Headers for security and caching
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|jpeg|png|webp|gif|ico)',
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)',
         headers: [
           {
             key: 'Cache-Control',
