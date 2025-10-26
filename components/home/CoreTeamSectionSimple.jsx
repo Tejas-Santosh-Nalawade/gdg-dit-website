@@ -15,7 +15,7 @@ const coreTeamMembers = [
     id: 2,
     name: 'Bhavesh Rathod',
     role: 'Managing Director',
-    image: '/images/team/bhavesh-rathod.jpg',
+    image: '/images/team/bhavesh-rathod.webp',
     color: '#4285f4',
   },
   {
@@ -29,7 +29,7 @@ const coreTeamMembers = [
     id: 4,
     name: 'Ananya Mahajan',
     role: 'Non-Tech Lead / Production Head',
-    image: '/images/team/Ananya.jpeg',
+    image: '/images/team/Ananya.webp',
     color: '#34a853',
   },
 ];

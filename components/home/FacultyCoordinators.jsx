@@ -15,7 +15,7 @@ const coordinators = [
     id: 2,
     name: 'Payal Wankhade',
     role: 'Faculty Coordinator',
-    image: '/images/team/Payal-Wankhade.png',
+    image: '/images/team/Payal-Wankhade.webp',
     color: '#ea4335',
   },
 ];
