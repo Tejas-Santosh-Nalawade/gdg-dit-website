@@ -47,28 +47,34 @@ const TeamCard = ({ member, isCore = false }) => {
     useEffect(() => { setImageError(false); }, [member.photo]);
     const dotColors = ['bg-blue-600', 'bg-red-600', 'bg-yellow-500', 'bg-green-600'];
     return (
-        <Card className={`overflow-hidden flex flex-col justify-between`}>
-            <div className={`h-3.5 w-full ${solidHeaderColorClass} rounded-t-xl`}></div>
-            <div className="w-full h-52 relative">
+        <Card className={`overflow-hidden flex flex-col h-full`}>
+            <div className={`h-2 w-full ${solidHeaderColorClass} rounded-t-xl`}></div>
+            <div className="w-full aspect-[4/5] relative">
                 <div className="w-full h-full overflow-hidden flex items-center justify-center bg-gray-100">
                     {!imageError && member.photo !== '👤' ? (
-                        <img src={imageUrl} alt={member.name} className="w-full h-full object-cover object-top" onError={() => setImageError(true)} loading="lazy" />
+                        <img 
+                            src={imageUrl} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover object-top scale-110" 
+                            onError={() => setImageError(true)} 
+                            loading="lazy" 
+                        />
                     ) : (
-                        <div className={`absolute inset-0 flex items-center justify-center text-4xl font-extrabold text-gray-500 bg-gray-200`}>{initials}</div>
+                        <div className={`absolute inset-0 flex items-center justify-center text-3xl font-extrabold text-gray-500 bg-gray-200`}>{initials}</div>
                     )}
                 </div>
             </div>
-            <div className="flex flex-col items-center p-4 pt-6 text-center flex-grow">
-                <h3 className="text-xl font-extrabold text-gray-800 leading-tight mb-1">{member.name}</h3>
-                <p className={`text-sm font-semibold ${textColor} tracking-wide mb-2`}>{member.role}</p>
-                {isCore && member.bio && (<p className="text-gray-500 text-xs italic mb-4 px-2 max-w-xs">{member.bio}</p>)}
-                <div className="flex justify-center space-x-1 mb-4">
-                    {dotColors.map((dotClass, i) => (<span key={i} className={`w-2 h-2 rounded-full ${dotClass}`}></span>))}
+            <div className="flex flex-col items-center p-3 md:p-4 text-center flex-grow">
+                <h3 className="text-base md:text-lg font-extrabold text-gray-800 leading-tight mb-1">{member.name}</h3>
+                <p className={`text-xs md:text-sm font-semibold ${textColor} tracking-wide mb-3`}>{member.role}</p>
+                {isCore && member.bio && (<p className="text-gray-500 text-xs italic mb-3 px-2 line-clamp-2">{member.bio}</p>)}
+                <div className="flex justify-center space-x-1 mb-3">
+                    {dotColors.map((dotClass, i) => (<span key={i} className={`w-1.5 h-1.5 rounded-full ${dotClass}`}></span>))}
                 </div>
                 {isCore && (member.social?.linkedin || member.social?.github) && (
-                    <div className="flex space-x-4 mt-2 mb-2">
-                        {member.social.linkedin && (<a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition duration-150 p-1" title={`LinkedIn of ${member.name}`}><Linkedin className="w-5 h-5" /></a>)}
-                        {member.social.github && (<a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition duration-150 p-1" title={`GitHub of ${member.name}`}><Github className="w-5 h-5" /></a>)}
+                    <div className="flex space-x-3 mt-auto">
+                        {member.social.linkedin && (<a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition duration-150" title={`LinkedIn of ${member.name}`}><Linkedin className="w-4 h-4 md:w-5 md:h-5" /></a>)}
+                        {member.social.github && (<a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition duration-150" title={`GitHub of ${member.name}`}><Github className="w-4 h-4 md:w-5 md:h-5" /></a>)}
                     </div>
                 )}
             </div>

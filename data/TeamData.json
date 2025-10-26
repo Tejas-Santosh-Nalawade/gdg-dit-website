@@ -6,7 +6,7 @@
             { "id": 1, "name": "Gaurav Masand", "role": "GDG Lead", "photo": "Gaurav-Masand.webp", "social": { "linkedin": "#", "github": "#" }, "bio": "Leading the chapter with a vision for community growth and technology adoption." },
             { "id": 2, "name": "Bhavesh Rathod", "role": "Managing Director", "photo": "bhavesh-rathod.webp", "social": { "linkedin": "#", "github": "#" }, "bio": "The backbone of operations, ensuring smooth execution of all our initiatives." },
             { "id": 3, "name": "Mrunal Thakare", "role": "Tech Lead", "photo": "Mrunal-Thakare.webp", "social": { "linkedin": "#", "github": "#" }, "bio": "Master of code, guiding our technical teams in cutting-edge development." },
-            { "id": 4, "name": "Ananya Mahajan", "role": "Non-Tech Lead", "photo": "Ananya.webp", "social": { "linkedin": "#", "github": "#" }, "bio": "Driving strategy and external relations to amplify our community's reach." }
+            { "id": 4, "name": "Ananya Mahajan", "role": "Production Lead", "photo": "Ananya.webp", "social": { "linkedin": "#", "github": "#" }, "bio": "Driving strategy and external relations to amplify our community's reach." }
         ]
     },
     "techTeams": [

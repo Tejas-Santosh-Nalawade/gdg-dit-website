@@ -28,7 +28,7 @@ const coreTeamMembers = [
   {
     id: 4,
     name: 'Ananya Mahajan',
-    role: 'Non-Tech Lead / Production Head',
+    role: 'Production Head',
     image: '/images/team/Ananya.webp',
     color: '#34a853',
   },
