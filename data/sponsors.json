@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "title": "Our Sponsors",
+    "subtitle": "Thank you to our amazing sponsors who make GDG-DIT possible. Together, we're building a stronger developer community."
+  },
+  "tiers": [
+    {
+      "name": "Platinum Sponsors",
+      "description": "Our platinum partners who provide exceptional support",
+      "sponsors": []
+    },
+    {
+      "name": "Gold Sponsors",
+      "description": "Strategic partners supporting our mission",
+      "sponsors": []
+    },
+    {
+      "name": "Silver Sponsors",
+      "description": "Valued partners helping us grow",
+      "sponsors": []
+    },
+    {
+      "name": "Community Partners",
+      "description": "Organizations supporting our events and activities",
+      "sponsors": []
+    }
+  ],
+  "benefits": {
+    "title": "Why Sponsor GDG-DIT?",
+    "subtitle": "Partner with us to reach talented students and developers",
+    "items": [
+      {
+        "title": "Brand Visibility",
+        "description": "Get your brand in front of 500+ passionate developers and tech enthusiasts at our events",
+        "icon": "visibility"
+      },
+      {
+        "title": "Talent Access",
+        "description": "Connect with skilled students and professionals for internships, jobs, and collaboration",
+        "icon": "talent"
+      },
+      {
+        "title": "Community Impact",
+        "description": "Support education and skill development in the tech community",
+        "icon": "community"
+      },
+      {
+        "title": "Event Collaboration",
+        "description": "Co-host workshops, hackathons, and tech talks with our active community",
+        "icon": "event"
+      },
+      {
+        "title": "Marketing Opportunities",
+        "description": "Social media coverage, newsletter features, and website visibility",
+        "icon": "marketing"
+      },
+      {
+        "title": "Networking",
+        "description": "Build connections with academia, industry, and fellow sponsors",
+        "icon": "network"
+      }
+    ]
+  },
+  "packages": [
+    {
+      "tier": "Platinum",
+      "price": "₹1,00,000+",
+      "color": "#e5e4e2",
+      "features": [
+        "Logo on all event materials",
+        "Dedicated social media posts",
+        "Speaking slot at major events",
+        "Booth at all events",
+        "Newsletter feature (monthly)",
+        "Prominent website placement",
+        "Custom collaboration opportunities",
+        "Direct access to talent pool"
+      ]
+    },
+    {
+      "tier": "Gold",
+      "price": "₹50,000 - ₹1,00,000",
+      "color": "#ffd700",
+      "features": [
+        "Logo on event materials",
+        "Social media mentions",
+        "Speaking slot at select events",
+        "Booth at major events",
+        "Newsletter feature (quarterly)",
+        "Website placement",
+        "Access to talent pool"
+      ]
+    },
+    {
+      "tier": "Silver",
+      "price": "₹25,000 - ₹50,000",
+      "color": "#c0c0c0",
+      "features": [
+        "Logo on select materials",
+        "Social media shoutouts",
+        "Booth at one major event",
+        "Newsletter mention",
+        "Website listing",
+        "Resume database access"
+      ]
+    },
+    {
+      "tier": "Community Partner",
+      "price": "Custom",
+      "color": "#4285f4",
+      "features": [
+        "Logo on website",
+        "Social media mention",
+        "Event collaboration",
+        "Community access",
+        "Flexible partnership terms"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Active Members"
+    },
+    {
+      "value": "50+",
+      "label": "Events Annually"
+    },
+    {
+      "value": "5000+",
+      "label": "Event Attendees"
+    },
+    {
+      "value": "20+",
+      "label": "Tech Domains"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Partnering with GDG-DIT has been an excellent way to connect with emerging tech talent.",
+      "author": "Past Sponsor",
+      "role": "Recruitment Lead"
+    }
+  ],
+  "cta": {
+    "title": "Become a Sponsor",
+    "description": "Join us in empowering the next generation of developers. Let's create something amazing together!",
+    "email": "contact@gdgdit.com",
+    "subject": "Sponsorship Inquiry - GDG-DIT"
+  }
+}

@@ -381,7 +381,7 @@ export default function App() {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-[#1e1e1e] dark:text-white" style={{ fontFamily: 'Google Sans, sans-serif' }}>
-              Join <span className="text-[#4285f4]">GDG</span>-<span className="text-[#ea4335]">DIT</span>
+              Join <span className="text-[#4285f4]">GDG-DIT</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-[#5f6368] dark:text-gray-300 mb-12 leading-relaxed">

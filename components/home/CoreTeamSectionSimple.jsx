@@ -15,7 +15,7 @@ const coreTeamMembers = [
     id: 2,
     name: 'Bhavesh Rathod',
     role: 'Managing Director',
-    image: '/images/team/bhavesh-rathod.jpg',
+    image: '/images/team/bhavesh-rathod.webp',
     color: '#4285f4',
   },
   {
@@ -28,8 +28,8 @@ const coreTeamMembers = [
   {
     id: 4,
     name: 'Ananya Mahajan',
-    role: 'Non-Tech Lead / Production Head',
-    image: '/images/team/Ananya.jpeg',
+    role: 'Production Head',
+    image: '/images/team/Ananya.webp',
     color: '#34a853',
   },
 ];
@@ -40,21 +40,20 @@ export default function CoreTeamSectionSimple() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.9 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.4,
+        ease: "easeOut",
       },
     },
   };
@@ -65,8 +64,8 @@ export default function CoreTeamSectionSimple() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.4,
+        ease: "easeOut",
       },
     },
   };
@@ -97,60 +96,50 @@ export default function CoreTeamSectionSimple() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
           {coreTeamMembers.map((member, index) => (
             <motion.div
               key={member.id}
               variants={itemVariants}
               whileHover={{
-                y: -10,
-                scale: 1.05,
-                transition: { duration: 0.3, ease: "easeOut" },
+                y: -8,
+                transition: { duration: 0.2 },
               }}
               className="group"
             >
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100">
+              <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100">
                 {/* Colored top border */}
-                <motion.div
+                <div
                   className="h-2 w-full"
                   style={{ backgroundColor: member.color }}
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
                 />
 
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
-                  <motion.div
-                    initial={{ scale: 1.2, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
-                  >
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                  </motion.div>
+                <div className="relative aspect-square overflow-hidden bg-gray-100">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    priority
+                    quality={90}
+                  />
                 </div>
 
                 {/* Info Section */}
-                <div className="p-6 text-center">
+                <div className="p-4 md:p-6 text-center">
                   <h3
-                    className="text-xl font-bold text-gray-900 mb-2"
+                    className="text-lg md:text-xl font-bold text-gray-900 mb-2"
                     style={{ fontFamily: 'Google Sans, sans-serif' }}
                   >
                     {member.name}
                   </h3>
                   <p
-                    className="text-sm font-semibold mb-3"
+                    className="text-xs md:text-sm font-semibold mb-3"
                     style={{ color: member.color }}
                   >
                     {member.role}
@@ -158,34 +147,10 @@ export default function CoreTeamSectionSimple() {
 
                   {/* Decorative element */}
                   <div className="flex items-center justify-center gap-1">
-                    <motion.div
-                      className="w-2 h-2 rounded-full bg-blue-500"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.15 + 0.6 }}
-                    />
-                    <motion.div
-                      className="w-2 h-2 rounded-full bg-red-500"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.15 + 0.7 }}
-                    />
-                    <motion.div
-                      className="w-2 h-2 rounded-full bg-yellow-500"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.15 + 0.8 }}
-                    />
-                    <motion.div
-                      className="w-2 h-2 rounded-full bg-green-500"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.15 + 0.9 }}
-                    />
+                    <div className="w-2 h-2 rounded-full bg-blue-500" />
+                    <div className="w-2 h-2 rounded-full bg-red-500" />
+                    <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                    <div className="w-2 h-2 rounded-full bg-green-500" />
                   </div>
                 </div>
               </div>

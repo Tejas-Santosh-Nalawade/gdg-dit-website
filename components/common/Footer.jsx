@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-5 group">
               <Image
-                src="/GDSC-logo..svg"
+                src="/GDSC-logo.svg"
                 alt="GDG Logo"
                 width={44}
                 height={44}
