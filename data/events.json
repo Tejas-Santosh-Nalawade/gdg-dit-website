@@ -2,7 +2,7 @@
   "upcomingEvents": [
     {
       "id": 1,
-      "title": "Hack a Bit",
+      "title": "Hack a Bit 2.0",
       "date": "Mar 22, 2026",
       "time": "TBD",
       "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
@@ -10,7 +10,7 @@
       "domain": "AI/ML",
       "banner": "HACKATHON",
       "color": "from-purple-400 to-pink-400",
-      "description": "Join us for an exciting hackathon where innovation meets creativity. Build solutions, network with peers, and showcase your technical skills."
+      "description": "Join us for the second edition of our flagship hackathon where innovation meets creativity. Build solutions, network with peers, and showcase your technical skills."
     }
   ],
   "pastEvents": [
@@ -25,51 +25,111 @@
     },
     {
       "id": 102,
-      "title": "Google I/O Extended 2024",
-      "date": "May 18, 2024",
-      "type": "Conference",
-      "domain": "AI/ML",
-      "attendees": 250
+      "title": "Tech Winter Break ❄️",
+      "date": "December 24, 2024",
+      "type": "Hackathon",
+      "domain": "Multi-Domain",
+      "attendees": 40,
+      "description": "4 weeks of intensive learning with key activities and 40 winners. A complete winter tech experience featuring coding challenges, project building, and skill development across multiple domains."
     },
     {
       "id": 103,
-      "title": "DevFest Pune 2023",
-      "date": "November 15, 2023",
-      "type": "Conference",
-      "domain": "Web",
-      "attendees": 400
+      "title": "Unlock Your Tech Potential – GDG FE Induction Event",
+      "date": "November 28, 2024",
+      "type": "Info Session",
+      "domain": "General",
+      "attendees": 150,
+      "description": "Engineer's Guide 101 - It's time to ANOTHER WAY TO START. First Edition induction event welcoming new members to the GDG DIT community."
     },
     {
       "id": 104,
-      "title": "Cloud Study Jam 2024",
-      "date": "March 10, 2024",
-      "type": "Study Jam",
-      "domain": "AI/ML",
-      "attendees": 180
+      "title": "Placement Series Part 1 – HireHustle",
+      "date": "October 17, 2024",
+      "type": "Speaker Session",
+      "domain": "Career Development",
+      "attendees": 100,
+      "description": "Season-1 HireHustle: Master Data Structures and Algorithms. Learn placement preparation strategies from industry experts and successful alumni."
     },
     {
       "id": 105,
-      "title": "Android Workshop Series",
-      "date": "February 20, 2024",
-      "type": "Workshop",
+      "title": "Build With AI Study Jam",
+      "date": "October 11, 2024",
+      "type": "Study Jam",
       "domain": "AI/ML",
-      "attendees": 120
+      "attendees": 120,
+      "description": "Build With AI Study Jams 2024-25. Comprehensive hands-on learning experience to build amazing AI solutions and earn skill badges."
     },
     {
       "id": 106,
+      "title": "Gen AI Study Jams - Info and Registration Session",
+      "date": "September 24, 2024",
+      "type": "Study Jam",
+      "domain": "AI/ML",
+      "attendees": 120,
+      "description": "GenAI Study Jams 2024-25 kickoff with 30+ quests. Info and registration session introducing participants to generative AI technologies and learning paths."
+    },
+    {
+      "id": 107,
+      "title": "Hack a Bit 1.0",
+      "date": "March 15, 2025",
+      "type": "Hackathon",
+      "domain": "Multi-Domain",
+      "attendees": 85,
+      "description": "The inaugural edition of Hack a Bit hackathon. Students built innovative solutions across various domains including web development, AI/ML, and mobile apps."
+    },
+    {
+      "id": 108,
+      "title": "Google I/O Extended 2024",
+      "date": "May 18, 2024",
+      "type": "Conference",
+      "domain": "Multi-Domain",
+      "attendees": 250,
+      "description": "Annual Google I/O Extended event celebrating Google's latest innovations and technologies with the developer community."
+    },
+    {
+      "id": 109,
+      "title": "Cloud Study Jam 2024",
+      "date": "March 10, 2024",
+      "type": "Study Jam",
+      "domain": "Cloud",
+      "attendees": 180,
+      "description": "Google Cloud study jam focused on cloud computing fundamentals and hands-on labs covering various GCP services."
+    },
+    {
+      "id": 110,
+      "title": "Android Workshop Series",
+      "date": "February 20, 2024",
+      "type": "Workshop",
+      "domain": "Android",
+      "attendees": 120,
+      "description": "Comprehensive workshop series covering Android app development from basics to advanced concepts."
+    },
+    {
+      "id": 111,
       "title": "Web Development Bootcamp",
       "date": "January 15, 2024",
       "type": "Workshop",
       "domain": "Web",
-      "attendees": 150
+      "attendees": 150,
+      "description": "Intensive bootcamp covering modern web development technologies including HTML, CSS, JavaScript, and popular frameworks."
     },
     {
-      "id": 107,
+      "id": 112,
+      "title": "DevFest Pune 2023",
+      "date": "November 15, 2023",
+      "type": "Conference",
+      "domain": "Multi-Domain",
+      "attendees": 400,
+      "description": "Annual DevFest celebration bringing together developers, designers, and technology enthusiasts for a day of learning and networking."
+    },
+    {
+      "id": 113,
       "title": "AI/ML Hands-on Session",
       "date": "December 8, 2023",
       "type": "Workshop",
       "domain": "AI/ML",
-      "attendees": 200
+      "attendees": 200,
+      "description": "Hands-on workshop exploring machine learning concepts and practical AI implementations using popular frameworks."
     }
   ]
 }
