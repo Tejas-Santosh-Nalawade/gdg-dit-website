@@ -1,124 +1,137 @@
-# 🌐 GDG-DIT Website
+# GDG-DIT Website
 
-This is the *official repository* for the *GDG-DIT Chapter Website* — the digital home for our community, designed to showcase events, team, and activities of GDG-DIT.
+Official website for the GDG on Campus Dr. D. Y. Patil Institute of Technology, Pune. Built to showcase events, team, and community activities.
 
----
+## About
 
-## 🧭 Project Blueprint & Requirements
+The GDG-DIT Chapter is a vibrant developer community focused on Google technologies. Our website serves as the central hub for:
 
-### 1️⃣ Core Mission & Goals
+- **Event Information** — Upcoming workshops, study jams, and hackathons
+- **Team Showcase** — Meet our organizing team and faculty coordinators
+- **Community Engagement** — Connect with fellow developers and join our activities
+- **Sponsorship Opportunities** — Partner with us to support the developer community
 
-The primary goal of this website is to serve as the central hub for the *GDG-DIT Chapter*.  
-It is designed to:
+## Tech Stack
 
-- *Attract & Inform New Members* — Communicate what the community is, what it does, and why someone should join.
-- *Engage Existing Members* — Provide a go-to resource for events, resources, and news.
-- *Showcase Expertise & Impact* — Highlight community achievements through event history and blogs.
-- *Facilitate Connections* — Help members connect with each other and the organizing team.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion, GSAP, Anime.js
+- **3D Graphics:** Three.js, React Three Fiber
+- **UI Components:** Radix UI, Lucide Icons
 
----
+## Project Structure
 
-### 2️⃣ Global Elements (Present on All Pages)
+```
+├── app/                    # Next.js app router pages
+│   ├── page.jsx           # Home page
+│   ├── events/            # Events page
+│   ├── team/              # Team page
+│   ├── contact/           # Contact page
+│   ├── sponsors/          # Sponsors page
+│   ├── gallery/           # Gallery page
+│   └── join/              # Join community page
+├── components/            # Reusable React components
+│   ├── common/            # Shared components (Navbar, Footer, etc.)
+│   ├── home/              # Home page components
+│   ├── events/            # Event-related components
+│   └── team/              # Team-related components
+├── data/                  # Static JSON data files
+│   ├── events.json        # Event information
+│   ├── team.json          # Team member data
+│   └── sponsors.json      # Sponsor information
+└── public/                # Static assets (images, fonts)
+```
 
-#### 🧭 Header / Navigation Bar
-- *Logo:* GDG Chapter Logo  
-- *Links:* Home · Events · Team · Blog · Contact  
-- *Button:* “Join Community” (CTA)  
-- *Responsive:* Collapses into hamburger menu on mobile  
+## Getting Started
 
-#### ⚓ Footer
-- *Quick Links:* Repeat main navigation  
-- *Social Media Icons:* LinkedIn · X (Twitter) · Instagram · GitHub  
-- *Code of Conduct:* Mandatory link  
-- *Contact Info:* contact@gdgchapter.com  
-- *Copyright:* © [Year] GDG-DIT. All rights reserved.
+### Prerequisites
 
----
+- Node.js 18.x or higher
+- npm, yarn, or pnpm
 
-## 🗺 Sitemap & Page-by-Page Requirements
-
-### 🏠 Page 1: Home
-*Purpose:*  
-Make a strong first impression, introduce the GDG chapter, and guide users to key sections.
-
-*Components:*
-- Hero Section: Full-width banner with tagline (e.g., “Learn, Build, and Grow Together”)
-- Primary CTA: “Join Our Community” / “View Upcoming Events”
-- What We Do: Short 2–3 sentence intro about GDG-DIT
-- Upcoming Events: Dynamic list of next 2–3 events
-- Our Domains: Grid showing key tech focuses (Android, Cloud, Web, AI/ML, Flutter)
-- Community Stats: Animated counters (Members, Events Hosted, Since [Year])
-- Photo Gallery: Curated images from past events
-
----
-
-### 🎉 Page 2: Events
-*Purpose:*  
-Display all upcoming chapter activities and guide users to past events.
-
-*Components:*
-- Upcoming Events List:
-  - Event Title & Banner  
-  - Date, Time, Venue/Online  
-  - Short Description  
-- Past Events Archive:
-  - Link to event recaps on the blog  
-- (Optional) Filter by technology/domain  
-
----
-
-### 👥 Page 3: The Team
-*Purpose:*  
-Introduce the organizing team and make the chapter feel approachable.
-
-*Components:*
-- Short intro about the team’s mission  
-- Grid of Team Member Cards:
-  - Photo · Name · Role · Social Links  
-
----
-
-### 📝 Page 4: Blog / Resources
-*Purpose:*  
-Share knowledge, event recaps, and tech insights to keep members engaged.
-
-*Components:*
-- Standard blog layout with:
-  - Featured Image · Title · Author · Excerpt  
-- *Mandatory Category:* “Event Recaps”  
-- *Other Categories:* Tutorials · Announcements · Tech Deep Dives  
-- Search Bar: For easy navigation  
-
----
-
-### 💬 Page 5: Contact / Sponsor Us
-*Purpose:*  
-Provide clear communication channels for general inquiries and sponsors.
-
-*Components:*
-- Contact Info · Social Links  
-- Contact Form  
-- “Sponsor Us” section with CTA  
-
----
-
-### 🤝 Page 6: Join Community
-*Purpose:*  
-Serve as the landing page for all “Join” CTAs.
-
-*Components:*
-- Clear headline and large “Join” buttons (Discord, WhatsApp, etc.)  
-- Bullet list of benefits for joining  
-
----
-
-## 🚀 Getting Started
-
-First, run the development server:
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/gdg-dit/website.git
+cd website
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the website.
+
+### Build for Production
+
+```bash
+# Create optimized production build
+npm run build
+
+# Start production server
+npm run start
+```
+
+## Content Management
+
+All content is managed through static JSON files in the `/data` directory:
+
+- **events.json** — Add/update upcoming and past events
+- **team.json** — Manage team member information
+- **sponsors.json** — Update sponsor details and packages
+- **domains.json** — Define technical domains and focus areas
+
+To add new content, simply edit the relevant JSON file and the website will automatically reflect the changes.
+
+## Key Features
+
+- **Responsive Design** — Optimized for desktop, tablet, and mobile devices
+- **Performance Optimized** — Fast loading times with Next.js optimization
+- **SEO Friendly** — Built-in metadata and sitemap generation
+- **Smooth Animations** — Engaging user experience with modern animations
+- **Accessibility** — Follows web accessibility standards
+
+## Pages
+
+- **Home** — Hero section, featured events, domains, stats, and gallery
+- **Events** — Complete list of upcoming and past events
+- **Team** — Core team, technical teams, and faculty coordinators
+- **Gallery** — Photo showcase from past events
+- **Contact** — Contact form and social media links
+- **Sponsors** — Sponsorship packages and current sponsors
+- **Join** — Community membership information
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Team
+
+Built and maintained by the GDG-DIT team:
+
+- **Lead:** Gaurav Masand
+- **Managing Director:** Bhavesh Rathod
+- **Tech Lead:** Mrunal Thakare
+
+## License
+
+© 2026 GDG on Campus Dr. D. Y. Patil Institute of Technology. All rights reserved.
+
+## Contact
+
+- **Email:** contact@gdgdit.com
+- **Website:** [gdgdit.com](https://gdgdit.com)
+- **LinkedIn:** [GDG-DIT](https://linkedin.com/company/gdg-dit)
+
+---
+
+Built with ❤️ by GDG-DIT Team
