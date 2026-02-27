@@ -2,104 +2,29 @@
   "upcomingEvents": [
     {
       "id": 1,
-      "title": "React Rush – Build Interactive Web Apps!",
-      "date": "Apr 6, 2025",
+      "title": "Hack a Bit",
+      "date": "Mar 22, 2026",
       "time": "TBD",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Workshop",
-      "domain": "Web",
-      "banner": "WEB",
-      "color": "from-red-400 to-pink-400",
-      "description": "Build dynamic UIs with React. Learn components, state, and more to create interactive web applications."
-    },
-    {
-      "id": 2,
-      "title": "DSA ODYSSEY",
-      "date": "Apr 6, 2025",
-      "time": "TBD",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Study Jam",
-      "domain": "AI/ML",
-      "banner": "DSA",
-      "color": "from-yellow-400 to-orange-400",
-      "description": "Master Data Structures and Algorithms - From Concepts to Code! Enhance your problem-solving skills."
-    },
-    {
-      "id": 3,
-      "title": "Tech Winter Break ❄️",
-      "date": "Dec 24, 2024",
-      "time": "4 Weeks | 4 Key Activities | 40 Winners!!",
       "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
       "type": "Hackathon",
       "domain": "AI/ML",
-      "banner": "WINTER",
-      "color": "from-green-400 to-emerald-400",
-      "description": "4 weeks of intensive learning with key activities and 40 winners. A complete winter tech experience!"
-    },
-    {
-      "id": 4,
-      "title": "Unlock Your Tech Potential – Join the GDG FE Induction Event",
-      "date": "Nov 28, 2024",
-      "time": "28 Nov 2024, 5 PM, DIT",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Info session",
-      "domain": "AI/ML",
-      "banner": "INDUCTION",
-      "color": "from-blue-400 to-cyan-400",
-      "description": "Engineer's Guide 101 - It's time to ANOTHER WAY TO START. Join the GDG First Edition induction event."
-    },
-    {
-      "id": 5,
-      "title": "Placement Series Part 1 – HireHustle",
-      "date": "Oct 17, 2024",
-      "time": "10.2024",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Speaker Session / Tech Talk",
-      "domain": "AI/ML",
-      "banner": "TALK",
-      "color": "from-yellow-400 to-orange-400",
-      "description": "Season-1 HireHustle: Master Data Structures and Algorithms. Learn placement preparation strategies."
-    },
-    {
-      "id": 6,
-      "title": "Build With AI",
-      "date": "Oct 11, 2024",
-      "time": "Study Jams - 24 ~ 25",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Workshop",
-      "domain": "AI/ML",
-      "banner": "AI",
-      "color": "from-red-400 to-pink-400",
-      "description": "Join Build With AI Study Jams 2024-25. Get ready to build amazing AI solutions!"
-    },
-    {
-      "id": 7,
-      "title": "Gen AI Study Jams - Info and Registration Session",
-      "date": "Sep 24, 2024",
-      "time": "Sep 24, 2024 - 30+ Quests, 120 Participants",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Hackathon",
-      "domain": "AI/ML",
-      "banner": "GENAI",
-      "color": "from-green-400 to-emerald-400",
-      "description": "GenAI Study Jams 2024-25. Info and registration session with 30+ quests and 120 participants."
-    },
-    {
-      "id": 8,
-      "title": "Web Development Bootcamp",
-      "date": "May 15, 2025",
-      "time": "9:00 AM - 5:00 PM",
-      "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
-      "type": "Study Jam",
-      "domain": "Web",
-      "banner": "WEB",
-      "color": "from-yellow-400 to-orange-400",
-      "description": "Full-day intensive bootcamp on modern web development. Learn HTML, CSS, JavaScript, and frameworks."
+      "banner": "HACKATHON",
+      "color": "from-purple-400 to-pink-400",
+      "description": "Join us for an exciting hackathon where innovation meets creativity. Build solutions, network with peers, and showcase your technical skills."
     }
   ],
   "pastEvents": [
     {
       "id": 101,
+      "title": "Google Cloud Study Jam 2025 at DIT",
+      "date": "January 1-2, 2025",
+      "type": "Study Jam",
+      "domain": "Cloud",
+      "attendees": 103,
+      "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
+    },
+    {
+      "id": 102,
       "title": "Google I/O Extended 2024",
       "date": "May 18, 2024",
       "type": "Conference",
@@ -107,7 +32,7 @@
       "attendees": 250
     },
     {
-      "id": 102,
+      "id": 103,
       "title": "DevFest Pune 2023",
       "date": "November 15, 2023",
       "type": "Conference",
@@ -115,7 +40,7 @@
       "attendees": 400
     },
     {
-      "id": 103,
+      "id": 104,
       "title": "Cloud Study Jam 2024",
       "date": "March 10, 2024",
       "type": "Study Jam",
@@ -123,7 +48,7 @@
       "attendees": 180
     },
     {
-      "id": 104,
+      "id": 105,
       "title": "Android Workshop Series",
       "date": "February 20, 2024",
       "type": "Workshop",
@@ -131,7 +56,7 @@
       "attendees": 120
     },
     {
-      "id": 105,
+      "id": 106,
       "title": "Web Development Bootcamp",
       "date": "January 15, 2024",
       "type": "Workshop",
@@ -139,7 +64,7 @@
       "attendees": 150
     },
     {
-      "id": 106,
+      "id": 107,
       "title": "AI/ML Hands-on Session",
       "date": "December 8, 2023",
       "type": "Workshop",
