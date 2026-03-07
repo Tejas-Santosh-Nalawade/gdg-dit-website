@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Hack a Bit 2.0",
-      "date": "Mar 22, 2026",
+      "date": "April 5, 2026",
       "time": "TBD",
       "venue": "GDG on Campus Dr. D. Y. Patil Institute of Technology - Pune, India",
       "type": "Hackathon",
@@ -15,13 +15,13 @@
   ],
   "pastEvents": [
     {
-      "id": 101,
-      "title": "Google Cloud Study Jam 2025 at DIT",
-      "date": "January 1-2, 2025",
-      "type": "Study Jam",
-      "domain": "Cloud",
-      "attendees": 103,
-      "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
+      "id": 107,
+      "title": "Hack a Bit 1.0",
+      "date": "February 1, 2025",
+      "type": "Hackathon",
+      "domain": "Multi-Domain",
+      "attendees": "300+",
+      "description": "The inaugural edition of Hack a Bit hackathon. Students built innovative solutions across various domains including web development, AI/ML, and mobile apps."
     },
     {
       "id": 102,
@@ -40,6 +40,15 @@
       "domain": "General",
       "attendees": 150,
       "description": "Engineer's Guide 101 - It's time to ANOTHER WAY TO START. First Edition induction event welcoming new members to the GDG DIT community."
+    },
+    {
+      "id": 101,
+      "title": "Google Cloud Study Jam 2025 at DIT",
+      "date": "November 15, 2024",
+      "type": "Study Jam",
+      "domain": "Cloud",
+      "attendees": 103,
+      "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
     },
     {
       "id": 104,
@@ -67,15 +76,6 @@
       "domain": "AI/ML",
       "attendees": 120,
       "description": "GenAI Study Jams 2024-25 kickoff with 30+ quests. Info and registration session introducing participants to generative AI technologies and learning paths."
-    },
-    {
-      "id": 107,
-      "title": "Hack a Bit 1.0",
-      "date": "March 15, 2025",
-      "type": "Hackathon",
-      "domain": "Multi-Domain",
-      "attendees": 85,
-      "description": "The inaugural edition of Hack a Bit hackathon. Students built innovative solutions across various domains including web development, AI/ML, and mobile apps."
     },
     {
       "id": 108,
@@ -114,15 +114,6 @@
       "description": "Intensive bootcamp covering modern web development technologies including HTML, CSS, JavaScript, and popular frameworks."
     },
     {
-      "id": 112,
-      "title": "DevFest Pune 2023",
-      "date": "November 15, 2023",
-      "type": "Conference",
-      "domain": "Multi-Domain",
-      "attendees": 400,
-      "description": "Annual DevFest celebration bringing together developers, designers, and technology enthusiasts for a day of learning and networking."
-    },
-    {
       "id": 113,
       "title": "AI/ML Hands-on Session",
       "date": "December 8, 2023",
@@ -130,6 +121,15 @@
       "domain": "AI/ML",
       "attendees": 200,
       "description": "Hands-on workshop exploring machine learning concepts and practical AI implementations using popular frameworks."
+    },
+    {
+      "id": 112,
+      "title": "DevFest Pune 2023",
+      "date": "November 15, 2023",
+      "type": "Conference",
+      "domain": "Multi-Domain",
+      "attendees": 400,
+      "description": "Annual DevFest celebration bringing together developers, designers, and technology enthusiasts for a day of learning and networking."
     }
   ]
 }
