@@ -24,13 +24,35 @@
       "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
     },
     {
+      "id": 114,
+      "title": "DSA Odyssey",
+      "date": "April 6, 2025",
+      "time": "6:30 PM",
+      "type": "Speaker Session",
+      "domain": "Career Development",
+      "mode": "Online",
+      "attendees": null,
+      "description": "A problem-solving session focused on strengthening core DSA concepts in Strings, Arrays, and Linked Lists. Covered handpicked questions commonly asked by top recruiters, with engaging discussions led by GDG Leads. Speakers: Atharva Parab, Prajwal Rode, Anushka Sao, Yash Shinkar, Harshil Bohra."
+    },
+    {
+      "id": 115,
+      "title": "React Rush",
+      "date": "April 6, 2025",
+      "time": "8:00 PM",
+      "type": "Workshop",
+      "domain": "Web",
+      "mode": "Online",
+      "attendees": null,
+      "description": "An online session on React covering core concepts like components, props, and state management, with hands-on practice to create interactive, responsive web pages. Speakers: Suhelali Pakjade, Prathamesh Desai, Vaishnavi Kshirsagar, Sarthak Deokar, Mrunal Thakare."
+    },
+    {
       "id": 107,
       "title": "Hack a Bit 1.0",
       "date": "February 1, 2025",
       "type": "Hackathon",
       "domain": "Multi-Domain",
       "attendees": "300+",
-      "description": "The inaugural edition of Hack a Bit hackathon. Students built innovative solutions across various domains including web development, AI/ML, and mobile apps."
+      "description": "GDG-DIT's flagship offline coding contest featuring three intense rounds: an MCQ Round (aptitude and basic programming), a Debugging Round (DSA or Web Development), and a DSA Contest (the ultimate showdown of data structures and algorithms). 🏆 Winners — 1st: Abhijeet Fasate & Arif Mulani | 2nd: Anurag Gade & Pratik Dongare | 3rd: Ved Babar & Ruchir Dhanawade. Event sponsored by Scrimba. Faculty Coordinators: Prof. Priyanka Jadhav & Prof. Payal Wankhede. Supported by Dr. Dheeraj Agrawal, Dr. Nitin Sherje, Dr. Vinod Kimbahune, and Dr. Daulappa Bhalke."
     },
     {
       "id": 102,
@@ -53,11 +75,11 @@
     {
       "id": 104,
       "title": "Placement Series Part 1 – HireHustle",
-      "date": "October 17, 2024",
+      "date": "October 16, 2024",
       "type": "Speaker Session",
       "domain": "Career Development",
       "attendees": 100,
-      "description": "Season-1 HireHustle: Master Data Structures and Algorithms. Learn placement preparation strategies from industry experts and successful alumni."
+      "description": "The first part of GDG-DIT's year-long Placement Preparation Series, organized in collaboration with the Computer Society of India (CSI), DIT Pune. Held at the DPU Auditorium, the session guided third-year students through the placement process of a specific visiting MNC, followed by two focused sessions covering PYQs with tips and tricks. Speakers featured GDG-DIT members sharing key insights on placement preparation. Special thanks to Prof. Dheeraj Agrawal (Director CCR), GDG Lead Meet Agarwal, Co-Lead Onkar Wattamwar, anchor Gunjan Sharma, and the event and photography teams."
     },
     {
       "id": 105,
