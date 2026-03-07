@@ -15,6 +15,15 @@
   ],
   "pastEvents": [
     {
+      "id": 101,
+      "title": "Google Cloud Study Jam 2025 at DIT",
+      "date": "November 15, 2025",
+      "type": "Study Jam",
+      "domain": "Cloud",
+      "attendees": 103,
+      "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
+    },
+    {
       "id": 107,
       "title": "Hack a Bit 1.0",
       "date": "February 1, 2025",
@@ -40,15 +49,6 @@
       "domain": "General",
       "attendees": 150,
       "description": "Engineer's Guide 101 - It's time to ANOTHER WAY TO START. First Edition induction event welcoming new members to the GDG DIT community."
-    },
-    {
-      "id": 101,
-      "title": "Google Cloud Study Jam 2025 at DIT",
-      "date": "November 15, 2024",
-      "type": "Study Jam",
-      "domain": "Cloud",
-      "attendees": 103,
-      "description": "A comprehensive cloud computing study jam requiring completion of 19 skill badges and one arcade challenge. Achieved Top-Tier performance and ranked among Top 20 performing GDGs in India with 103 successful completions. Featured a 2.5-hour hands-on workshop with dedicated trainer support, led by trainers including Ayush VaZe. Organized in collaboration with GDG Lead Gaurav Masand, Managing Director Bhavesh Rathod, Tech Lead Mrunal Thakare, and the entire GDG DIT team."
     },
     {
       "id": 104,
