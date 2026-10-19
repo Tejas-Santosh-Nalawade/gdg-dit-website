@@ -1,0 +1,152 @@
+{
+  "_note": "Example seed. Copy the real internal seed file to prisma/seed-data/incursion.local.json (git-ignored) or set SEED_FILE. Contains no internal names or figures.",
+  "settings": {
+    "statedTeamSize": 3,
+    "statedDomainCounts": {
+      "EVENT_DIRECTOR_FINANCE": 1,
+      "MARKETING_SPONSORSHIP": 2
+    },
+    "historicalStated": {
+      "sections": {
+        "Example section": 1500
+      },
+      "expenseTotal": 1500,
+      "incomeTotal": 500,
+      "net": 1000
+    },
+    "historicalMeta": {
+      "source": "Example source document"
+    }
+  },
+  "milestones": [
+    {
+      "key": "website",
+      "name": "Website launch",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-01",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "registration",
+      "name": "Registrations",
+      "startDate": "2026-11-05",
+      "endDate": "2026-12-05",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "ppt-submission",
+      "name": "PPT submission",
+      "startDate": "2026-12-06",
+      "endDate": "2026-12-12",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "ppt-evaluation",
+      "name": "PPT evaluation",
+      "startDate": "2026-12-13",
+      "endDate": "2026-12-19",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "video-submission",
+      "name": "Video prototype submission",
+      "startDate": "2026-12-20",
+      "endDate": "2026-12-25",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "prototype-evaluation",
+      "name": "Prototype evaluation",
+      "startDate": "2026-12-25",
+      "endDate": "2027-01-05",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "results",
+      "name": "Result announcement",
+      "startDate": "2027-01-06",
+      "endDate": "2027-01-06",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    },
+    {
+      "key": "finale",
+      "name": "Grand Finale (on campus)",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-31",
+      "source": "Permission letter GDGDIT/2026-27 (14/10/2026)"
+    }
+  ],
+  "committee": [
+    {
+      "serialNo": 1,
+      "name": "Example Director",
+      "domain": "EVENT_DIRECTOR_FINANCE",
+      "position": "Event Director & Finance",
+      "source": "Example roster"
+    },
+    {
+      "serialNo": 2,
+      "name": "Example Lead",
+      "domain": "MARKETING_SPONSORSHIP",
+      "position": "Lead",
+      "source": "Example roster"
+    },
+    {
+      "serialNo": 3,
+      "name": null,
+      "domain": "MARKETING_SPONSORSHIP",
+      "position": "Member",
+      "source": "Example roster"
+    }
+  ],
+  "historicalBudget": [
+    {
+      "kind": "EXPENSE",
+      "section": "Example section",
+      "category": "FOOD",
+      "particulars": "Example meal",
+      "quantity": 10,
+      "rate": 100,
+      "amount": 1000
+    },
+    {
+      "kind": "EXPENSE",
+      "section": "Example section",
+      "category": "LOGISTICS",
+      "particulars": "Example kit",
+      "quantity": null,
+      "rate": null,
+      "amount": 500
+    },
+    {
+      "kind": "INCOME",
+      "section": "Expected income",
+      "category": null,
+      "particulars": "Example entry fees",
+      "quantity": 5,
+      "rate": 100,
+      "amount": 500
+    }
+  ],
+  "seedIncursionBudgetFromHistorical": true,
+  "incomeEstimates": [],
+  "sponsorProspects": [
+    {
+      "companyName": "Example Prospect Pvt Ltd",
+      "category": "TECHNOLOGY",
+      "requestedAmount": null,
+      "researchSource": "Example research source"
+    }
+  ],
+  "packages": [],
+  "institutionalRequests": [
+    {
+      "type": "TPO",
+      "title": "TPO / CCRP corporate sponsorship support"
+    },
+    {
+      "type": "FOUNDATION",
+      "title": "DPU Unitech Foundation innovation / prize-fund proposal"
+    }
+  ]
+}

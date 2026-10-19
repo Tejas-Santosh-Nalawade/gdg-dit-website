@@ -1,0 +1,459 @@
+// Organiser-only data for THE INCURSION 2027 sponsorship and event management system.
+// Nothing in this database is rendered on the public site.
+// Money is stored as whole rupees (Int) to avoid floating-point drift.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN // Event Director & Finance or a lead they appoint
+  FINANCE
+  SPONSORSHIP // Marketing & Sponsorship team
+  VIEWER // any other organiser
+}
+
+enum Domain {
+  EVENT_DIRECTOR_FINANCE
+  OPERATIONS_PARTICIPANT_HOSPITALITY
+  MARKETING_SPONSORSHIP
+  COMMUNITY
+  DESIGN
+  TECH
+  MEDIA
+}
+
+enum SponsorStatus {
+  PROSPECT
+  RESEARCH
+  OUTREACH_READY
+  CONTACTED
+  RESPONSE_RECEIVED
+  MEETING_SCHEDULED
+  PROPOSAL_SUBMITTED
+  NEGOTIATION
+  WRITTEN_CONFIRMATION
+  AGREEMENT_PENDING
+  CONFIRMED
+  PAYMENT_PENDING
+  PAID
+  IN_KIND_CONFIRMED
+  POSTPONED
+  DECLINED
+}
+
+enum SponsorCategory {
+  TECHNOLOGY
+  SOFTWARE_PRODUCT
+  CLOUD_AI
+  CYBERSECURITY
+  ENGINEERING_AUTOMOTIVE
+  FOOD_HOSPITALITY
+  TRAINING_CONSULTANCY
+  LOCAL_BUSINESS
+  OTHER
+}
+
+enum InteractionType {
+  EMAIL
+  CALL
+  MEETING
+  PROPOSAL
+  NOTE
+}
+
+enum DraftStatus {
+  DRAFT
+  PENDING_APPROVAL
+  APPROVED
+  REJECTED
+  SENT_MANUALLY
+}
+
+enum BudgetCategory {
+  FOOD
+  PRIZES
+  BRANDING
+  GUESTS_JUDGES
+  LOGISTICS
+  INAUGURATION
+  VALEDICTORY
+  NIGHT_TIME
+  TECH_INFRASTRUCTURE
+  PARTICIPANT_MATERIALS
+  SAFETY
+  HOSPITALITY
+  CONTINGENCY
+  OTHER
+}
+
+enum BudgetStage {
+  ESTIMATE
+  QUOTED
+  APPROVED
+  COMMITTED
+  INVOICED
+  PAID
+}
+
+enum QuotationStatus {
+  NOT_REQUESTED
+  REQUESTED
+  RECEIVED
+}
+
+enum FundingSource {
+  UNASSIGNED
+  INSTITUTE
+  SPONSOR_CASH
+  IN_KIND
+  ENTRY_FEES
+  FOUNDATION
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+}
+
+enum IncomeSource {
+  ENTRY_FEES
+  INSTITUTE
+  OTHER
+}
+
+enum IncomeStatus {
+  ESTIMATE
+  CONFIRMED
+  RECEIVED
+}
+
+enum InstitutionType {
+  TPO
+  FOUNDATION
+}
+
+enum RequestStage {
+  NOT_REQUESTED
+  DRAFTING
+  INTERNAL_REVIEW
+  SUBMITTED
+  UNDER_DISCUSSION
+  APPROVED
+  PARTIALLY_APPROVED
+  DECLINED
+  ON_HOLD
+}
+
+enum FundingMode {
+  PRIZE_MONEY
+  PROTOTYPE_GRANT
+  MILESTONE_FUNDING
+  GENERAL_SUPPORT
+}
+
+enum MilestoneProgress {
+  NOT_STARTED
+  IN_PROGRESS
+  DONE
+}
+
+enum TaskStatus {
+  OPEN
+  DONE
+}
+
+model Organizer {
+  id                String           @id @default(cuid())
+  email             String           @unique
+  name              String
+  role              Role             @default(VIEWER)
+  active            Boolean          @default(true)
+  committeeMember   CommitteeMember? @relation(fields: [committeeMemberId], references: [id])
+  committeeMemberId String?          @unique
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+}
+
+model CommitteeMember {
+  id          String       @id @default(cuid())
+  serialNo    Int?
+  name        String? // null when the roster entry is blank
+  domain      Domain
+  position    String
+  verified    Boolean      @default(false)
+  source      String // e.g. "Team roster GDGDIT/2026-27 (14/10/2026)" or "Added by organiser"
+  notes       String?
+  organizer   Organizer?
+  sponsors    Sponsor[]
+  tasks       Task[]
+  budgetLines BudgetLine[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedBy String?
+  updatedAt DateTime @updatedAt
+}
+
+model Milestone {
+  id                 String             @id @default(cuid())
+  key                String             @unique
+  name               String
+  startDate          DateTime           @db.Date
+  endDate            DateTime           @db.Date
+  source             String
+  sortOrder          Int
+  progress           MilestoneProgress? // null = nothing recorded yet
+  progressNote       String?
+  progressRecordedAt DateTime?
+  progressRecordedBy String?
+}
+
+model SponsorshipPackage {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  amount    Int? // null until set against the verified budget
+  benefits  String[]
+  slots     Int?
+  active    Boolean   @default(true)
+  notes     String?
+  sponsors  Sponsor[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Sponsor {
+  id                    String                @id @default(cuid())
+  companyName           String
+  category              SponsorCategory
+  industry              String?
+  website               String?
+  status                SponsorStatus         @default(PROSPECT)
+  package               SponsorshipPackage?   @relation(fields: [packageId], references: [id])
+  packageId             String?
+  requestedAmount       Int?
+  cashCommitted         Int                   @default(0) // only with written confirmation
+  inKindDescription     String?
+  inKindValue           Int                   @default(0)
+  confirmationReference String? // written confirmation: email/letter reference
+  confirmationDate      DateTime?
+  agreementApprovalRef  String? // institutional approval of the agreement
+  agreementApprovedAt   DateTime?
+  assignedTo            CommitteeMember?      @relation(fields: [assignedToId], references: [id])
+  assignedToId          String?
+  lastContactAt         DateTime?
+  nextFollowUpAt        DateTime?
+  researchSource        String?
+  researchDate          DateTime?
+  notes                 String?
+  introducedVia         InstitutionalRequest? @relation(fields: [introducedViaId], references: [id])
+  introducedViaId       String?
+  contacts              SponsorContact[]
+  interactions          Interaction[]
+  payments              Payment[]
+  documents             RelatedDocument[]
+  drafts                OutreachDraft[]
+  tasks                 Task[]
+  budgetLines           BudgetLine[]
+  createdAt             DateTime              @default(now())
+  updatedAt             DateTime              @updatedAt
+}
+
+model SponsorContact {
+  id          String    @id @default(cuid())
+  sponsor     Sponsor   @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  sponsorId   String
+  name        String
+  designation String?
+  email       String?
+  phone       String?
+  source      String // where this contact was officially obtained
+  verifiedAt  DateTime?
+  verifiedBy  String?
+  createdAt   DateTime  @default(now())
+}
+
+model Interaction {
+  id         String                @id @default(cuid())
+  sponsor    Sponsor?              @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  sponsorId  String?
+  request    InstitutionalRequest? @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  requestId  String?
+  type       InteractionType
+  occurredAt DateTime
+  summary    String
+  outcome    String?
+  attendees  String?
+  recordedBy String
+  createdAt  DateTime              @default(now())
+}
+
+model Payment {
+  id         String                @id @default(cuid())
+  sponsor    Sponsor?              @relation(fields: [sponsorId], references: [id])
+  sponsorId  String?
+  request    InstitutionalRequest? @relation(fields: [requestId], references: [id])
+  requestId  String?
+  amount     Int
+  receivedOn DateTime
+  reference  String // receipt / transaction reference
+  note       String?
+  recordedBy String
+  createdAt  DateTime              @default(now())
+}
+
+model RelatedDocument {
+  id        String                @id @default(cuid())
+  sponsor   Sponsor?              @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  sponsorId String?
+  request   InstitutionalRequest? @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  requestId String?
+  title     String
+  url       String
+  createdBy String
+  createdAt DateTime              @default(now())
+}
+
+model OutreachDraft {
+  id             String                @id @default(cuid())
+  templateKey    String
+  sponsor        Sponsor?              @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  sponsorId      String?
+  request        InstitutionalRequest? @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  requestId      String?
+  subject        String
+  body           String
+  status         DraftStatus           @default(DRAFT)
+  createdBy      String
+  reviewedBy     String?
+  reviewedAt     DateTime?
+  reviewNote     String?
+  sentRecordedAt DateTime?
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime              @updatedAt
+}
+
+model Task {
+  id         String          @id @default(cuid())
+  title      String
+  assignee   CommitteeMember @relation(fields: [assigneeId], references: [id])
+  assigneeId String
+  sponsor    Sponsor?        @relation(fields: [sponsorId], references: [id], onDelete: SetNull)
+  sponsorId  String?
+  dueDate    DateTime?
+  status     TaskStatus      @default(OPEN)
+  createdBy  String
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+}
+
+model HistoricalBudgetItem {
+  id          String          @id @default(cuid())
+  kind        String // "EXPENSE" | "INCOME"
+  category    BudgetCategory?
+  section     String
+  particulars String
+  quantity    Int?
+  rate        Int?
+  amount      Int
+  sortOrder   Int
+}
+
+model BudgetLine {
+  id               String           @id @default(cuid())
+  category         BudgetCategory
+  description      String
+  quantity         Int?
+  unitCost         Int?
+  estimatedTotal   Int
+  quotationStatus  QuotationStatus  @default(NOT_REQUESTED)
+  quotationAmount  Int?
+  approvedAmount   Int?
+  actualAmount     Int?
+  stage            BudgetStage      @default(ESTIMATE)
+  fundingSource    FundingSource    @default(UNASSIGNED)
+  fundingSponsor   Sponsor?         @relation(fields: [fundingSponsorId], references: [id])
+  fundingSponsorId String?
+  paymentStatus    PaymentStatus    @default(UNPAID)
+  responsible      CommitteeMember? @relation(fields: [responsibleId], references: [id])
+  responsibleId    String?
+  supportingDocUrl String?
+  approvalRecord   String?
+  notes            String?
+  sortOrder        Int              @default(0)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model IncomeLine {
+  id          String       @id @default(cuid())
+  source      IncomeSource
+  description String
+  quantity    Int?
+  rate        Int?
+  amount      Int
+  status      IncomeStatus @default(ESTIMATE)
+  reference   String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model InstitutionalRequest {
+  id                    String            @id @default(cuid())
+  type                  InstitutionType
+  title                 String
+  stage                 RequestStage      @default(NOT_REQUESTED)
+  contactPerson         String?
+  requestedAmount       Int?
+  approvedAmount        Int?
+  approvalReference     String?
+  approvedOn            DateTime?
+  conditions            String?
+  reportingRequirements String?
+  recruitmentRequests   String? // TPO only, subject to placement policy
+  incubationNotes       String? // Foundation only, optional discussions
+  notes                 String?
+  fundingOptions        FundingOption[]
+  introducedSponsors    Sponsor[]
+  interactions          Interaction[]
+  payments              Payment[]
+  documents             RelatedDocument[]
+  drafts                OutreachDraft[]
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+}
+
+model FundingOption {
+  id          String               @id @default(cuid())
+  request     InstitutionalRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  requestId   String
+  mode        FundingMode
+  amount      Int
+  description String
+  milestones  String?
+  createdAt   DateTime             @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorEmail String
+  action     String
+  entityType String
+  entityId   String?
+  before     Json?
+  after      Json?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}

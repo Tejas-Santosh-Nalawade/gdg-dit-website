@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal organiser seed data (names, budget figures) must never be committed
+/prisma/seed-data/*.local.json
+!.env.example

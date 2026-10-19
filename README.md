@@ -104,6 +104,10 @@ To add new content, simply edit the relevant JSON file and the website will auto
 - **Sponsors** — Sponsorship packages and current sponsors
 - **Join** — Community membership information
 
+## Organiser area (THE INCURSION 2027)
+
+A private, sign-in-only area at `/organiser` manages sponsorship, the event budget and document generation for THE INCURSION 2027. It needs a PostgreSQL database and a Google OAuth client. See [docs/ORGANISER.md](docs/ORGANISER.md) for setup, roles and tests.
+
 ## Contributing
 
 We welcome contributions! Please follow these steps:

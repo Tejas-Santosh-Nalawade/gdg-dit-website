@@ -26,6 +26,9 @@ const nextConfig = {
   // Page extensions
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   
+  // PDF generation reads its font metrics from node_modules at runtime.
+  serverExternalPackages: ['pdfkit'],
+
   // Experimental features for better performance
   experimental: {
     optimizeCss: true,
